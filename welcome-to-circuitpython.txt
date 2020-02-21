@@ -224,78 +224,67 @@ Renombrando CIRCUITPY
 
 Cuando le cambias el nombre a CIRCUITPY, se escribe el nombre en el sistema de archivos. Esto significa que el cambio de nombre se va a mantener si desconectas la tarjetas así como si recargas CircuitPython. ¡El nombre debe ser de 11 letras o menos! Esto es una limitante del sistema de archivo. Vas a recibir un error si escojes uno con más de 11 letras.
 
+Renombrando CIRCUITPY en Mac
+Cambiarle el nombre a tu unidad de disco CIRCUITPY es sencillo. Das click a tu unidad de disco en el Finder para ver su contenido. Luego le das click derecho a la unidad de disco en el Finder y escoges "Renombrar".
+Cuando das click a "Renombrar", en el menú de click derecho, el nombre de la unidad de disco aparece en una caja de texto donde puedes renombrarla. Escriba el nuevo nombre.
 
-Renaming CIRCUITPY on Mac
-Renaming your CIRCUITPY drive on Mac is simple. Click
-on the drive in Finder so you can see the contents.
-Then, right click on the drive in Finder and choose
-"Rename".
-Once you click "Rename", in the right-click menu, the
-drive name will show up in a text box where you can
-rename the drive. Type in the new name.
-Renaming CIRCUITPY on Windows
-Renaming the CIRCUITPY drive on Windows is easy. Open File Explorer and find the CIRCUITPY drive. Right click on it,
-and click "Rename".
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 22 of 95Renaming the CIRCUITPY drive on Windows is easy.
-Open File Explorer and find the CIRCUITPY drive. Right
-click on it, and click "Rename".
-You can also rename the drive through the "Properties"
-menu, which can be opened several different ways
-through the Windows File Explorer, including right
-clicking on the CIRCUITPY drive and choosing
-"Properties".
-Once you click "Rename" in the right-click menu, the
-drive name will show up in a text box where you can
-rename the drive. Type in the new name.
-Renaming CIRCUITPY on Linux
-Renaming CIRCUITPY on Linux requires a couple of steps. You'll need to identify the mount point, and then run a
-command to rename the drive.
-Open a terminal program. Run the following to find out where your board is mounted:
+Renombrando CIRCUITPY en Windows
+Camniar el nombre a la unidad de disco CIRCUITPY en Windows es sencillo. Abre el Explorador de archivos y buscas la unidad de disco CIRCUITPY. Le das click derecho encima, y click a "Renombrar".
+
+Renombrar la unidad de disco CIRCUITPY en Windows es sencillo. Abre el Explorador de archivos y buscas la unidad de disco CIRCUITPY. Le das click derecho encima, y click a "Renombrar".
+También puedes renombrar la unidad de disco por medio del menú de "Propiedades" en el Explorador de Windows, incluyendo click derecho sobre la unidad de disco CIRCUITPY y escogiendo "Propiedades".
+
+Una vez que da click en "Renombrar" en el menú de click derecho, la unidad de disco aparece en un campo de texto donde puedes renombrarla. Escriba el nuevo nombre.
+
+Renombrando CIRCUITPY en Linux
+Para cambiar el nombre de la unidad de disco CIRCUITPY en Linux, es necesario ejecuta un par de pasos. Necesitas identificar el punto de monta, y luego ejecutar un comando para renombrar la unidad de disco.
+
+Abra la aplicación de terminal. Ejecute el siguiente comando para consultar donde está montada tu tarjeta:
+
 df | grep CIRCUITPY
-You will see CIRCUITPY on the right end of the resulting line. The dev/foo (where foo is the name of the mount
-point) on the left end of that line is the mount point.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 23 of 95Next you can run the following to unmount the board, replacing foo with your specific mount point.
+
+Vas a ver CIRCUITPY en la derecha de la línea resultante. El punto de monta aparece a la izquierda de la línea y es similar a /dev/foo (donde foo es el nombre del punto de monta).
+
+Ahora puedes ejecutar el siguiente comando para desmontar la tarjeta, reemplazando la palabra foo por tu punto de monta.
+
 sudo umount /dev/foo
-To rename the board, run the following:
-sudo fatlabel /dev/foo NEW_NAME
-Then, eject your board, unplug it, and plug it back in to force it to remount with the new name.
-To check to see if it worked, look for the drive in your file manager. Or, you can run the following:
+
+Para renombrar la tarjeta, ejecute lo siguiente:
+
+sudo fatlabel /dev/foo NUEVO_NOMBRE
+Ahora desconecta tu tarjeta y la conectas para forzarla a remontarse con el nuevo nombre.
+
+Para revisar que funcionó, busca el nuevo nombre de unidad de disco en tu navegador de archivos. O puedes ejecutar lo siguiente:
+
 df | grep NEW_NAME
-Renaming CIRCUITPY through CircuitPython
-You can also rename the board using CircuitPython. Create a new file on your CIRCUITPY drive called boot.py . Copy
-the following code into the new boot.py file:
+
+Renombrando CIRCUITPY desde CircuitPython
+Usted también puede renombrar la unidad de disco CIRCUITPY utilizando CircuitPython. Crea un nuevo archivo en tu CIRCUITPY llamado boot.py . Copia el siguiente código dentro del archivo boot.py:
+
 import storage
 storage.remount("/", readonly=True)
 m = storage.getmount("/")
 m.label = "NEW_NAME"
 storage.remount("/", readonly=False)
-Eject your board, and reboot the board either by pressing the reset button once, or unplugging it and plugging it back
-in. After a moment, it should show up in your file explorer with the NEW_NAME you chose for it! You can delete
-boot.py after the newly named board shows up in your file explorer.
-Reverting to CIRCUITPY
-You can follow the same processes above to rename the drive back to CIRCUITPY.
-You will also revert to CIRCUITPY by erasing the filesystem. If you are in a situation where you need to erase the
-filesystem on your CircuitPython board, the drive name will revert to CIRCUITPY on completion.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 24 of 95Creating and Editing Code
-One of the best things about CircuitPython is how simple it is to get code up and running. In this section, we're going to
-cover how to create and edit your first CircuitPython program.
-To create and edit code, all you'll need is an editor. There are many options. We strongly recommend using Mu! It's
-designed for CircuitPython, and it's really simple and easy to use, with a built in serial console!
-If you don't or can't use Mu, there are basic text editors built into every operating system such as Notepad on Windows,
-TextEdit on Mac, and gedit on Linux. However, many of these editors don't write back changes immediately to files that
-you edit. That can cause problems when using CircuitPython. See the Editing Code (https://adafru.it/id3) section below.
-If you want to skip that section for now, make sure you do "Eject" or "Safe Remove" on Windows or "sync" on Linux
-after writing a file if you aren't using Mu. (This is not a problem on MacOS.)
-Creating Code
-Open your editor, and create a new file. If you are using
-Mu, click the New button in the top left
-Copy and paste the following code into your editor:
+
+Desmonta tu tarjeta, y reiniciala ya sea presionando el botón de reset una vez, o desconectando la tarjeta y reconectándola. !Luego de un instante, debería aparecer en tu navegador de archivos con el NUEVO_NOMBRE que has escogido! Ya puedes borrar boot.py luego de que el nuevo nombre aparece en tu navegador de archivos.
+
+Revirtiendo a CIRCUITPY
+Puedes seguir el mismo proceso antes descrito para renombrar la unidad de disco, de nuevo hacia CIRCUITPY.
+También puedes revertir al nombre CIRCUITPY, borrando el sistema de archivos. Si estás en una situación donde debe eliminar el sistema de archivos en tu tarjeta CircuitPython, la unidad de disco revertirá su nombre a CIRCUITPY cuando complete el borrado.
+
+Creando y editando el código
+
+Una de las mejores cosas sobre CircuitPython, es lo sencillo que es poner a trabajar al código. En esta sección vamos a hablar de como crear y editar tu primer progrma en CircuitPython.
+
+Para crear y editar el código, todo lo que necesitas es un editor. Existen muchas opciones. ¡Nosotros recomendamos fuertemente a Mu! Es diseñado para CircuitPython, y es realmente simple y sencillo de utilizar, ¡con una consola serial integrada!
+Si no utilizas o no puedes usar Mu, hay editores básicos para texto en cualquier sistema operativo, como Notepad en Windows, TextEdit en Mac, y gedit en Linux. Sin embargo, muchos de estos editores no escriben sus cambios de inmediato a los archivosque editas. Esto puede causar problemas con CircuitPython. Ver la sección de Editando Código a continuación (https://adafru.it/id3)
+
+Si quieres saltarte dicha sección por el momento, asegúrate de "Expulsar" o "Remover de forma segura" en Windows, o "sync" en Linux luego de escribir un archivo si no estás en Mu. (Esto no es un problema en MacOS)
+
+Creando código
+Abre tu editor y crea un archivo nuevo. Si estás usando Mu, dá click al botón de Nuevo arriba a la izquierda.
+Copia y pega el siguiente código en tu editor:
 import board
 import digitalio
 import time
@@ -306,74 +295,66 @@ led.value = True
 time.sleep(0.5)
 led.value = False
 time.sleep(0.5)
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 25 of 95It will look like this - note that under the while True:
-line, the next four lines have spaces to indent them, but
-they're indented exactly the same amount. All other
-lines have no spaces before the text.
-Save this file as code.py on your CIRCUITPY drive.
-On each board you'll find a tiny red LED. It should now be blinking. Once per second
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 26 of 95Congratulations, you've just run your first CircuitPython program!
-Editing Code
-To edit code, open the code.py file on your CIRCUITPY
-drive into your editor.
-Make the desired changes to your code. Save the file.
-That's it!
-Your code changes are run as soon as the file is done saving.
-There's just one warning we have to give you before we continue...
-Don't Click Reset or Unplug!
-The CircuitPython code on your board detects when the files are changed or written and will automatically re-start your
-code. This makes coding very fast because you save, and it re-runs.
-However, you must wait until the file is done being saved before unplugging or resetting your board! On Windows
-using some editors this can sometimes take up to 90 seconds, on Linux it can take 30 seconds to complete because
-the text editor does not save the file completely. Mac OS does not seem to have this delay, which is nice!
-This is really important to be aware of. If you unplug or reset the board before your computer finishes writing the file to
-your board, you can corrupt the drive. If this happens, you may lose the code you've written, so it's important to backup
-your code to your computer regularly.
-There are a few ways to avoid this:
-1. Use an editor that writes out the file completely when you save it.
-Recommended editors:
-mu (https://adafru.it/Be6) is an editor that safely writes all changes (it's also our recommended editor!)
-emacs (https://adafru.it/xNA) is also an editor that will fulIy write files on save (https://adafru.it/Be7)
-Sublime Text (https://adafru.it/xNB) safely writes all changes
-Visual Studio Code (https://adafru.it/Be9) appears to safely write all changes
-gedit on Linux appears to safely write all changes
-IDLE (https://adafru.it/IWB), in Python 3.8.1 or later, was fixed (https://adafru.it/IWF) to write all changes
-immediately
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 27 of 95Recommended only with particular settings or with add-ons:
-vim (https://adafru.it/ek9) / vi safely writes all changes. But set up vim to not write swapfiles (https://adafru.it/ELO)
-(.swp files: temporary records of your edits) to CIRCUITPY. Run vim with vim -n , set the no swapfile option, or
-set the directory option to write swapfiles elsewhere. Otherwise the swapfile writes trigger restarts of your
-program.
-The PyCharm IDE (https://adafru.it/xNC) is safe if "Safe Write" is turned on in Settings->System Settings-
->Synchronization (true by default).
-If you are using Atom (https://adafru.it/fMG), install the fsync-on-save package (https://adafru.it/E9m) so that it will
-always write out all changes to files on CIRCUITPY .
-SlickEdit (https://adafru.it/DdP) works only if you add a macro to flush the disk (https://adafru.it/ven).
-We don't recommend these editors:
-notepad (the default Windows editor) and Notepad++ can be slow to write, so we recommend the editors above!
-If you are using notepad, be sure to eject the drive (see below)
-IDLE in Python 3.8.0 or earlier does not force out changes immediately
-nano (on Linux) does not force out changes
-geany (on Linux) does not force out changes
-Anything else - we haven't tested other editors so please use a recommended one!
-2. Eject or Sync the Drive After Writing
-If you are using one of our not-recommended-editors, not all is lost! You can still make it work.
-On Windows, you can Eject or Safe Remove the CIRCUITPY drive. It won't actually eject, but it will force the operating
-system to save your file to disk. On Linux, use the sync command in a terminal to force the write to disk.
-Oh No I Did Something Wrong and Now The CIRCUITPY Drive Doesn't Show Up!!!
-Don't worry! Corrupting the drive isn't the end of the world (or your board!). If this happens, follow the steps found on
-the Troubleshooting page of every board guide to get your board up and running again.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 28 of 95Back to Editing Code...
-Now! Let's try editing the program you added to your board. Open your code.py file into your editor. We'll make a
-simple change. Change the first 0.5 to 0.1 . The code should look like this:
+
+Se va a ver así - nota que cuando estás bajo la línea while True:, las siguientes cuatro líneas tienen espacios para identarlas, pero están identadas la misma cantidad. El resto de líneas no tiene espacios antes del texto.
+Salva este archivo como code.py bajo tu unidad de disco CIRCUITPY.
+
+En cada tarjeta vas a encontrar un pequeño LED rojo. Debería estar parpadeando una vez por segundo.
+
+¡Felicidades, estás ejecutando tu primer programa en CircuitPython!
+
+Editando código
+
+Para editar código, abre tu archivo code.py bajo tu unidad de disco CIRCUITPY usando un editor.
+Realiza los cambios deseados en tu código. Salva el archivo.
+¡Eso es todo!
+Los cambios en tu código son aplicados en el momento que el archivo es salvado.
+Solamente hay una advertencia para darte, antes de continuar...
+¡No dés click en Reset o desconectes!
+
+El código CircuitPython en tu tarjeta detecta cuando los archivos cambian o son escritos y automáticamente re-inicia tu código. Esto hace programar muy rápido porque tu salvas y vuelve a correr.
+¡Sin embargo, desdeesperar a que el archivo esté completamentes salvado antes de desconectar o reiniciar tu tarjeta! En Windows, usando algunos editores es posible que dure hasta 30 segundos para completar porque el editor de texto no salva el archivo completamente. Mac OS parece no tener este retraso, ¡lo cual es bueno!
+
+Esto es muy importante para tenr en cuenta. Si desconectas o reinicias la tarjeta antes de que tu computadora termine de escribir a la tarjeta, puedes corromper la unidad de disco. Si esto sucede, es posible que pierdas el código que has escrito, por lo que es importante respaldar tu código regularmente hacia una computadora.
+
+Estas son algunas recomendaciones para evitar que suceda:
+1. Utiliza un editor que escriba los archivos completamente cuando los salvas.
+Editores recomendados:
+
+mu (https://adafru.it/Be6) es un editor que escribe de forma segura todos los cambios (así como es tambié̆n nuestro editor recomendado!)
+
+emacs (https://adafru.it/xNA) is también un editor que va a escribir completamente los archivos cuando los salvas (https://adafru.it/Be7)
+Sublime Text (https://adafru.it/xNB) escribe segúramente los cambios
+Visual Studio Code (https://adafru.it/Be9) parece escribir seguramente los cambios
+gedit bajo Linux aparece escribir seguramente todos los cambios
+IDLE (https://adafru.it/IWB), en Python 3.8.1 o posterior, se arregló́ (https://adafru.it/IWF) para escribir todos los cambios inmediatamente
+
+Recomendadoo para ciertos escenarios o con añadidos:
+vim (https://adafru.it/ek9) / vi escribe seguramente todos los cambios. Pero lo debes configurar para no utilizar archivos de intercambio  (https://adafru.it/ELO) (archivos .swp: registros temprales de las ediciones) en CIRCUITPY. Ejecuta vim con -n, para definir la opción sin archivos de intercambio, o puedes definirle que escriba los archivos de intercambio en otro directorio. De otra manera, los archivos de intercambio podrían iniciar un reiniciado de tu programa.
+
+El IDE PyCharm (https://adafru.it/xNC) es seguro cuando "Safe Write" es activado en Settings->System Settings->Synchronization (activado por omisión).
+Si estás utilizando Atom (https://adafru.it/fMG), instala el paquete fsync-on-save (https://adafru.it/E9m) para que siempre escriba completamente los archivos hacia CIRCUITPY.
+SlickEdit (https://adafru.it/DdP) funciona solo si le agregas un macro para vaciar escrituras pendientes hacia el disco (https://adafru.it/ven).
+
+Nosotros no recomendamos estos editores:
+notepad (el editor por omisión en Windows) ni Notepad++ que pueden serlentos para escribir, ¡por lo que recomendamos los editores mencionados arriba!
+Si estás utilizando notepad, asegúrate de expulsar la unidad de disco (ver abajo). 
+IDLE en Python 3.8.0 o anteriorno fuerza la escritura inmediata de los cambio
+nano (on Linux) no fuerza la escritura de cambios
+geany (on Linux) no fuerza la escritura de cambios
+
+Cualquier otro - nosotros no hemos probado otros editores, así que por favor ¡utilice uno recomendado!
+
+2. Expulse o sincronice el dispostivo luego de escribir
+Si estás utilizando uno de los editores no recomendados, ¡todavía hay esperanza! Todavía puedes lograr que funcione.
+En Windows, puedes Expulsar o Remover de forma segura, la unidad de disco CIRCUITPY. No se va a expulsar realmente, pero forzará al sistema operativo a escribir tu archivo al disco. En Linux, puedes usar el comando sync en una terminal para forzar la escritura al disco.
+
+¡¡¡Oh No, hice algo mal y ahora la unidad de disco CIRCUITPY no apace!!!
+¡No se preocupe! El corromper una unidad de disco no es el fin del mundo (¡o de tu tarjeta!). Si esto sucede, sigue los pasos descritos en la página de Solución de Problemas en la guía de cada tarjeta, para tenerla trabajando de nuevo.
+
+
+Volviendo a la edición de código...
+¡Ahora! Vamos a tratar de editar el programa que has agregado a tu tarjeta. Abre tu archivo code.py en tu editor. Vamos a realizar un simple cambio. Modifique el primer 0.5 hacia un 0.1 . El código debería verse de esta manera:
 import board
 import digitalio
 import time
@@ -384,13 +365,14 @@ led.value = True
 time.sleep(0.1)
 led.value = False
 time.sleep(0.5)
-Leave the rest of the code as-is. Save your file. See what happens to the LED on your board? Something changed! Do
-you know why? Let's find out!
-Exploring Your First CircuitPython Program
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 29 of 95First, we'll take a look at the code we're editing.
-Here is the original code again:
+
+Mantenga el resto del código sin cambios. Salve su archivo. Observe que sucede con el LED de tarjeta. ¡Algo ha cambiado! ¿Sabes por qué? ¡Vamos a averiguarlo!
+
+Explorando tu primer programa en CircuitPython
+
+Primero, vamos a observar el código que estamos editando.
+
+Aquí está el código original de nuevo:
 import board
 import digitalio
 import time
@@ -401,92 +383,85 @@ led.value = True
 time.sleep(0.5)
 led.value = False
 time.sleep(0.5)
-Imports & Libraries
-Each CircuitPython program you run needs to have a lot of information to work. The reason CircuitPython is so simple
-to use is that most of that information is stored in other files and works in the background. These files are called
-libraries. Some of them are built into CircuitPython. Others are stored on your CIRCUITPY drive in a folder called lib.
+
+Imports y librerías
+Cada programa en CircuitPython que ejecutas necesita tener mucha información para trabajar. La razón de porqué CircuitPython es tan sencillo es porque mucha de esa inforación se encuentra almacenada en otros archivos y trabaja detrás del telón. Estos archivos se llaman librerías. Algunas de ellas están integradas dentro e CircuitPython. Otras están almacenadas dentro de la unidad de disco CIRCUITPY en una carpeta llamada lib.
 import board
 import digitalio
 import time
-The import statements tells the board that you're going to use a particular library in your code. In this example, we
-imported three libraries: board , digitalio , and time . All three of these libraries are built into CircuitPython, so no
-separate files are needed. That's one of the things that makes this an excellent first example. You don't need any thing
-extra to make it work! board gives you access to the hardware on your board, digitalio lets you access that hardware
-as inputs/outputs and time let's you pass time by 'sleeping'
-Setting Up The LED
-The next two lines setup the code to use the LED.
+
+Las palabras de import le dicen a la tarjeta que vas a utilizar una librería en particular en tu código. En este ejemplo, hemos importado tres librerías: board , digitalio , y time . Estas tres librerías se encuentran integrada en CircuitPython, por lo que no son necesarios archivos adicionales. Eso es una de las cosas que lo vuelven un excelente primer ejemplo. ¡No necesitas nada extra para que funcione! board provee el acceso al hardware de tu tarjeta, digitalio permite accesar las entradas y salidas de hardware, time te permite pasar el rato 'durmiendo' 
+Configurando el LED
+Las siguientes dos líneas de código configuran el código para utilizar el LED.
 led = digitalio.DigitalInOut(board.D13)
 led.direction = digitalio.Direction.OUTPUT
-Your board knows the red LED as D13 . So, we initialise that pin, and we set it to output. We set led to equal the rest
-of that information so we don't have to type it all out again later in our code.
-Loop-de-loops
-The third section starts with a while statement. while True: essentially means, "forever do the following:". while
-True: creates a loop. Code will loop "while" the condition is "true" (vs. false), and as True is never False, the code will
-loop forever. All code that is indented under while True: is "inside" the loop.
-Inside our loop, we have four items:
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 30 of 95while True:
+
+Tu tarjeta conoce el LED rojo como D13 . Así que cuando inicializas este pin, lo preparamos para salida. Preparamos led para para que retenga esta información y no sea necesario escribirlo de nuevo más adelante en nuestro código.
+
+Ciclos
+La tercera sección comienza con una palabra de while. while True: básicamente significa "por siempre haga esto". while True: crea un ciclo. El código va a repetir "mientras" (while) la condición sea "verdadera" (true) (a diferencia de falso), y como True nunca es falso, el código se encicla sin fin. Todo el código que está identado bajo while True: está "dentro" del ciclo.
+
+Dentro del ciclo, tenemos cuatro elementos:
+
+while True:
 led.value = True
 time.sleep(0.5)
 led.value = False
 time.sleep(0.5)
-First, we have led.value = True . This line tells the LED to turn on. On the next line, we have time.sleep(0.5) . This line
-is telling CircuitPython to pause running code for 0.5 seconds. Since this is between turning the led on and off, the led
-will be on for 0.5 seconds.
-The next two lines are similar. led.value = False tells the LED to turn off, and time.sleep(0.5) tells CircuitPython to
-pause for another 0.5 seconds. This occurs between turning the led off and back on so the LED will be off for 0.5
-seconds too.
-Then the loop will begin again, and continue to do so as long as the code is running!
-So, when you changed the first 0.5 to 0.1 , you decreased the amount of time that the code leaves the LED on. So it
-blinks on really quickly before turning off!
-Great job! You've edited code in a CircuitPython program!
-What if I don't have the loop?
-If you don't have the loop, the code will run to the end and exit. This can lead to some unexpected behavior in
-simple programs like this since the "exit" also resets the state of the hardware. This is a different behavior than
-running commands via REPL. So if you are writing a simple program that doesn't seem to work, you may need to add
-a loop to the end so the program doesn't exit.
-The simplest loop would be:
+
+Primero, tenemos led.value = True . Esta línea le dice al LED que se encienda. En la siguiente línea tenemos time.sleep(0.5) . Esta línea le dice a CircuitPython que realice una pausa durante medio segundo. Ya que esta línea está en medio del prendido y apagao el led, el led va a estar encendido por medio segundo.
+
+Las siguientes dos líneas son similares. led.value = False le dice al LED que se apague, y time.sleep(0.5) le dice a CircuitPython que realice otra pausa, también medio segundo.
+
+Luego el ciclo comienza de nuevo, y ¡se va a mantener ejecutándose siempre y cuando el código esté trabajando!
+
+Entonces, cuando cambiaste el primer 0.5 hacia un 0.1, bajaste el tiempo que el LED se mantiene encendido. Así que parpadea encendido, ¡muy rápido antes de apagarse!
+
+¡Excelente trabajo! ¡Has editado código de un programa en CircuitPython!
+
+¿Que pasa si no tienes el ciclo?
+
+Si no tienes el ciclo, el código se va a ejecutar hasta el final, y terminal. Esto puede llevar a comportamientos extraños en programas sencillos como este, ya que el comportamiento de "exit" también reinicia el estado del hardware. Esto es un comportamiento diferente a ejecutar comandos en el REPL. Así que si estás editando un programa sencillo que parece no funcionar, pueda que necesites agregar un ciclo al final para que el programa no termine.
+
+El ciclo más sencillo sería:
 while True:
 pass
-And remember - you can press <CTRL><C> to exit the loop.
-See also the Behavior section in the docs.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 31 of 95More Changes
-We don't have to stop there! Let's keep going. Change the second 0.5 to 0.1 so it looks like this:
+
+Y recuerda, puedes presionar <CTRL><C> para salirte del ciclo.
+Puedes también leer la sección Comportamiento de la documentación.
+
+Más Cambios
+¡No hay razón para detenernos  aquí! Vamos a continuar. Cambie el segundo 0.5 por 0.1 para que se vea así:
 while True:
 led.value = True
 time.sleep(0.1)
 led.value = False
 time.sleep(0.1)
-Now it blinks really fast! You decreased the both time that the code leaves the LED on and off!
-Now try increasing both of the 0.1 to 1 . Your LED will blink much more slowly because you've increased the amount
-of time that the LED is turned on and off.
-Well done! You're doing great! You're ready to start into new examples and edit them to see what happens! These
-were simple changes, but major changes are done using the same process. Make your desired change, save it, and
-get the results. That's really all there is to it!
-Naming Your Program File
-CircuitPython looks for a code file on the board to run. There are four options: code.txt, code.py, main.txt and main.py.
-CircuitPython looks for those files, in that order, and then runs the first one it finds. While we suggest using code.py as
-your code file, it is important to know that the other options exist. If your program doesn't seem to be updating as you
-work, make sure you haven't created another code file that's being read instead of the one you're working on.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 32 of 95Connecting to the Serial Console
-One of the staples of CircuitPython (and programming in general!) is something called a "print statement". This is a line
-you include in your code that causes your code to output text. A print statement in CircuitPython looks like this:
-print("Hello, world!")
-This line would result in:
-Hello, world!
-However, these print statements need somewhere to display. That's where the serial console comes in!
-The serial console receives output from your CircuitPython board sent over USB and displays it so you can see it. This
-is necessary when you've included a print statement in your code and you'd like to see what you printed. It is also
-helpful for troubleshooting errors, because your board will send errors and the serial console will print those too.
-The serial console requires a terminal program. A terminal is a program that gives you a text-based interface to perform
-various tasks.
-If you're on Linux, and are seeing multi-second delays connecting to the serial console, or are seeing "AT"
-and other gibberish when you connect, then the modemmanager service might be interfering. Just remove it;
+
+¡Ahora parpadea muy rápido! ¡Has bajado ambos tiempos que el código prende y apaga el LED!
+Ahora trata de cambiar ambos de 0.1 a 1 . El LED va parpadear mucho más despacio porque aumentaste la cantidad de tiempo que el LED está prendido y apagado.
+¡Bien hecho! ¡Lo estás haciendo muy bien! ¡Estás listo para comenzar con nuevos ejemplos y editarlos para ver que pasa! Estos cambos han sido sencillos, pero cambios mayores se puede realizar por el mismo proceso. Haces el cambio que deseas, lo salvas y recibes los resultados. ¡No tiene nada de complicado!
+Nombrando tu programa
+CircuitPython busca un código en tu tarjeta para ejecutar. Existen cuatro opciones: code.txt, code.py, main.txt y main.py.
+CircuitPython buscar por esos archivos, en ese orden, y ejecuta el primero que encuentre. Así como sugerimos utilizar code.py como tu archivo para código, es importante que sepas que existen otras opciones. Si pareciera que tu programa no se actualiza mientras trabajas, verifica que no hayas creado otro archivo que pueda estar siendo leído en lugar del archivo sobre el que estás trabajano.
+
+
+Conectándose a la Consola Serial
+
+Algo de todos los días en CircuitPython (¡y en programación en general!) is algo llamado "print". Esto es una línea que incluys en tu código para que tu código imprima texto. Un "print" en CircuitPython se ve así:
+print("¡Hola mundo!")
+
+Esta línea resultaría en:
+¡Hola mundo!
+
+Sin embargo, estos prints necesitan algún lugar para imprimirlos. ¡Aquí es donde entra la consola serial!
+
+La consola serial recibe la salida de la tarjeta CircuitPython enviada por USB y la imprime para que la puedas ver. Esto es necesario cuando has incluído un print en tu código y deseas ver la salida. También es útil para mensajes de depuración de errores, porque tu tarjeta enviará errores y la consola serial los imprimirá.
+
+La consola serial requiere una aplicación de terminal. Una terminal es un aplicació̆n que provee una interface de texto para realizar ciertas tareas.
+
+Si estás en Linux, y observas que la consola serial tarda varios segundos en conectarse, o si observas mensajes como "AT" o similares, entonces la aplicación modemmanager está posiblemente intefiriendo. Remuevelo; no tiene mucha utilidad a menos que utilices modems
+
 it doesn't have much use unless you're still using dial-up modems. To remove, type this command at a shell:
 sudo apt purge modemmanager
 Are you using Mu?
