@@ -1,4 +1,4 @@
-¡Bienvenido a CircuitPython!
+﻿¡Bienvenido a CircuitPython!
 Creado por Kattni Rembor
 
 Last updated on 2020-02-10 04:43:06 PM UTC
@@ -460,42 +460,45 @@ La consola serial recibe la salida de la tarjeta CircuitPython enviada por USB y
 
 La consola serial requiere una aplicación de terminal. Una terminal es un aplicació̆n que provee una interface de texto para realizar ciertas tareas.
 
-Si estás en Linux, y observas que la consola serial tarda varios segundos en conectarse, o si observas mensajes como "AT" o similares, entonces la aplicación modemmanager está posiblemente intefiriendo. Remuevelo; no tiene mucha utilidad a menos que utilices modems
+Si estás en Linux, y observas que la consola serial tarda varios segundos en conectarse, o si observas mensajes como "AT" o similares, entonces la aplicación modemmanager está posiblemente intefiriendo. Remuevelo; no tiene mucha utilidad a menos que utilices modems de marcado telefónico. Para remover escribes este comando en el intérprete:
 
-it doesn't have much use unless you're still using dial-up modems. To remove, type this command at a shell:
 sudo apt purge modemmanager
-Are you using Mu?
-If so, good news! The serial console is built into Mu and will autodetect your board making using the REPL really really
-easy.
-Please note that Mu does yet not work with nRF52 or ESP8266-based CircuitPython boards, skip down to the next
-section for details on using a terminal program.
-First, make sure your CircuitPython board is plugged in.
-If you are using Windows 7, make sure you installed the
-drivers (https://adafru.it/Amd).
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 33 of 95Once in Mu, look for the Serial button in the menu and click it.
-Setting Permissions on Linux
-On Linux, if you see an error box something like the one below when you press the Serial button, you need to add
-yourself to a user group to have permission to connect to the serial console.
-On Ubuntu and Debian, add yourself to the dialout group by doing:
+
+¿Estás utilizando Mu?
+
+Si es así, ¡buenas noticias! La consola serial está integrada en Mu y va a autodetectar tu tarjeta, haciendo que usar el REPL sea realmente sencillo.
+
+Favor notar que Mu todavía no trabaja con CircuitPython para tarjetas basadas en nRF52 o ESP8266, pasa a la siguiente sección para detalles de como utilizar una aplicación de terminal.
+
+Primero, vamos a asegurarnos que tu tarjeta de CircuitPython está conectada. Si estás en Windows 7, asegúrate de que has instalado los controladores (https://adafru.it/Amd).
+
+Una vez en Mu, busque el botón Serial en el menú y dale click.
+
+Configurando permisos en Linux
+
+En Linux, si ves un mensaje de error similar a la que se encuentra abajo cuando aprestas el botón Serial, necesitas agrega a tu usuario al grupo que tiene permisos para conectarse con la consola serial.
+En Ubuntu y Debian, te agregas al grupo dialout ejecutando:
+
 sudo adduser $USER dialout
-After running the command above, reboot your machine to gain access to the group. On other Linux distributions, the
-group you need may be different. See Advanced Serial Console on Mac and Linux (https://adafru.it/AAI) for details on
-how to add yourself to the right group.
-Using Something Else?
-If you're not using Mu to edit, are using ESP8266 or nRF52 CircuitPython, or if for some reason you are not a fan of the
-built in serial console, you can run the serial console as a separate program.
-Windows requires you to download a terminal program, check out this page for more details (https://adafru.it/AAH)
-Mac and Linux both have one built in, though other options are available for download, check this page for more
-details (https://adafru.it/AAI)
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 34 of 95Interacting with the Serial Console
-Once you've successfully connected to the serial console, it's time to start using it.
-The code you wrote earlier has no output to the serial console. So, we're going to edit it to create some output.
-Open your code.py file into your editor, and include a print statement. You can print anything you like! Just include
-your phrase between the quotation marks inside the parentheses. For example:
+
+Luego de ejecutar el comando anterior, reinicia tu computadora para lograr acceso al grupo.
+
+En otras distribuciones de Linux, el grupo puede que tenga un nombre diferente. Puedes buscar detalles en la guía Advanced Serial Console on Mac and Linux (https://adafru.it/AAI), con información de como agregarte al grupo correcto.
+
+¿Utilizando otra cosa?
+Si por alguna razón no estás utilizando Mu para editar, estás utilizando una ESP8266 o nRF52 con CircuitPython, o si por alguna razón no te gusta la consola serial integrada, puedes ejecutar la consola serial como un programa aparte.
+
+Windows requiere que descargues una aplicación terminal, puedes buscar detalles en esta página (https://adafru.it/AAH)
+
+Mac y Linux ambas tienen una integrada, aunque existe opciones disponibles para descargar, revisar esta página para más detalles (https://adafru.it/AAI)
+
+Interactuando con la Consola Serial
+
+Una vez que te has conectado existosamente a la consola serial, es hora de comenzar a utilizarla.
+
+El código que escribimos anteriomente no tiene salida hacia la consola serial. Entonces, vamos a editarlo para crear alguna salida.
+
+Abre el archivo code.py en tu editor, e incluye un print. ¡Puedes imprimir cualquier cosa que gustes! Solo incluye tu frase entre comillas, dentro de paréntesis. Por ejemplo:
 import board
 import digitalio
 import time
@@ -507,70 +510,74 @@ led.value = True
 time.sleep(1)
 led.value = False
 time.sleep(1)
-Save your file.
-Now, let's go take a look at the window with our connection to the serial console.
-Excellent! Our print statement is showing up in our console! Try changing the printed text to something else.
-Keep your serial console window where you can see it. Save your file. You'll see what the serial console displays when
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 35 of 95the board reboots. Then you'll see your new change!
-The Traceback (most recent call last): is telling you the last thing your board was doing before you saved your file.
-This is normal behavior and will happen every time the board resets. This is really handy for troubleshooting. Let's
-introduce an error so we can see how it is used.
-Delete the e at the end of True from the line led.value = True so that it says led.value = Tru
-Save your file. You will notice that your red LED will stop blinking, and you may have a colored status LED blinking at
-you. This is because the code is no longer correct and can no longer run properly. We need to fix it!
-Usually when you run into errors, it's not because you introduced them on purpose. You may have 200 lines of code,
-and have no idea where your error could be hiding. This is where the serial console can help. Let's take a look!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 36 of 95The Traceback (most recent call last): is telling you that the last thing it was able to run was line 10 in your code. The
-next line is your error: NameError: name 'Tru' is not defined . This error might not mean a lot to you, but combined with
-knowing the issue is on line 10, it gives you a great place to start!
-Go back to your code, and take a look at line 10. Obviously, you know what the problem is already. But if you didn't,
-you'd want to look at line 10 and see if you could figure it out. If you're still unsure, try googling the error to get some
-help. In this case, you know what to look for. You spelled True wrong. Fix the typo and save your file.
-Nice job fixing the error! Your serial console is streaming and your red LED Is blinking again.
-The serial console will display any output generated by your code. Some sensors, such as a humidity sensor or a
-thermistor, receive data and you can use print statements to display that information. You can also use print statements
-for troubleshooting. If your code isn't working, and you want to know where it's failing, you can put print statements in
-various places to see where it stops printing.
-The serial console has many uses, and is an amazing tool overall for learning and programming!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 37 of 95The REPL
-The other feature of the serial connection is the Read-Evaluate-Print-Loop, or REPL. The REPL allows you to enter
-individual lines of code and have them run immediately. It's really handy if you're running into trouble with a particular
-program and can't figure out why. It's interactive so it's great for testing new ideas.
-To use the REPL, you first need to be connected to the serial console. Once that connection has been established,
-you'll want to press Ctrl + C.
-If there is code running, it will stop and you'll see Press any key to enter the REPL. Use CTRL-D to reload. Follow those
-instructions, and press any key on your keyboard.
-The Traceback (most recent call last): is telling you the last thing your board was doing before you pressed Ctrl + C
-and interrupted it. The KeyboardInterrupt is you pressing Ctrl + C. This information can be handy when
-troubleshooting, but for now, don't worry about it. Just note that it is expected behavior.
-If there is no code running, you will enter the REPL immediately after pressing Ctrl + C. There is no information about
-what your board was doing before you interrupted it because there is no code running.
-Either way, once you press a key you'll see a >>> prompt welcoming you to the REPL!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 38 of 95If you have trouble getting to the >>> prompt, try pressing Ctrl + C a few more times.
-The first thing you get from the REPL is information about your board.
-This line tells you the version of CircuitPython you're using and when it was released. Next, it gives you the type of
-board you're using and the type of microcontroller the board uses. Each part of this may be different for your board
-depending on the versions you're working with.
-This is followed by the CircuitPython prompt.
-From this prompt you can run all sorts of commands and code. The first thing we'll do is run help() . This will tell us
-where to start exploring the REPL. To run code in the REPL, type it in next to the REPL prompt.
-Type help() next to the prompt in the REPL.
-Then press enter. You should then see a message.
-First part of the message is another reference to the version of CircuitPython you're using. Second, a URL for the
-CircuitPython related project guides. Then... wait. What's this? To list built-in modules, please do `help("modules")`.
-Remember the libraries you learned about while going through creating code? That's exactly what this is talking about!
-This is a perfect place to start. Let's take a look!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 39 of 95Type help("modules") into the REPL next to the prompt, and press enter.
+
+Salva el archivo.
+Ahora, vamos a mirar a la ventana con la conexión hacia la consola serial.
+
+¡Excelente! ¡Nuestro print se está mostrando en la consola! Trata de cambiar el texto que imprime por otra cosa.
+
+Mantén la ventana con la consola serial donde la puedes observar. Salvar tu archivo. Vas a ver lo que la consola serial imprime cuando la tarjeta se reinicia. ¡Luego verás el nuevo cambio!
+
+La línea que dice The Traceback (most recent call last): se refiere a la última cosa que tu tarjeta estaba realizando antes de salvar tu archivo.
+
+Esto es comportamiento normal y va a suceder cada vez que la tarjeta se reinicia. Esto es realmente útil para depuración. Vamos a introducir un error para ver como se utiliza.
+
+Borra la e al final de True de la línea line led.value = True de forma que diga led.value = Tru
+Salva el archivo. Vas a notar que el LED rojo ha dejado de parpadear, y puede que tengas un LED de estado de colores parpadeandote. Esto es porque el código ya no es correcto y no se puede ejecutar apropiadamente.
+
+¡Necesitamos arreglarlo!
+
+Usualmente cuando nos topamos errores, no es porque los hayas introducido a propósito. Puede que tengas 200 líneas de código y no tienes idea donde podría esconder tu error. Aquí es donde la consola sería nos puede ayudar. ¡Vamos a ver!
+
+La línea The Traceback (most recent call last): nos dice que es la últma cosa que pudo ejecutar fue la línea 10 de tu código. El siguiente mensaje es tu error: NameError: name 'Tru' is not defined . Este error puede que no signifique mucho para tí, pero combinado con saber que el problema está en la línea 10, ¡te dá un excelente lugar para comenzar!
+
+Regresa a tu código, y observa la línea 10. Obviamente, ya sabes cual es el problema. Pero si no lo supieras, puedes tratar de mirar la línea 10 para ver si lo puedes encontrar. Si todavía no estás seguro, trata de buscar en internet el error para recibir ayuda. En este caso, sabes que buscar. Has escrito la palabra True mal. Arregla el error y salva el archivo.
+
+¡Buen trabajo arreglando el error! Tu consola serial está recibiendo información y tu LED rojo está parpadeando de nuevo.
+
+La consola serial va a desplegar cualquier salida generada por tu código. Algunos sensores, como pueden ser sensores de humedad o thermo-resistores, reciben datos y puedes utilizar prints para desplegar dicha información. También puedes utilizar prints para depuración y buscar errores. Si tu código no funciona, y no sabes donde está fallando, puedes agregar prints en diferentes lugares para ver donde deja de imprimir.
+
+!La consola serial tiene muchos ususo, y es una herramienta impresionante en general para aprendizaje y programación!
+
+El REPL
+
+Otra característica de la conexión serial es el Read-Evaluate-Print-Loop (Leer-Evaluar-Imprimir-Repite) o REPL. El REPL permite ingresar líneas individuales de código y ejecutarlas inmediatamente. Es muy útil para cuando estás teniendo problemas con un programar en particular y no puedes descifrar la razón. Es interactivo por lo cual es excelente para probar nuevas ideas.
+Para usar el REPL, primero debes estar conectado en la consola serial. Una vez que la conexión está establecida, quieres presionar Ctrl + C.
+
+Si había código ejecutándose, se detiene y vas a ver un mensaje 
+
+Press any key to enter the REPL. Use CTRL-D to reload.
+
+Sigue esas instrucciones, y presiona cualquier tecla en tu teclado.
+
+El mensaje The Traceback (most recent call last): te dice la última cosa que tu tarjeta estaba haciendo antes de que tu apretaras Ctrl + C y la interrumpieras. La parte que dice KeyboardInterrupt es cuando presionaste Ctrl + C. Esta información puede ser útil para depuración, pero por ahora, no le vamos a poner atención. Solo ten en cuenta que es comportamiento normal.
+
+Si no había código ejecutándose, vas a entrar en el REPL de forma inmediata luego de presionar Ctrl + C. No hay información de lo que estaba pasando anteriormente en tu tarjeta porque no había código ejecutándose.
+
+De todas formas, una vez que presiones una teclas vas a ver el mensaje de solicitud de >>> !dándote la bienvenida al REPL!
+
+Si tienes problemas opteniendo el mensaje de solicitud de >>>, trata de presionar Ctrl + C un par de vez más.
+
+Lo primero que obtienes del REPL es información sobre tu tarjeta.
+
+Esta línea dice la versión de CircuitPython que estás utilizando y cuando fue liberada. Luego, te dice el tipo de tarjeta que estás utilizando y el tipo de microcontroladora que utiliza la tarjeta. Cada parte de esto puede que sea diferente para tu tarjeta dependiendo de las versiones que tengas.
+
+Luego de esto, sigue el mensaje de solicitud de CircuitPython.
+
+El mensaje de solicitud te está pidiendo todo tipo de comandos y código. Lo primero que vamos a hacer es ejecutar help(). Esto nos dice donde comenzar a explorar el REPL. Para correr código en el REPL, lo escribes a la par del mensaje de solicitud del REPL.
+
+Ahora presionas enter y deberías ver un mensaje.
+
+La primera parte del mensaje es de nuevo una referencia a la versión de CircuitPython que estás usando. Segundo, el URL para guías de proyectos relacionados a CircuitPython. Luego… un momento… ¿Que es esto? 
+To list built-in modules, please do `help("modules")`
+
+¿Recuerdas las librerías que aprendiste mientras aprendías a crear código? ¡De esto es de lo que estaban hablando!
+
+Es un excelente lugar para comenzar, ¡vamos a ver!
+
+Escribe help("modules") 
+
+into the REPL next to the prompt, and press enter.
 This is a list of all the core libraries built into CircuitPython. We discussed how board contains all of the pins on the
 board that you can use in your code. From the REPL, you are able to see that list!
 Type import board into the REPL and press enter. It'll go to a new prompt. It might look like nothing happened, but
