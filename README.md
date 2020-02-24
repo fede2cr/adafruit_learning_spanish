@@ -3,4 +3,4 @@ Translation of the learning guides from Adafruit to Spanish
 
 |Document|Progress|
 |--------|--------|
-|welcome-to-circuitpython.txt|~30%|
+|welcome-to-circuitpython.txt|~50%|
