@@ -1,0 +1,9 @@
+
+
+core libraries - liberías núcleo
+
+prompt - prompt --> https://es.wikipedia.org/wiki/Prompt
+
+statement - ? palabra
+
+enter - enter. Existen Entrar e Intro, dependiendo del fabricante, lo que puede causar confusión. https://es.wikipedia.org/wiki/Entrar_(tecla)

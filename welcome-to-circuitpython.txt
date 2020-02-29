@@ -428,10 +428,10 @@ while True:
 pass
 
 Y recuerda, puedes presionar <CTRL><C> para salirte del ciclo.
-Puedes también leer la sección Comportamiento de la documentación.
+Puedes también leer la sección Comportamiento de la documentación.
 
 Más Cambios
-¡No hay razón para detenernos  aquí! Vamos a continuar. Cambie el segundo 0.5 por 0.1 para que se vea así:
+¡No hay razón para detenernos aquí! Vamos a continuar. Cambie el segundo 0.5 por 0.1 para que se vea así:
 while True:
 led.value = True
 time.sleep(0.1)
@@ -439,16 +439,16 @@ led.value = False
 time.sleep(0.1)
 
 ¡Ahora parpadea muy rápido! ¡Has bajado ambos tiempos que el código prende y apaga el LED!
-Ahora trata de cambiar ambos de 0.1 a 1 . El LED va parpadear mucho más despacio porque aumentaste la cantidad de tiempo que el LED está prendido y apagado.
-¡Bien hecho! ¡Lo estás haciendo muy bien! ¡Estás listo para comenzar con nuevos ejemplos y editarlos para ver que pasa! Estos cambos han sido sencillos, pero cambios mayores se puede realizar por el mismo proceso. Haces el cambio que deseas, lo salvas y recibes los resultados. ¡No tiene nada de complicado!
+Ahora trata de cambiar ambos de 0.1 a 1 . El LED va parpadear mucho más despacio porque aumentaste la cantidad de tiempo que el LED esta prendido y apagado.
+¡Bien hecho! ¡Lo estas haciendo muy bien! ¡Estas listo para comenzar con nuevos ejemplos y editarlos para ver que pasa! Estos cambos han sido sencillos, pero cambios mayores se puede realizar por el mismo proceso. Haces el cambio que deseas, lo salvas y recibes los resultados. ¡No tiene nada de complicado!
 Nombrando tu programa
 CircuitPython busca un código en tu tarjeta para ejecutar. Existen cuatro opciones: code.txt, code.py, main.txt y main.py.
-CircuitPython buscar por esos archivos, en ese orden, y ejecuta el primero que encuentre. Así como sugerimos utilizar code.py como tu archivo para código, es importante que sepas que existen otras opciones. Si pareciera que tu programa no se actualiza mientras trabajas, verifica que no hayas creado otro archivo que pueda estar siendo leído en lugar del archivo sobre el que estás trabajano.
+CircuitPython buscar por esos archivos, en ese orden, y ejecuta el primero que encuentre. Así como sugerimos utilizar code.py como tu archivo para código, es importante que sepas que existen otras opciones. Si pareciera que tu programa no se actualiza mientras trabajas, verifica que no hayas creado otro archivo que pueda estar siendo leído en lugar del archivo sobre el que estas trabajando.
 
 
 Conectándose a la Consola Serial
 
-Algo de todos los días en CircuitPython (¡y en programación en general!) is algo llamado "print". Esto es una línea que incluys en tu código para que tu código imprima texto. Un "print" en CircuitPython se ve así:
+Algo de todos los días en CircuitPython (¡y en programación en general!) is algo llamado "print". Esto es una línea que incluyes en tu código para que tu código imprima texto. Un "print" en CircuitPython se ve así:
 print("¡Hola mundo!")
 
 Esta línea resultaría en:
@@ -456,11 +456,11 @@ Esta línea resultaría en:
 
 Sin embargo, estos prints necesitan algún lugar para imprimirlos. ¡Aquí es donde entra la consola serial!
 
-La consola serial recibe la salida de la tarjeta CircuitPython enviada por USB y la imprime para que la puedas ver. Esto es necesario cuando has incluído un print en tu código y deseas ver la salida. También es útil para mensajes de depuración de errores, porque tu tarjeta enviará errores y la consola serial los imprimirá.
+La consola serial recibe la salida de la tarjeta CircuitPython enviada por USB y la imprime para que la puedas ver. Esto es necesario cuando has incluído un print en tu código y deseas ver la salida. También es útil para mensajes de depuración de errores, porque tu tarjeta enviará errores y la consola serial los imprimirá.
 
 La consola serial requiere una aplicación de terminal. Una terminal es un aplicació̆n que provee una interface de texto para realizar ciertas tareas.
 
-Si estás en Linux, y observas que la consola serial tarda varios segundos en conectarse, o si observas mensajes como "AT" o similares, entonces la aplicación modemmanager está posiblemente intefiriendo. Remuevelo; no tiene mucha utilidad a menos que utilices modems de marcado telefónico. Para remover escribes este comando en el intérprete:
+Si usas en Linux, y observas que la consola serial tarda varios segundos en conectarse, o si observas mensajes como "AT" o similares, entonces la aplicación modemmanager esta posiblemente interfiriendo. Elimínalo; no tiene mucha utilidad a menos que utilices modems de marcado telefónico. Para remover escribes este comando en el intérprete:
 
 sudo apt purge modemmanager
 
@@ -494,9 +494,9 @@ Mac y Linux ambas tienen una integrada, aunque existe opciones disponibles para 
 
 Interactuando con la Consola Serial
 
-Una vez que te has conectado existosamente a la consola serial, es hora de comenzar a utilizarla.
+Una vez que te has conectado exitosamente a la consola serial, es hora de comenzar a utilizarla.
 
-El código que escribimos anteriomente no tiene salida hacia la consola serial. Entonces, vamos a editarlo para crear alguna salida.
+El código que escribimos anteriormente no tiene salida hacia la consola serial. Entonces, vamos a editarlo para crear alguna salida.
 
 Abre el archivo code.py en tu editor, e incluye un print. ¡Puedes imprimir cualquier cosa que gustes! Solo incluye tu frase entre comillas, dentro de paréntesis. Por ejemplo:
 import board
@@ -523,13 +523,13 @@ La línea que dice The Traceback (most recent call last): se refiere a la últim
 Esto es comportamiento normal y va a suceder cada vez que la tarjeta se reinicia. Esto es realmente útil para depuración. Vamos a introducir un error para ver como se utiliza.
 
 Borra la e al final de True de la línea line led.value = True de forma que diga led.value = Tru
-Salva el archivo. Vas a notar que el LED rojo ha dejado de parpadear, y puede que tengas un LED de estado de colores parpadeandote. Esto es porque el código ya no es correcto y no se puede ejecutar apropiadamente.
+Salva el archivo. Vas a notar que el LED rojo ha dejado de parpadear, y puede que tengas un LED de estado de colores parpadeándote. Esto es porque el código ya no es correcto y no se puede ejecutar apropiadamente.
 
 ¡Necesitamos arreglarlo!
 
 Usualmente cuando nos topamos errores, no es porque los hayas introducido a propósito. Puede que tengas 200 líneas de código y no tienes idea donde podría esconder tu error. Aquí es donde la consola sería nos puede ayudar. ¡Vamos a ver!
 
-La línea The Traceback (most recent call last): nos dice que es la últma cosa que pudo ejecutar fue la línea 10 de tu código. El siguiente mensaje es tu error: NameError: name 'Tru' is not defined . Este error puede que no signifique mucho para tí, pero combinado con saber que el problema está en la línea 10, ¡te dá un excelente lugar para comenzar!
+La línea The Traceback (most recent call last): nos dice que es la última cosa que pudo ejecutar fue la línea 10 de tu código. El siguiente mensaje es tu error: NameError: name 'Tru' is not defined . Este error puede que no signifique mucho para ti, pero combinado con saber que el problema está en la línea 10, ¡te dá un excelente lugar para comenzar!
 
 Regresa a tu código, y observa la línea 10. Obviamente, ya sabes cual es el problema. Pero si no lo supieras, puedes tratar de mirar la línea 10 para ver si lo puedes encontrar. Si todavía no estás seguro, trata de buscar en internet el error para recibir ayuda. En este caso, sabes que buscar. Has escrito la palabra True mal. Arregla el error y salva el archivo.
 
@@ -537,7 +537,7 @@ Regresa a tu código, y observa la línea 10. Obviamente, ya sabes cual es el pr
 
 La consola serial va a desplegar cualquier salida generada por tu código. Algunos sensores, como pueden ser sensores de humedad o thermo-resistores, reciben datos y puedes utilizar prints para desplegar dicha información. También puedes utilizar prints para depuración y buscar errores. Si tu código no funciona, y no sabes donde está fallando, puedes agregar prints en diferentes lugares para ver donde deja de imprimir.
 
-!La consola serial tiene muchos ususo, y es una herramienta impresionante en general para aprendizaje y programación!
+!La consola serial tiene muchos usos, y es una herramienta impresionante en general para aprendizaje y programación!
 
 El REPL
 
@@ -556,7 +556,7 @@ Si no había código ejecutándose, vas a entrar en el REPL de forma inmediata l
 
 De todas formas, una vez que presiones una teclas vas a ver el mensaje de solicitud de >>> !dándote la bienvenida al REPL!
 
-Si tienes problemas opteniendo el mensaje de solicitud de >>>, trata de presionar Ctrl + C un par de vez más.
+Si tienes problemas obteniendo el mensaje de solicitud de >>>, trata de presionar Ctrl + C un par de veces más.
 
 Lo primero que obtienes del REPL es información sobre tu tarjeta.
 
@@ -575,44 +575,39 @@ To list built-in modules, please do `help("modules")`
 
 Es un excelente lugar para comenzar, ¡vamos a ver!
 
-Escribe help("modules") 
+Escribe help("modules") en el REPL y presiona enter.
 
-into the REPL next to the prompt, and press enter.
-This is a list of all the core libraries built into CircuitPython. We discussed how board contains all of the pins on the
-board that you can use in your code. From the REPL, you are able to see that list!
-Type import board into the REPL and press enter. It'll go to a new prompt. It might look like nothing happened, but
-that's not the case! If you recall, the import statement simply tells the code to expect to do something with that
-module. In this case, it's telling the REPL that you plan to do something with that module.
-Next, type dir(board) into the REPL and press enter.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 40 of 95This is a list of all of the pins on your board that are available for you to use in your code. Each board's list will differ
-slightly depending on the number of pins available. Do you see D13 ? That's the pin you used to blink the red LED!
-The REPL can also be used to run code. Be aware that any code you enter into the REPL isn't saved anywhere. If
-you're testing something new that you'd like to keep, make sure you have it saved somewhere on your computer as
-well!
-Every programmer in every programming language starts with a piece of code that says, "Hello, World." We're going to
-say hello to something else. Type into the REPL:
+Esto es una lista de las librerías núcleo integradas a CircuitPython. Ya hablamos como el módulo board contiene todos los pines en la tarjetas que puedes utilizar en tu código. Desde el REPL, ¡puedes ver esta lista!
+Escribe import board en el REPL y presiona enter. Se irá a un nuevo prompt. Puede que parezca que nada ha sucedido, ¡pero ese no es el caso! Si recuerdas, la palabra import solo le dice al código que debe estar listo para realizar algo con ese módulo. En este caso, le está diciendo al REPL que planeas realizar algo con este módulo.
+Ahora, escribe dir(board) en el REPL y presiona enter.
+
+Esta es una lista de todos los pines que tienes disponible para utilizar en tu tarjeta. La lista va a ser diferente para cada tarjeta, dependiendo en la cantidad de pines disponibles. ¿Puedes encontrar D13? ¡Ese es el pin utilizado para parpadear el LED rojo!
+
+El REPL también puede ser utilizado para ejecutar código. Pero ten en cuenta que el código que digitas en él, no se salva en ningún lado. Si estás probando algo nuevo que desear preservar, ¡asegúrate de salvarlo también en algún lado de tu computadora!
+
+Todos los programadores en todos los lenguajes de programación comienzan realizando una porción de código que dice “¡Hola mundo!”. Vamos a decirle hola a otra cosa. Escribe en el REPL:
+
 print("Hello, CircuitPython!")
-Then press enter.
-That's all there is to running code in the REPL! Nice job!
-You can write single lines of code that run stand-alone. You can also write entire programs into the REPL to test them.
-As we said though, remember that nothing typed into the REPL is saved.
-There's a lot the REPL can do for you. It's great for testing new ideas if you want to see if a few new lines of code will
-work. It's fantastic for troubleshooting code by entering it one line at a time and finding out where it fails. It lets you see
-what libraries are available and explore those libraries.
-Try typing more into the REPL to see what happens!
-Returning to the serial console
-When you're ready to leave the REPL and return to the serial console, simply press Ctrl + D. This will reload your board
-and reenter the serial console. You will restart the program you had running before entering the REPL. In the console
-window, you'll see any output from the program you had running. And if your program was affecting anything visual on
-the board, you'll see that start up again as well.
-You can return to the REPL at any time!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 41 of 95© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 42 of 95CircuitPython Hardware
+
+Y luego presiona enter.
+
+¡Eso es todo lo necesario para ejecutar código en el REPL! ¡Buen trabajo!
+
+Puedes escribir líneas individuales de código que corren solas. También puedes escribir programas completos en el REPL para probarlos.
+
+Como hemos dicho, sin embargo, recuerda que nada de lo que escribes en el REPL se salva.
+
+Hay mucho que el REPL puede hacer por ti. Es excelente para probar nuevas ideas si quieres ver si unas cuentas líneas de código van a funcionar. Es fantástico para depuración de código, mientras escribes las líneas una por una para encontrar donde falla. Te permite ver cuales librerías hay disponibles y explorar estas librerías.
+
+!Trata de escribir más en el REPL a ver que pasa!
+
+Retornando a la consola serial
+
+Cuando estás listo para abandonar el REPL y regresar a la consola serial, simplemente presionas Ctrl + D. Esto va a recargar tu tarjeta y re-activar la consola serial. Esto va a reiniciar el programa que tenías ejecutando antes de entrar en el REPL. En la ventana de la consola, vas a ver la salida del programa que tenías ejecutando. Y si tu programa estaba afectando algo visible en la tarjeta, también observaras donde inicia.
+¡Puedes regresar al REPL en cualquier momento!
+
+
+CircuitPython Hardware
 Now it's time to do something great with what you've learned! Every CircuitPython board is perfect for projects.
 However, each one excels in different areas. We're going to give you some details about each board, and highlight
 Learn guides where each one is used. You can try these out or get ideas for your own project!
