@@ -275,12 +275,12 @@ También puedes revertir al nombre CIRCUITPY, borrando el sistema de archivos. 
 
 Creando y editando el código
 
-Una de las mejores cosas sobre CircuitPython, es lo sencillo que es poner a trabajar al código. En esta sección vamos a hablar de como crear y editar tu primer progrma en CircuitPython.
+Una de las mejores cosas sobre CircuitPython, es lo sencillo que es poner a trabajar al código. En esta sección vamos a hablar de como crear y editar tu primer programa en CircuitPython.
 
 Para crear y editar el código, todo lo que necesitas es un editor. Existen muchas opciones. ¡Nosotros recomendamos fuertemente a Mu! Es diseñado para CircuitPython, y es realmente simple y sencillo de utilizar, ¡con una consola serial integrada!
-Si no utilizas o no puedes usar Mu, hay editores básicos para texto en cualquier sistema operativo, como Notepad en Windows, TextEdit en Mac, y gedit en Linux. Sin embargo, muchos de estos editores no escriben sus cambios de inmediato a los archivosque editas. Esto puede causar problemas con CircuitPython. Ver la sección de Editando Código a continuación (https://adafru.it/id3)
+Si no utilizas o no puedes usar Mu, hay editores básicos para texto en cualquier sistema operativo, como Notepad en Windows, TextEdit en Mac, y gedit en Linux. Sin embargo, muchos de estos editores no escriben sus cambios de inmediato a los archivos que editas. Esto puede causar problemas con CircuitPython. Ver la sección de Editando Código a continuación (https://adafru.it/id3)
 
-Si quieres saltarte dicha sección por el momento, asegúrate de "Expulsar" o "Remover de forma segura" en Windows, o "sync" en Linux luego de escribir un archivo si no estás en Mu. (Esto no es un problema en MacOS)
+Si quieres saltarte dicha sección por el momento, asegurate de "Expulsar" o "Remover de forma segura" en Windows, o "sync" en Linux luego de escribir un archivo si no estás en Mu. (Esto no es un problema en MacOS)
 
 Creando código
 Abre tu editor y crea un archivo nuevo. Si estás usando Mu, dá click al botón de Nuevo arriba a la izquierda.
@@ -301,7 +301,7 @@ Salva este archivo como code.py bajo tu unidad de disco CIRCUITPY.
 
 En cada tarjeta vas a encontrar un pequeño LED rojo. Debería estar parpadeando una vez por segundo.
 
-¡Felicidades, estás ejecutando tu primer programa en CircuitPython!
+¡Felicidades, estas ejecutando tu primer programa en CircuitPython!
 
 Editando código
 
@@ -339,17 +339,17 @@ SlickEdit (https://adafru.it/DdP) funciona solo si le agregas un macro para vaci
 Nosotros no recomendamos estos editores:
 notepad (el editor por omisión en Windows) ni Notepad++ que pueden serlentos para escribir, ¡por lo que recomendamos los editores mencionados arriba!
 Si estás utilizando notepad, asegúrate de expulsar la unidad de disco (ver abajo). 
-IDLE en Python 3.8.0 o anteriorno fuerza la escritura inmediata de los cambio
+IDLE en Python 3.8.0 o anterior no fuerza la escritura inmediata de los cambio
 nano (on Linux) no fuerza la escritura de cambios
 geany (on Linux) no fuerza la escritura de cambios
 
 Cualquier otro - nosotros no hemos probado otros editores, así que por favor ¡utilice uno recomendado!
 
-2. Expulse o sincronice el dispostivo luego de escribir
+2. Expulse o sincronice el dispositivo luego de escribir
 Si estás utilizando uno de los editores no recomendados, ¡todavía hay esperanza! Todavía puedes lograr que funcione.
 En Windows, puedes Expulsar o Remover de forma segura, la unidad de disco CIRCUITPY. No se va a expulsar realmente, pero forzará al sistema operativo a escribir tu archivo al disco. En Linux, puedes usar el comando sync en una terminal para forzar la escritura al disco.
 
-¡¡¡Oh No, hice algo mal y ahora la unidad de disco CIRCUITPY no apace!!!
+¡¡¡Oh No, hice algo mal y ahora la unidad de disco CIRCUITPY no aparece!!!
 ¡No se preocupe! El corromper una unidad de disco no es el fin del mundo (¡o de tu tarjeta!). Si esto sucede, sigue los pasos descritos en la página de Solución de Problemas en la guía de cada tarjeta, para tenerla trabajando de nuevo.
 
 
@@ -606,161 +606,116 @@ Retornando a la consola serial
 Cuando estás listo para abandonar el REPL y regresar a la consola serial, simplemente presionas Ctrl + D. Esto va a recargar tu tarjeta y re-activar la consola serial. Esto va a reiniciar el programa que tenías ejecutando antes de entrar en el REPL. En la ventana de la consola, vas a ver la salida del programa que tenías ejecutando. Y si tu programa estaba afectando algo visible en la tarjeta, también observaras donde inicia.
 ¡Puedes regresar al REPL en cualquier momento!
 
+Hardware CircuitPython
+¡Ahora es tiempo de hacer algo grande con lo que has aprendido! Toda tarjeta de CircuitPython es perfecta para projectos. Sin embargo, cada una brilla en diferentes áreas. Te vamos a dar algunos detalles sobre cada tarjeta, y traer a luz Guías de Aprendizaje donde cada una ha sido utilizada. ¡Usted puede probarlas u obtener ideas para su proyecto!
 
-CircuitPython Hardware
-Now it's time to do something great with what you've learned! Every CircuitPython board is perfect for projects.
-However, each one excels in different areas. We're going to give you some details about each board, and highlight
-Learn guides where each one is used. You can try these out or get ideas for your own project!
 Trinket M0
-The Adafruit Trinket M0 (https://adafru.it/zya) is the smallest CircuitPython board we carry. But don't let that fool you! It's
-a tiny board with a lot of power. We wanted to design a microcontroller board that was small enough to fit into any
-project, and low cost enough to use without hesitation. Planning to test a proof of concept and need a CircuitPython
-board to throw in? Not ready to disassemble the project you worked so hard to design to extract the board you used
-last time? Trinket M0 has you covered. It's the lowest cost CircuitPython board available but it easily holds its own with
-the bigger boards!
-Trinket M0 ships with CircuitPython and comes with demo code already on the board. You can open and edit the
-main.py file found on the CIRCUITPY drive to get started, or create your own! The Trinket M0
-guide (https://adafru.it/Bez) gives you everything you need to know about your board. Check out the
-CircuitPython (https://adafru.it/ABS) section to find a huge list of examples to try.
-You can use Trinket M0 to make the Chilled Drinkibot (https://adafru.it/BeA) which uses the Trinket to control
-thermoelectric cooling of a beverage. Or build a spooky Halloween project that turns your candy bucket into a
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 43 of 95Screaming Cauldron (https://adafru.it/BeB)!
+El Trinket M0 de Adafruit (https://adafru.it/zya) es la tarjeta para CircuitPython más grande que tenemos. ¡Pero que no te engañe! Es una tarjeta pequeña con mucho poder. Queríamos diseñar una tarjeta de un tamaño pequeño para que quepa en cualquier proyecto, de bajo costo para usar sin duda alguna. ¿Planea realizar una prueba de concepto y necesita una tarjeta con CircuitPython para agregarle? ¿No estás listo para desarmar el proyecto en el que trabajaste tanto para entraerle la tarjeta que usaste la última vez? La Trinket M0 es para esto. Es la tarjeta disponible de menor costo para CircuitPython, ¡pero es un buen contrincante a las tarjetas más grandes!
+
+Las Trinket M0 viene con CircuitPython instalado y con código de demostración en la tarjeta. Puedes abrir y editar el archivo main.py que encuentras en la unidad de disco CircuitPython, ¡para iniciar o crear tu propio! La guía (https://adafru.it/Bez) te brinda todo lo que necesitas saber sobre tu tarjeta. Revisa los ejemplos en la sección de CircuitPython (https://adafru.it/ABS) para encontrar una enorme lista de ejemplos a probar.
+
+Puedes utilizar una Trinket M0 para construir un robot para enfriar bebidas llamado “Chilled Drinkibot” (https://adafru.it/BeA) que utiliza la Trinket para controlar un dispositivo de termoeléctrico para enfriar una bebida. O un tenebroso proyecto de Halloween que convierte un contenedor para confites, ¡en un caldero que grita! (https://adafru.it/BeB)
+
 Gemma M0
-The Adafruit Gemma M0 (https://adafru.it/ytb) is a tiny CircuitPython board with just enough built-in to build many
-simple projects. It's designed to be worked into your wearable projects, with big holes around the outside for sewing
-(and they're alligator clip friendly too!). Gemma M0 will super-charge your wearables and is easier to use than ever.
-There are capacitive touch pads, an on-off switch and an RGB DotStar LED built right into the board so there's plenty
-you can do without adding a thing. Add conductive thread and LEDs and you'll have a blinky wearable in no time!
-Like Trinket, Gemma M0 ships with CircuitPython and has demo code already on the board. You can open and edit the
-main.py file on the CIRCUITPY drive, or create your own! The Gemma M0 guide (https://adafru.it/BeC) shows you all the
-info about your board, and has a great list of CircuitPython examples (https://adafru.it/zAl) to try out.
-Use Gemma M0 to create a pair of Clockwork Goggles (https://adafru.it/BeD) with fun light patterns on NeoPixel rings.
-Or accessorise with this 3D printed Sheikah Pendant (https://adafru.it/BeE) to add a bit of light to your next costume!
+
+La Gemma M0 de Adafruit (https://adafru.it/ytb) es una pequeña tarjeta para CircuitPython con apenas suficientes cosas integradas para construir muchos proyectos simples. Está diseñada para trabajar con proyectos electrovestibles, con grandes huecos alrededor del exterior para poder coser en ellos (¡también con amigables con clips estilo lagarto!). Las Gemma M0 van a subir de nivel tus electrovestibles, siendo más sencillas de usar que nunca. Tiene superficies capacitivas que detectan cuando las tocas, un switch on-off, y un LED RBG DotStar integrado en la tarjeta para que tengas mucho que hacer sin necesidad de agregarle nada. ¡Si le agregas hilo conductivo y LEDs vas a tener un electrovestible parpadeando en poco tiempo!
+
+Similar a las Trinket, la Gemma M0 viene con CircuitPython y tiene código de ejemplo en la tarjeta. ¡Puedes abrir y editar el archivo main.py en la unidad de disco CIRCUITPY, o crear el tuyo! La guía de la Gemma M0 (https://adafru.it/BeC) te muestra toda la información sobre la tarjeta, y tiene una excelente lista de ejemplos con CircuitPython (https://adafru.it/zAl) para probar.
+
+Utilice la Gemma M0 para crear un par de los llamados Clockwork Goggles (https://adafru.it/BeD) con divertidos patrones de luz en anillos NeoPixel.
+
+¡O puedes crear accesorios para ropa como este pendiente impreso llamado Pendiente Sheikah Pendant (https://adafru.it/BeE) para agregar un poco de luz a tu siguiente disfraz!
+
 Circuit Playground Express
-The Adafruit Circuit Playground Express (https://adafru.it/wpF) is the next step towards a perfect introduction to
-electronics and programming. It's packed full of sensors, LEDs, buttons and switches, and it's super easy to get started
-with! This board is super versatile. Whether you're new to electronics and programming, or a seasoned veteran, Circuit
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 44 of 95Playground Express is an amazing board to work with. With so much built into the board, you can learn how different
-types of electronics work and learn to program them all without purchasing any other parts. All you need is a USB
-cable and the board! But, that's just the beginning. Many of the pads around the outside of the board function in
-multiple ways allowing you to wire other things to the board. For example, you could wire up a servo or a
-potentiometer. The possibilities are endless!
-The Circuit Playground Express guide (https://adafru.it/BeF) has tons of information on all the fantastic features of the
-board. The CircuitPython section (https://adafru.it/AFI) of the guide has an extensive list of examples using the built-in
-features of the CircuitPython and the board. There is also a section called Python Playground (https://adafru.it/BeG)
-with more demos and a Drum Machine project (https://adafru.it/BeH) to try out.
-You can turn your Circuit Playground Express into a capacitive touch tone Piano in the Key of Lime (https://adafru.it/BeI)
-using the touch pads on the board. Use the built in accelerometer to make a UFO Flying Saucer (https://adafru.it/BeJ)
-complete with lights and alien sounds using your board, and some extra supplies from around the house or a 3D
-printed saucer!
+
+
+La Circuit Playground Express de Adafruit (https://adafru.it/wpF) es el siguiente paso hacia una perfecta introducción a electrónica y programación. Viene repleta de sensores, LEDs, botones y switches, ¡y es super fácil de comenzar a usar! Esta tarjeta es muy versátil. Sin importar si eres nuevo a electrónica y programación, o un veterano, la Circuit Playground Express es una impresionante tarjeta para trabajar. Con tanto integrado en la tarjeta, puedes aprender como trabajan diferentes tipos de componentes electrónicos funcionan y aprender como programarlos sin necesidad de comprar otros componentes. ¡Solo necesitas un cable USB y a la tarjeta! Pero, eso es solo el principio. Muchas de las superficies alrededor de la tarjeta funcionan de muchas formas, permitiéndote conectar otras cosas a la tarjeta. Por ejemplo puedes conectar un motor tipo servo o un potenciómetro. ¡Las posibilidades son infinitas! La guía de Circuit Playground Express (https://adafru.it/BeF) contiene toneladas de información sobre todas las características impresionantes de la tarjeta. La sección de CircuitPython (https://adafru.it/AFI) de la guía tiene una amplia lista de ejemplos utilizando las características integradas de CircuitPython y de la tarjeta. Hay una sección llamada Python Playground (https://adafru.it/BeG) con más demostraciones y un proyecto de Caja de Ritmos o Drum Machine (https://adafru.it/BeH) para probar.
+
+Puedes convertir tu Circuit Playground Express usando el toque capacitivo en un Piano en Llave de Lima (https://adafru.it/BeI) utilizando las superficies táctiles de la tarjeta. ¡Utilizando el acelerómetro integrado puedes crear un Platillo Volador OVNI (https://adafru.it/BeJ) completo con luces y sonidos alienígenas utilizando tu tarjeta, y algunos materiales que encuentras en la casa o con un platillo volador impreso 3d!
+
 Feather M0 Express
-The Adafruit Feather M0 Express (https://adafru.it/wfb) is the first Feather designed specifically for CircuitPython. It's
-part of a line of Adafruit Feather development boards (https://adafru.it/BeK) designed to work standalone or stacked,
-and is powered by USB or lithium ion battery so it works for both stationary and on-the-go projects. Feather M0
-Express comes with two headers for use with a solderless breadboard, or you can solder wires directly to the pins on
-the board. This allows for prototyping while you're working on your project and permanent installation when you're
-ready. One of the things that makes the Feather M0 Express amazing is the the huge array of boards called
-Featherwings (https://adafru.it/BeL) which are designed to fit right on the Feather. There are CircuitPython libraries for
-many of these boards and more are being written all the time.
-Feather M0 Express ships CircuitPython-ready with the UF2 bootloader installed and ready for you to install
-CircuitPython when you receive your board. Create your first program, save it to the board, and off you go! The Feather
-M0 Express guide (https://adafru.it/BeM) has all the details about your board, and a CircuitPython
-section (https://adafru.it/BeN) to get you started.
-Feather M0 Express can be used to power all kinds of projects. Build a CircuitPython Painter (https://adafru.it/BeO) POV
-LED wand using 3D printed parts and DotStar strips. Create an engraved edge-lit LED Acrylic Sign (https://adafru.it/BeP)
-with NeoPixels. There are guides to go with the Featherwings that explain how to use them with CircuitPython, like the
-OLED Display (https://adafru.it/BeQ) and Adalogger Featherwing (https://adafru.it/BeR).
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 45 of 95Metro M0 Express
-Metro M0 Express (https://adafru.it/xoa) is the first Metro board designed to work with CircuitPython. This is not a
-beginner board. If you're just getting started, we'd recommend one of the previous boards. It has a lot of the same
-features as Feather M0 Express, as well as some development specific features (like the SWD port built in!). The Metro
-M0 Express is designed to work with the Arduino form-factor, so if you've already got Arduino shields, this board would
-be great for you. There are CircuitPython libraries for some shields already. It has 25 GPIO pins (the most of any of
-these boards!) so it's great if you're looking for a lot of options.
-Metro M0 Express ships CircuitPython-ready with the UF2 bootloader installed and is ready for you to install
-CircuitPython when you receive your board. Create your first program, save it to the board, and you're good to go! The
-Metro M0 Express guide (https://adafru.it/BeS) gives you all the details about your board, and the CircuitPython
-section (https://adafru.it/BeT) is available to get you started.
-All sensors and breakout boards with CircuitPython libraries will work with the Metro M0 Express running CircuitPython.
-Find the guide for your sensor and follow the guide to find out how to wire it up. There are a ton of options available.
-What's Next?
-Now you're ready to jump into some more Learn Guides or simply get started with a brand new project. Great job, and
-good luck!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 46 of 95CircuitPython Libraries
-As we continue to develop CircuitPython and create new releases, we will stop supporting older releases.
-Visit https://circuitpython.org/downloads to download the latest version of CircuitPython for your board. You
-must download the CircuitPython Library Bundle that matches your version of CircuitPython. Please update
-CircuitPython and then visit https://circuitpython.org/libraries to download the latest Library Bundle.
-Each CircuitPython program you run needs to have a lot of information to work. The reason CircuitPython is so simple
-to use is that most of that information is stored in other files and works in the background. These files are called
-libraries. Some of them are built into CircuitPython. Others are stored on your CIRCUITPY drive in a folder called lib.
-Part of what makes CircuitPython so awesome is its ability to store code separately from the firmware itself. Storing
-code separately from the firmware makes it easier to update both the code you write and the libraries you depend.
-Your board may ship with a lib folder already, it's in the base directory of the drive. If not, simply create the folder
-yourself. When you first install CircuitPython, an empty lib directory will be created for you.
-CircuitPython libraries work in the same way as regular Python modules so the Python docs (https://adafru.it/rar) are a
-great reference for how it all should work. In Python terms, we can place our library files in the lib directory because its
-part of the Python path by default.
-One downside of this approach of separate libraries is that they are not built in. To use them, one needs to copy them
-to the CIRCUITPY drive before they can be used. Fortunately, we provide a bundle full of our libraries.
-Our bundle and releases also feature optimized versions of the libraries with the .mpy file extension. These files take
-less space on the drive and have a smaller memory footprint as they are loaded.
-Installing the CircuitPython Library Bundle
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 47 of 95We're constantly updating and improving our libraries, so we don't (at this time) ship our CircuitPython boards with the
-full library bundle. Instead, you can find example code in the guides for your board that depends on external libraries.
-Some of these libraries may be available from us at Adafruit, some may be written by community members!
-Either way, as you start to explore CircuitPython, you'll want to know how to get libraries on board.
-You can grab the latest Adafruit CircuitPython Bundle release by clicking the button below.
-Note: Match up the bundle version with the version of CircuitPython you are running - 3.x library for running any version
-of CircuitPython 3, 4.x for running any version of CircuitPython 4, etc. If you mix libraries with major CircuitPython
-versions, you will most likely get errors due to changes in library interfaces possible during major version changes.
+
+La Feather M0 Express de Adafruit (https://adafru.it/wfb) es la primera Feather diseñada específicamente para CircuitPython. Es parte de la línea de tarjetas Feather de Adafruit para desarrollo (https://adafru.it/BeK) diseñadas para trabajar solas o en pila, y con alimentación por USB o baterías de iones de litio, así que funciona tanto para proyectos estacionarios o portátiles. La Feather M0 Express viene con dos cabeceras para pines para utilizar placas de pruebas, o puedes soldarle cables directamente a los pines de la tarjeta. Esto permite prototipado mientras trabajas en tu proyecto y una solución más permanente para cuando te sientas a gusto. Una de las cosas que hace a las Feather M0 Express impresionante es la cantidad de tipo de tarjetas llamadas Featherwings (https://adafru.it/BeL) las cuales están diseñadas para encajar en las Feather. Existen librerías para CircuitPython para muchas de las tarjetas y más se desarrollan todo el tiempo.
+
+Las Feather M0 Express vienen listas para CircuitPython con el gestor de arranque UF2 instalado a la espera de que le instales CircuitPython cuando recibes la tarjeta. ¡Crea tu primer programa, sálvalo a la tarjeta y listo! La guía de Feather M0 Express (https://adafru.it/BeM) tiene todos los detalles sobre tu tarjeta, y tiene una sección de CircuitPython (https://adafru.it/BeN) que te ayudará a iniciar.
+
+
+Las Feather M0 Express se pueden utilizar para todo tipo de proyectos. Construye un Pincel LED POV con CircuitPython (https://adafru.it/BeO) utilizando piezas impresas 3D y tiras DotStar. Puedes crear un Letrero Acrílico LED (https://adafru.it/BeP) con iluminación lateral a un grabado utilizando NeoPixels. Hay guías que acompañan a las Featherwings y explican como utilizarlas con CircuitPython como la Pantalla OLED (https://adafru.it/BeQ) y la Featherwing Adalogger (https://adafru.it/BeR).
+
+
+Metro M0 Express
+La Metro M0 Express (https://adafru.it/xoa) es la primera tarjeta Metro diseñada para trabajar con CircuitPython. Esta no es una tarjeta para principiante. Si apenas estás comenzando, te recomendamos alguna de las tarjetas anteriores. Tiene muchas de las mismas características de la Feather M0 Express, así como capacidades específicas para desarrollo (¡Como un puerto SWD integrado!). La Metro M0 Express se diseñó para tener un formato físico compatible con Arduino, por lo que si tienes shields para Arduino, esta tarjeta será genial para tí. Ya existen liberías para CircuitPython para muchos de los shields. Tiene 25 pines GPIO (¡la mayoría de muchas de estas tarjetas!) así que es excelente para alguien que está buscando muchas opciones. Las Metro M0 Express viene lista para CircuitPython con el gestor de arranque UF2 instalado y está lista para que le instales CircuitPython cuando recibas la tarjeta. ¡Crea tu primer programa, lo salvas a la tarjeta y listo! La guía sobre la Metro M0 Express (https://adafru.it/BeS) te brinda detalles sobre tu tarjeta, y la sección de CircuitPython (https://adafru.it/BeT) está disponible para ayudarte a iniciar.
+
+Todos los sensores y tarjetas breakout con librerías para CircuitPython van a funcionar con la Metro M0 Express corriendo CircuitPython.
+Encuentre la guía para tu sensor y la sigues para encontrar como cablearlo. Hay muchas opciones disponibles.
+
+
+¿Que Sigue?
+
+Ya estás listo para adentrarte en más Guías de Aprendizaje o simplemente iniciar con un nuevo proyecto. ¡Buen trabajo y buena suerte!
+
+Librerías CircuitPython
+
+Mientras continuamos desarrollando CircuitPython y creando nuevas versiones, vamos a ir dejando de dar mantenimiento a las versiones más viejas. Visite https://circuitpython.org/downloads para descargar la última versión de CircuitPython para tu tarjeta. Debes descargar las Librerías Agrupadas para CircuitPython correctas para tu versión de CircuitPython. Favor actualice CircuitPython y luego visite https://circuitpython.org/libraries para descargar la última versión de las Librerías Agrupadas.
+
+Cada programa en CircuitPython que ejecutas necesita tener mucha información para operar. La razón por la que CircuitPython es tan sencillo se usar es que la mayoría de la información reside en otros archivos y trabaja en el fondo. Estos archivos se llaman librerías. Algunas están integradas en CircuitPython. Otras están almacenadas en la unidad de disco CircuitPython en una carpeta llamada lib. Parte de lo que hace CircuitPython tan asombroso es la habilidad de almacenar código de forma separada al firmware. El almacenar código separado al firmware hace que sea más fácil actualizar tanto el código que escribes como las librerías de las que dependes.
+
+Tu tarjeta puede que ya venga con la carpeta lib, en la base de la unidad de disco. Sino, simplemente crea la carpeta. Cuando instalas CircuitPython por primera vez, una carpeta vacía lib va a ser creada para tí. 
+
+Las librerías de CircuitPython trabajan de la misma forma que los módulo del Python regular, así que la documentación de Python (https://adafru.it/rar) es una excelente referencia sobre como funciona todo. En términos de Python, podemos poner nuestros archivos de librería en la carpeta lib porque es parte del path por omisión de Python.
+
+Una desventaja de esta forma de manejar las librerías es que no vienen incluídas. Para utilizarlas uno debe copiarlas a la unidad de disco CircuitPython antes de que puedan ser usadas. Por fortuna, nosotros proveemos un agrupado de librerías.
+
+Nuestro agrupado y sus versiones también son versiones optimizadas de las librerías con la extensión de archivo .mpy . Estos archivos requieren menos espacio en la unidad de disco y requieren menos memoria al cargarse.
+
+Instalando el Agrupado de Librerías de CircuitPython
+
+Nosotros estamos constantemente actualizando y mejorando nuestras librerías, así que no (por ahora) les ponemos el empaquetado de librerías a las tarjetas cuando las enviamos. En cambio, puedes encontrar código ejemplo en las guías para tu tarjeta el cual depende de librerías externas.
+
+Algunas de estas librerías van ser ofrecidas por nosotros en Adafruit, ¡y puede que otras sean escritas por miembros de la comunidad!
+
+De cualquier manera, mientras comienzas a explorar CircuitPython, vas a querer aprender como cargarle librerías a la tarjeta.
+
+Ahora descarga la última versión del Agrupado de Librerías de Adafruit para CircuitPython dándole click al botón abajo.
+
+Nota: La versión del agrupado debe ser la versión correcta para la versión de CircuitPython que ejecutas – usas la el agrupado versión 3.x para CircuitPython 3, y usar el agrupado versión 4.x para CircuitPython 4, etc. Si mezclas versiones de librerías y versiones mayores de CircuitPython, lo más probable es que recibas errores debido a cambio en las interfaces hacia las librerías durante los cambios de versión.
+
 https://adafru.it/ENC
-https://adafru.it/ENC
-If you need another version, you can also visit the bundle release page (https://adafru.it/Ayy) which will let you select
-exactly what version you're looking for, as well as information about changes.
-Either way, download the version that matches your CircuitPython firmware version. If you don't know the version,
-look at the initial prompt in the CircuitPython REPL, which reports the version. For example, if you're running v4.0.1,
-download the 4.x library bundle. There's also a py bundle which contains the uncompressed python files, you probably
-don't want that unless you are doing advanced work on libraries.
-After downloading the zip, extract its contents. This is usually done by double clicking on the zip. On Mac OSX, it
-places the file in the same directory as the zip.
-Open the bundle folder. Inside you'll find two information files, and two folders. One folder is the lib bundle, and the
-other folder is the examples bundle.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 48 of 95Now open the lib folder. When you open the folder, you'll see a large number of mpy files and folders
-Example Files
-All example files from each library are now included in the bundles, as well as an examples-only bundle. These are
-included for two main reasons:
-Allow for quick testing of devices.
-Provide an example base of code, that is easily built upon for individualized purposes.
-Copying Libraries to Your Board
-First you'll want to create a lib folder on your CIRCUITPY drive. Open the drive, right click, choose the option to create
-a new folder, and call it lib. Then, open the lib folder you extracted from the downloaded zip. Inside you'll find a
-number of folders and .mpy files. Find the library you'd like to use, and copy it to the lib folder on CIRCUITPY.
-This also applies to example files. They are only supplied as raw .py files, so they may need to be converted to .mpy
-using the mpy-cross utility if you encounter MemoryErrors . This is discussed in the CircuitPython Essentials
-Guide (https://adafru.it/CTw). Usage is the same as described above in the Express Boards section. Note: If you do not
-place examples in a separate folder, you would remove the examples from the import statement.
-Example: ImportError Due to Missing Library
-If you choose to load libraries as you need them, you may write up code that tries to use a library you haven't yet
-loaded. We're going to demonstrate what happens when you try to utilise a library that you don't have loaded on your
-board, and cover the steps required to resolve the issue.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 49 of 95This demonstration will only return an error if you do not have the required library loaded into the lib folder on your
-CIRCUITPY drive.
-Let's use a modified version of the blinky example.
+
+Si necesitas otra versión, puedes visitar la página de versiones de agrupados (https://adafru.it/Ayy) que te va a permitir seleccionar exáctamente la versión que andas buscando, así como contiene información sobre cambios.
+
+De cualquier forma, descarga la versión correcta para la versión de firmware de CircuitPython que usas. Si no conoces la versión, mira la información inicial en el REPL de CircuitPython, el cual reporta la versión.
+
+Por ejemplo, si estás ejecutando v4.0.1, descarga la versión 4.x del agrupado de librerías. También existe un agrupado de py, el cual contiene los archivos de python sin compresión, lo cuales probablemente no quieres a menos que estés realizando un trabajo avanzado sobre las librerías.
+
+Luego de descargar el archivo zip, extrae sus contenidos. Esto se hace usualmente dándole doble click al archivo zip. En Mac OSX, el archivo termina en la misma carpeta que el archivo zip.
+
+Abre la carpeta del empaquetado. Dentro vas a encontrar dos archivos informativos, dos carpetas. Una es la carpeta lib con el agrupado, y la otra es una carpeta con ejemplos para las librerías del agrupado.
+
+Ahora abre la carpeta lib. Cuando abres la carpeta, vas a ver una gran cantidad de archivos mpy y carpetas.
+
+Archivos Ejemplo
+
+Todos los archivos de ejemplo de cada librería ahora se incluyen en el agrupado, así como también existe un agrupado con solo ejemplos. Estos se incluyen por dos razones:
+Permiten pruebas rápidas sobre dispositivos.
+Proveen un ejemplo para basar el código, el cual se construye fácilmente sobre la base hacia propósitos particulares.
+
+Copiando librerías a tu tarjeta
+
+Primero vas a querer crear la carpeta lib en la unidad de disco CIRCUITPY. Abre la unidad de disco, das click derecho y buscas la opción para crear una carpeta, nombrándola lib . Ahora, abre la carpeta lib que has extraído del archivo zip descargado. Dentro vas a encontrar una cantidad de carpetas y archivos .mpy . Encuentra la librería que deseas utilizar y cópiala a la carpeta lib de la unidad de disco CIRCUITPY.
+
+Esto también aplica para los archivos de ejemplo. Se proveen solo como archivos crudos .py, por lo cual es posible que sea necesario convertirlos a .mpy usando la herramienta mpy-cross, si encuentras errores de MemoryErrors . Esto ha sido contemplado en la Guía de Esenciales para CircuitPython (https://adafru.it/CTw). 
+
+El uso es el mismo descrito arriba en la sección de las tarjetas Express. Nota: Si no colocas los ejemplos en una carpeta separada, deberías remover los ejemplos de los import.
+
+Ejemplo: ImportError Due to Missing Library
+
+Si decides descargas las librerías mientras las necesitas, es posible que quieras escribir código que trate de utilizar una librería que aún no has cargado. Vamos a demostrar que sucede cuando tratas de utilizar una librería que no has carga a tu tarjeta, y revisar los pasos necesarios para resolver el problema
+
+Esta demostración solo va a devolver un error si no tienes la librería requerida instalada en la carpeta lib de la unidad de disco CIRCUITPY.
+
+Vamos a modificar la versión del ejemplo que parpadea.
+
 import board
 import time
 import simpleio
@@ -770,331 +725,290 @@ led.value = True
 time.sleep(0.5)
 led.value = False
 time.sleep(0.5)
-Save this file. Nothing happens to your board. Let's check the serial console to see what's going on.
-We have an ImportError . It says there is no module named 'simpleio' . That's the one we just included in our code!
-Click the link above to download the correct bundle. Extract the lib folder from the downloaded bundle file. Scroll down
-to find simpleio.mpy. This is the library file we're looking for! Follow the steps above to load an individual library file.
-The LED starts blinking again! Let's check the serial console.
-No errors! Excellent. You've successfully resolved an ImportError !
-If you run into this error in the future, follow along with the steps above and choose the library that matches the one
-you're missing.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 50 of 95Library Install on Non-Express Boards
-If you have a Trinket M0 or Gemma M0, you'll want to follow the same steps in the example above to install libraries as
-you need them. You don't always need to wait for an ImportError as you probably know what library you added to
-your code. Simply open the lib folder you downloaded, find the library you need, and drag it to the lib folder on your
-CIRCUITPY drive.
-You may end up running out of space on your Trinket M0 or Gemma M0 even if you only load libraries as you need
-them. There are a number of steps you can use to try to resolve this issue. You'll find them in the Troubleshooting page
-in the Learn guides for your board.
-Updating CircuitPython Libraries/Examples
-Libraries and examples are updated from time to time, and it's important to update the files you have on your
-CIRCUITPY drive.
-To update a single library or example, follow the same steps above. When you drag the library file to your lib folder, it
-will ask if you want to replace it. Say yes. That's it!
-A new library bundle is released every time there's an update to a library. Updates include things like bug fixes and
-new features. It's important to check in every so often to see if the libraries you're using have been updated.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 51 of 95Welcome to the Community!
-CircuitPython is a programming language that's super simple to get started with and great for learning. It runs on
-microcontrollers and works out of the box. You can plug it in and get started with any text editor. The best part?
-CircuitPython comes with an amazing, supportive community.
-Everyone is welcome! CircuitPython is Open Source. This means it's available for anyone to use, edit, copy and improve
-upon. This also means CircuitPython becomes better because of you being a part of it. It doesn't matter whether this is
-your first microcontroller board or you're a computer engineer, you have something important to offer the Adafruit
-CircuitPython community. We're going to highlight some of the many ways you can be a part of it!
-Adafruit Discord
-The Adafruit Discord server is the best place to start. Discord is where the community comes together to volunteer and
-provide live support of all kinds. From general discussion to detailed problem solving, and everything in between,
-Discord is a digital maker space with makers from around the world.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 52 of 95There are many different channels so you can choose the one best suited to your needs. Each channel is shown on
-Discord as "#channelname". There's the #projecthelp channel for assistance with your current project or help coming
-up with ideas for your next one. There's the #showandtell channel for showing off your newest creation. Don't be afraid
-to ask a question in any channel! If you're unsure, #general is a great place to start. If another channel is more likely to
-provide you with a better answer, someone will guide you.
-The CircuitPython channel is where to go with your CircuitPython questions. #circuitpython is there for new users and
-developers alike so feel free to ask a question or post a comment! Everyone of any experience level is welcome to join
-in on the conversation. We'd love to hear what you have to say!
-The easiest way to contribute to the community is to assist others on Discord. Supporting others doesn't always mean
-answering questions. Join in celebrating successes! Celebrate your mistakes! Sometimes just hearing that someone
-else has gone through a similar struggle can be enough to keep a maker moving forward.
-The Adafruit Discord is the 24x7x365 hackerspace that you can bring your granddaughter to.
-Visit https://adafru.it/discord ()to sign up for Discord. We're looking forward to meeting you!
-Adafruit Forums
-The Adafruit Forums (https://adafru.it/jIf) are the perfect place for support. Adafruit has wonderful paid support folks to
-answer any questions you may have. Whether your hardware is giving you issues or your code doesn't seem to be
-working, the forums are always there for you to ask. You need an Adafruit account to post to the forums. You can use
-the same account you use to order from Adafruit.
-While Discord may provide you with quicker responses than the forums, the forums are a more reliable source of
-information. If you want to be certain you're getting an Adafruit-supported answer, the forums are the best place to be.
-There are forum categories that cover all kinds of topics, including everything Adafruit. The Adafruit CircuitPython and
-MicroPython (https://adafru.it/xXA) category under "Supported Products & Projects" is the best place to post your
-CircuitPython questions.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 53 of 95Be sure to include the steps you took to get to where you are. If it involves wiring, post a picture! If your code is giving
-you trouble, include your code in your post! These are great ways to make sure that there's enough information to help
-you with your issue.
-You might think you're just getting started, but you definitely know something that someone else doesn't. The great
-thing about the forums is that you can help others too! Everyone is welcome and encouraged to provide constructive
-feedback to any of the posted questions. This is an excellent way to contribute to the community and share your
-knowledge!
-Adafruit Github
-Whether you're just beginning or are life-long programmer who would like to contribute, there are ways for everyone
-to be a part of building CircuitPython. GitHub is the best source of ways to contribute to
-CircuitPython (https://adafru.it/tB7) itself. If you need an account, visit https://github.com/ (https://adafru.it/d6C)and sign
-up.
-If you're new to GitHub or programming in general, there are great opportunities for you. Head over to
-adafruit/circuitpython (https://adafru.it/tB7) on GitHub, click on "Issues (https://adafru.it/Bee)", and you'll find a list that
-includes issues labeled "good first issue (https://adafru.it/Bef)". These are things we've identified as something that
-someone with any level of experience can help with. These issues include options like updating documentation,
-providing feedback, and fixing simple bugs.
-Already experienced and looking for a challenge? Checkout the rest of the issues list and you'll find plenty of ways to
-contribute. You'll find everything from new driver requests to core module updates. There's plenty of opportunities for
-everyone at any level!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 54 of 95When working with CircuitPython, you may find problems. If you find a bug, that's great! We love bugs! Posting a
-detailed issue to GitHub is an invaluable way to contribute to improving CircuitPython. Be sure to include the steps to
-replicate the issue as well as any other information you think is relevant. The more detail, the better!
-Testing new software is easy and incredibly helpful. Simply load the newest version of CircuitPython or a library onto
-your CircuitPython hardware, and use it. Let us know about any problems you find by posting a new issue to GitHub.
-Software testing on both current and beta releases is a very important part of contributing CircuitPython. We can't
-possibly find all the problems ourselves! We need your help to make CircuitPython even better.
-On GitHub, you can submit feature requests, provide feedback, report problems and much more. If you have questions,
-remember that Discord and the Forums are both there for help!
+
+Salve este archivo. Nada sucede con la tarjeta. Vamos a revisar la consola serial para ver que está pasando.
+Tenemos un ImportError . Dice que no tenemos un módulo de nombre ‘simpleio’. ¡Este es el que acabamos de agregar en nuestro código!
+
+
+Dá click en el enlace arriba para descargar el agrupado correcto. Extrae la carpeta lib del archivo descargado con el agrupado. Baja hasta ver el simpleio.mpy. ¡Este es el archivo de librería que andamos buscando! Sigue los pasos descritos arriba para cargar un archivo de librería de forma individual.
+
+¡Ahora el LED comienza a parpadear de nuevo! Vamos a revisar la consola serial.
+
+¡Sin errores! Excelente. ¡Has resuelto correctamente un error de ImportError !
+
+Si te topas con este error en el futuro, sigue los pasos descritos arriba y escoja la librería que te hace falta.
+
+Instalación de librerías en tarjetas que no son Express
+
+Si tienes una Trinket M0 o una Gemma M0, vas a querer seguir los mismos pasos en el ejemplo anterior para instalar librerías mientras van haciendo falta. No siempre debes esperar a recibir el error ImportError dado que probablemente sabes que librería vas a necesitar ya que sabes que librería has agregado a tu código. Simplemente abre la carpeta lib que descargaste, escoge la librería que necesitas y arrástrala a la carpeta lib de tu unidad de disco CIRCUITPY.
+
+Es posible que te quedes sin espacio en tu Trinket M0 o Gemma M0 incluso si vas copiando las librerías mientras las necesitas.
+
+Hay una serie de pasos que se pueden realizar para resolver este problema. Las vas a encontrar en la página de Depuración de la Guía de Aprendizaje para tu tarjeta.
+
+Actualizando Librerías o Ejemplos de CircuitPython
+
+Las librerías y sus ejemplos se actualizan de forma constante, y es importante actualizar los archivos que tienes en tu unidad de disco CIRCUITPY.
+
+Para actualizar las librerías de forma individual, sigue los mismos pasos descritos arriba. Cuando arrastras un archivo de librería a tu carpeta lib, te va a preguntar si la deseas reemplazar. Dile que sí. ¡Eso es todo!
+
+Una nueva versión del agrupado de librerías es liberado cuando existe una actualización a una librería. Las actualizaciones incluyen cosas como arreglos a pulgas y nuevas características. Es importante revisar de vez en cuando para ver si las librerías que utilizas han sido actualizadas.
+
+¡Bienvenido a la Comunidad!
+
+CircuitPython es un lenguaje de programación al cual es super sencillo para iniciar y excelente para aprendizaje. Corre en microcontroladoras y funciona saliendo de la caja. Lo puedes conectar y comenzar a trabajar con cualquier editor de texto. ¿La mejor parte?
+
+CircuitPython incluye una sorprendente comunidad que nos apoya.
+
+¡Todos son bienvenidos! CircuitPython es Código Abierto. Esto significa que está disponible para todos para usar, editar, copiar y mejorar. Esto también significa que CircuitPython mejora porque tu eres una parte de él. No importa si es tu primer tarjeta microcontroladora o si eres un ingeniero informático, tu tienes algo importante que aportar a la Comunidad CircuitPython. ¡Vamos a subrayar algunos aspectos en los que te puedes involucrar!
+
+Discord de Adafruit
+
+El servidor de Discord de Adafruit es el mejor lugar para inciar. Discord es donde la comunidad de congrega para voluntariado y dar ayuda en vivo de todo tipo. Desde discusión en general hasta como resolver detalladamente un problema y cualquier cosa en medio, Discord es un maker space digital con makers de todo el mundo. 
+
+Existen muchos canales diferentes así que puedes escoger el que mejor se adapte a tus necesidades. Cada canal es mostrado en Discord como “#nombrecanal”. Existe el canal #projecthelp para asistencia con proyectos en progreso, o para buscar ayudas para el siguiente proyecto. Existe el canal #showandtell para mostrar tus últimas creaciones. ¡No tengas miedo de preguntar en ningún canal! Si estás incierto, el canal #general es un excelente lugar comenzar. Si hay otro canal que sea más apropiado para darte una mejor respuesta, alguien te va a guiar hacia él.
+
+El canal CircuitPython es donde puedes ir para realizar preguntas sobre CircuitPython. #circuitpython está ahí tanto para usuarios novatos como también para desarrolladores, así que ¡siéntete en libertad de realizar preguntas o enviar comentarios!
+
+Todos con cualquier nivel de experiencia son bienvenidos a participar en la conversación. ¡Nos encantaría escuchar lo que tienes que decir! La mejor manera para contribuir con la comunidad es ayudar a otros en Discord.
+Ayudar a otros no siempre quiere decir responder sus preguntas. ¡Participa celebrando cuando algo sale bien! ¡Celebra tus errores! Algunas veces solo escuchar que alguien más ha tenido problemas en un área similar que por lo que uno está pasando puede ser suficiente para ayudarle a un maker a avanzar.
+
+El Discord de Adafruit es un hackerspace abierto las 24x7, todos los días del año y adonde también puedes traer a tu hija Visita https://adafru.it/discord () para crear una cuenta para Discord. ¡Estamos ansiosos por conocerte!
+
+Foros de Adafruit
+
+Los Foros de Adafruit (https://adafru.it/jIf) son el lugar perfecto para solicitar asistencia técnica. Adafruit tiene varios maravillosas personas a las que paga para dar asistencia técnica y responder cualquier pregunta que puedas tener. Ya sea que tu hardware te está dando problemas o que tu código parece no funcionar, los foros siempre están ahí para tus consultas. Usted necesita una cuenta de Adafruit para escribir a los foros. Usted puede utilizar la misma cuenta para realizar pedidos de Adafruit.
+
+Mientras puede que en Discord encuentres una respuesta más rápida que en los foros, los foros son una fuente más confiable de información. Si quieres estar seguro de recibir una respuesta respaldada por Adafruit, los foros son el mejor lugar para ello. Las categorías de los foros cubren todo tipo de temas, incluyendo todo lo relacionado con Adafruit. La categoría de Adafruit CircuitPython y MicroPython (https://adafru.it/xXA) bajo "Supported Products & Projects" (o Productos y Proyectos con Asistencia Técnia) es el mejor lugar para enviar tus preguntas sobre CircuitPython.
+
+Asegúrate de incluir todos los pasos que tomaste para llegar a donde te encuentras. Si involucra cableado, ¡envía una fotografía! Si tu código está teniendo problemas, ¡incluye tu código en la consulta! Estas son buenas prácticas para asegurarnos que vamos a tener suficiente información para ayudar con tu consulta.
+
+Pueda que creas que apenas estáns comenzando, pero definitivamente sabes algo que alguien más no. ¡Lo bueno de los foros es que tu también puedes ayudar a otros! Todos son bienvenidos is alentados a dar retroalimentación constructiva a las consultas enviadas. ¡Es una excelente forma para contribuir a la comunidad y compartir tus conocimientos!
+
+GitHub de Adafruit
+
+Ya sea que estés comenzando o que seas programador de toda la vida que te gustaría contribuir, hay formas para que todos sean parte de construir CircuitPython. GitHub es la mejor de las formas para contribuir a CircuitPython (https://adafru.it/tB7). Si necesitas una cuenta, visita https://github.com/ (https://adafru.it/d6C) y solicita la tuya.
+
+Si eres nuevo hacia GitHub o programación en general, hay buenas oportunidades para ti. Visita adafruit/circuitpython (https://adafru.it/tB7) en GitHub, dá click en "Issues (https://adafru.it/Bee)", y vas a encontrar una lista de problemas que han sido clasificados como "good first issue (https://adafru.it/Bef)" (o buen primer problema). Estas son cosas que hemos identificado como algo en lo que cualquier con cualquier nivel de experiencia puede contribuir. Estos temas pueden incluir opciones como actualizar documentación, dar retroalimentación o arreglando pulgas sencillas.
+
+¿Ya tienes experiencia y buscas un reto? Revisa el resto de problemas y vas a encontrar suficientes formas en las que puedes contribuir. Vas a encontrar de todo desde solicitudes para nuevas controladoras a actualización de módulos del núcleo. ¡Hay muchas oportunidades para todos los niveles!
+
+Cuando se trabaja con CircuitPython, se pueden encontrar problemas. Si encuentras una pulga, ¡es excelente! ¡Nos encantan las pulgas! Enviar un reporte de problema detallado a GitHub es una manera invaluable para contribuir en la mejora de CircuitPython. Asegúrate de incluir los pasos relevantes para replicar el problema, así como cualquier otra información que te parezca relevante. Entre más detalle, ¡mejor!
+
+Probar nuevo software es algo sencillo y de mucha ayuda. Simplemente cargue la nueva versión de CircuitPython o una librería en tu hardware para CircuitPython, y úsalo. Déjanos saber de cualquier problema que puedas encontrar, escribiendo un “issue” en GitHub.
+
+Probar software tanto en la versión estable como en las beta es una parte muy importante de contribuir a CircuitPython. ¡Nosotros no podemos encontrar todos los problemas! Necesitamos tu ayuda haciendo CircuitPython todavía mejor.
+
+En GitHub, puedes enviar solicitud de características, dar retroalimentación, reportar problemas y mucho más. Si tienes consultas, ¡recuerda que Discord y los Foros están para ayudar!
+
 ReadTheDocs
-ReadTheDocs (https://adafru.it/Beg) is a an excellent resource for a more in depth look at CircuitPython. This is where
-you'll find things like API documentation and details about core modules. There is also a Design Guide that includes
-contribution guidelines for CircuitPython.
-RTD gives you access to a low level look at CircuitPython. There are details about each of the core
-modules (https://adafru.it/Beh). Each module lists the available libraries. Each module library page lists the available
-parameters and an explanation for each. In many cases, you'll find quick code examples to help you understand how
-the modules and parameters work, however it won't have detailed explanations like the Learn Guides. If you want help
-understanding what's going on behind the scenes in any CircuitPython code you're writing, ReadTheDocs is there to
-help!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 55 of 95Advanced Serial Console on Windows
-Windows 7 Driver
-If you're using Windows 7, use the link below to download the driver package. You will not need to install drivers on
-Mac, Linux or Windows 10.
+ReadTheDocs (https://adafru.it/Beg) es un excelente recurso para una mirada más profunda a CircuitPython. Aquí es donde vas a encontrar cosas como documentación del API y detalles sobre los módulos del núcleo. También hay Guías de Diseño que incluyen guías sobre como contribuir a CircuitPython.
+
+RTD nos da un acceso a bajo nivel de CircuitPython. Hay detalles sobre cada uno de los módulos núcleo (https://adafru.it/Beh). Cada módulo lista las librerías disponibles. Cada página de módulo de librería lista los parámetros disponibles y la explicación de cada uno. En muchos casos, vas a encontrar ejemplos rápidos de código que te van a ayudar a entender como funcionan los módulos y sus parámetros, sin embargo no va a tener explicaciones detalladas como las Guías de Aprendizaje. Si quieres ayuda aprendiendo que sucede detrás del telón en el código de CircuitPython que escribes, ¡ReadTheDocs está para ayudar!
+
+Consola Serial Avanzada para Windows
+Controlador para Windows 7
+
+Si estás utilizando Windows 7, usa el enlace abajo para descargar el paquete con el controlador. No vas a tener que instalar controladores ni para Mac, Linux o Windows 10.
+
 https://adafru.it/AB0
-https://adafru.it/AB0
-What's the COM?
-First, you'll want to find out which serial port your board is using. When you plug your board in to USB on your
-computer, it connects to a serial port. The port is like a door through which your board can communicate with your
-computer using USB.
-We'll use Windows Device Manager to determine which port the board is using. The easiest way to determine which
-port the board is using is to first check without the board plugged in. Open Device Manager. Click on Ports (COM &
-LPT). You should find something already in that list with (COM#) after it where # is a number.
-Now plug in your board. The Device Manager list will refresh and a new item will appear under Ports (COM & LPT).
-You'll find a different (COM#) after this item in the list.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 56 of 95Sometimes the item will refer to the name of the board. Other times it may be called something like USB Serial Device,
-as seen in the image above. Either way, there is a new (COM#) following the name. This is the port your board is using.
-Install Putty
-If you're using Windows, you'll need to download a terminal program. We're going to use PuTTY.
-The first thing to do is download the latest version of PuTTY (https://adafru.it/Bf1). You'll want to download the Windows
-installer file. It is most likely that you'll need the 64-bit version. Download the file and install the program on your
-machine. If you run into issues, you can try downloading the 32-bit version instead. However, the 64-bit version will
-work on most PCs.
-Now you need to open PuTTY.
-Under Connection type: choose the button next to Serial.
-In the box under Serial line, enter the serial port you found that your board is using.
-In the box under Speed, enter 115200. This called the baud rate, which is the speed in bits per second that data
-is sent over the serial connection. For boards with built in USB it doesn't matter so much but for ESP8266 and
-other board with a separate chip, the speed required by the board is 115200 bits per second. So you might as
-well just use 115200!
-If you want to save those settings for later, use the options under Load, save or delete a stored session. Enter a name
-in the box under Saved Sessions, and click the Save button on the right.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 57 of 95Once your settings are entered, you're ready to connect to the serial console. Click "Open" at the bottom of the
-window. A new window will open.
-If no code is running, the window will either be blank or will look like the window above. Now you're ready to see the
-results of your code.
-Great job! You've connected to the serial console!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 58 of 95Advanced Serial Console on Mac and Linux
-Connecting to the serial console on Mac and Linux uses essentially the same process. Neither operating system needs
-drivers installed. On MacOSX, Terminal comes installed. On Linux, there are a variety such as gnome-terminal (called
-Terminal) or Konsole on KDE.
-What's the Port?
-First you'll want to find out which serial port your board is using. When you plug your board in to USB on your
-computer, it connects to a serial port. The port is like a door through which your board can communicate with your
-computer using USB.
-We're going to use Terminal to determine what port the board is using. The easiest way to determine which port the
-board is using is to first check without the board plugged in. On Mac, open Terminal and type the following:
+
+¿Que es el COM?
+
+Primero, quieres saber cual de los puertos seriales es el que usa tu tarjeta. Cuando conectas tu tarjeta por USB a tu computadora, se conecta a un puerto serial. Este puerto es un acceso por el cual tu tarjeta se comunica con tu computadora utilizando USB.
+
+Nosotros vamos a utiliza el Administrador de Dispositivos de Windows para determinar cual puerto de la tarjeta estás utilizando. La forma más sencilla para determinar cual puerto está utilizando la tarjeta es primero revisar la lista de puertos sin haber conectado la tarjeta. Abra el Administrador de Dispositivos. De click a Puertos (COM y LPT). Deberías encontrar algo en esta lista con un nombre como COM# donde # es un número.
+
+Ahora conecta tu tarjeta. La lista del Administrador de Dispositivos se va a refrescar y va a aparecer un puerto nuevo bajo Puertos (COM & LPT).
+
+Vas a encontrar un nuevo (COM#) en esta lista.
+
+Algunas veces el puerto se va a referir al nombre de la tarjeta. Otras veces puede que se llame algo como USB Serial Device, como se observa en la imagen arriba. De cualquier forma, aparece un nuevo (COM#) seguido por el nombre.
+
+Este es el puerto de la tarjeta que estás utilizando.
+
+Instalando Putty
+
+Si estás utilizando Windows, vas a tener que descargar una aplicación terminal. Vamos a utilizar PuTTY.
+
+Lo primero que debes hacer es descargar la última versión de PuTTY (https://adafru.it/Bf1). Vas a querer descargar el archivo instalador para Windows. Lo más probable es que vas a necesitar la versión de 64-bits. Descargar el archivo e instalar la aplicación en tu computadora. Si tienes problemas, puedes tratar descargando más bien la versión de 32-bits. Sin embargo, la versión de 64-bits va a funicionar en la mayoría de computadoras personales.
+
+Ahora va a querer abrir PuTTY.
+
+Bajo Connection type: busca el botón a la par de Serial.
+
+En la caja bajo la línea de Serial, digita el puerto serial que encontraste que utiliza tu tarjeta.
+
+En la caja bajo Speed, digita 115200. Esto se llama la taza de baudios, que es la velocidad en bits por segundo que los datos se transfieren por la conexión serial. Para tarjetas con USB integrado no importa mucho, pero para tarjetas como las ESP8266 y otras con un chip adicional, la velocidad requerida por la placa es 115200 bits por segundo. ¡Así que porqué no usar 115200!
+
+Si deseas guardar estos parámetros, utiliza las opciones bajo para cargar, salvar o borrar una sesión almacenada. Digita el nombre de la sesión en la caja bajo Saved Sessions, y dá click en el botón Save a la derecha.
+
+Una vez que los parámetros se han digitado, estás listo para conectarte a la consola serial. Dá click a “Open” en la parte de abajo de la ventana. Una nueva ventana se abrirá.
+
+Si no hay código en ejecución, la ventana va a verse en blanco o se va a ver como la ventana arriba. Ahora estás listo para ver los resultados de tu código.
+
+¡Buen trabajo! ¡Te has conectado a la consola serial!
+
+Conexión Serial Avanzada para Mac y Linux
+
+Conectándose a la consola serial de Mac y Linux es esencialmente el mismo proceso. Ninguno de los dos sistemas operativos necesita que se instalen controladores. En MacOSX, la aplicación Terminal viene instalada. En Linux hay una variedad como gnome-terminal (llamada Terminal) o Konsole bajo KDE.
+
+¿Cual es el puerto?
+
+Primero vas a querer averiguar cual es el puerto serial que utiliza tu tarjeta. Cuando conectas tu tarjeta por USB a tu computadora, se conecta a un puerto serial. El puerto es un acceso por el cual tu tarjeta se comunica con tu computadora utilizando USB.
+
+Vamos a utilizar Terminal para determinar cual puerto está usando la tarjeta. La forma más sencilla para determinar cual puerto está utilizando la tarjeta es primero revisar sin haber conectado la tarjeta. En Mac, abre Terminal, y escribe lo siguiente:
+
 ls /dev/tty.*
-Each serial connection shows up in the /dev/ directory. It has a name that starts with tty. . The command ls shows
-you a list of items in a directory. You can use * as a wildcard, to search for files that start with the same letters but end
-in something different. In this case, we're asking to see all of the listings in /dev/ that start with tty. and end in
-anything. This will show us the current serial connections.
-For Linux, the procedure is the same, however, the name is slightly different. If you're using Linux, you'll type:
+
+Cada conexión serial aparece en la carpeta /dev/ . Tiene un nombre que comienza con tty. . El comando ls muestra una lista del contenido de la carpeta. Puede utilizar * como un metacaracter, para buscar archivos que comienzan su nombre con las mismas letras, pero terminan en algo diferente. En este caso, te pedimos que veas todo lo listado que comience con tty. y termine en cualquier cosa. Esto nos va a mostrar las conexiones seriales presentes.  
+
+Para Linux, el procedimiento es el mismo, sin embargo, el nombre es ligeramente diferente. Si está utilizando Linux, vas a escribir:
+
 ls /dev/ttyACM*
-The concept is the same with Linux. We are asking to see the listings in the /dev/ folder, starting with ttyACM and
-ending with anything. This will show you the current serial connections. In the example below, the error is indicating
-that are no current serial connections starting with ttyACM .
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 59 of 95Now, plug your board. Using Mac, type:
+
+El conepto es el mismo con Linux. Te pedimos que veas lo listado de la carpeta /dev, comenzando con ttyACM y terminando en cualquier cosa. Esto va a mostrar las conexiones seriales presentes. En el ejemplo anterior el error es indicando que no hay conexiones seriales presentes que comiencen con ttyACM .
+
+Ahora conecta tu tarjeta. Utilizando Mac, escribe:
+
 ls /dev/tty.*
-This will show you the current serial connections, which will now include your board.
-Using Mac, a new listing has appeared called /dev/tty.usbmodem141441 . The tty.usbmodem141441 part of this
-listing is the name the example board is using. Yours will be called something similar.
-Using Linux, type:
+
+Esto va a mostrar las conexiones seriales presentes, en las cuales se incluye la de tu tarjeta.
+
+Utilizando Mac, un nuevo puerto aparece con el nombre /dev/tty.usbmodem141441 . La parte tty.usbmodem141441 es en este ejemplo el nombre de la tarjeta que estás usando. La tuya va a tener un nombre similar.
+
+Utilizando Linux, escribe:
+
 ls /dev/ttyACM*
-This will show you the current serial connections, which will now include your board.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 60 of 95Using Linux, a new listing has appeared called /dev/ttyACM0 . The ttyACM0 part of this listing is the name the
-example board is using. Yours will be called something similar.
-Connect with screen
-Now that you know the name your board is using, you're ready connect to the serial console. We're going to use a
-command called screen . The screen command is included with MacOS. Linux users may need to install it using their
-package manager. To connect to the serial console, use Terminal. Type the following command, replacing
-board_name with the name you found your board is using:
-screen /dev/tty.board_name 115200
-The first part of this establishes using the screen command. The second part tells screen the name of the board you're
-trying to use. The third part tells screen what baud rate to use for the serial connection. The baud rate is the speed in
-bits per second that data is sent over the serial connection. In this case, the speed required by the board is 115200 bits
-per second.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 61 of 95Press enter to run the command. It will open in the same window. If no code is running, the window will be blank.
-Otherwise, you'll see the output of your code.
-Great job! You've connected to the serial console!
-Permissions on Linux
-If you try to run screen and it doesn't work, then you may be running into an issue with permissions. Linux keeps track
-of users and groups and what they are allowed to do and not do, like access the hardware associated with the serial
-connection for running screen . So if you see something like this:
-then you may need to grant yourself access. There are generally two ways you can do this. The first is to just run
-screen using the sudo command, which temporarily gives you elevated privileges.
-Once you enter your password, you should be in:
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 62 of 95The second way is to add yourself to the group associated with the hardware. To figure out what that group is, use the
-command ls -l as shown below. The group name is circled in red.
-Then use the command adduser to add yourself to that group. You need elevated privileges to do this, so you'll need
-to use sudo . In the example below, the group is adm and the user is ackbar.
-After you add yourself to the group, you'll need to logout and log back in, or in some cases, reboot your machine. After
-you log in again, verify that you have been added to the group using the command groups . If you are still not in the
-group, reboot and check again.
-And now you should be able to run screen without using sudo .
-And you're in:
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 63 of 95The examples above use screen , but you can also use other programs, such as putty or picocom , if you prefer.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 64 of 95PyCharm and CircuitPython
-THIS PROCESS DOES NOT WORK. This plugin was never designed to work with CircuitPython. The process
-described here is a work-around that is of limited functionality. IF YOU WANT TO USE THE REPL WITHIN
-PYCHARM, USE THE BUILT IN TERMINAL AND screen.
-PyCharm (https://adafru.it/xNC) is a full featured Python editor including super helpful things like code completion and
-error highlighting. It's available for free in a Community Edition.
-Recently, they added a MicroPython plugin (https://adafru.it/Bex) that enables use of the REPL from within the editor.
-CircuitPython isn't officially supported, however we have some steps to make it work!
-Download (https://adafru.it/Bey) and install PyCharm on your computer. Then, plug in your board and follow the steps
-below!
-Create a new project or open an existing project.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 65 of 95Open PyCharm Preferences/Settings. Click on Plugins
-and search for "micropython". Click on Search in
-repositories.
-THIS PROCESS DOES NOT WORK. This plugin was never designed to work with CircuitPython. The process
-described here is a work-around that is of limited functionality. IF YOU WANT TO USE THE REPL WITHIN
-PYCHARM, USE THE BUILT IN TERMINAL AND screen.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 66 of 95Click Install.
-Once it's finished installing, click Restart PyCharm.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 67 of 95Once restarted, open Preferences/Settings. Click on
-Languages & Frameworks and choose MicroPython.
-THIS PROCESS DOES NOT WORK. This plugin was never designed to work with CircuitPython. The process
-described here is a work-around that is of limited functionality. IF YOU WANT TO USE THE REPL WITHIN
-PYCHARM, USE THE BUILT IN TERMINAL AND screen.
-Choose your project directory from the list.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 68 of 95Choose ESP8266 from the list of Device Names.
-For now, you'll use this option regardless of what board
-you are using.
-You'll need to manually add your Device Path. This is
-the path to your serial connection. Once entered, click
-Ok.
-If you need help finding your device's serial connection,
-see Advanced Serial Console on
-Windows (https://adafru.it/AAH) and Advanced Serial
+
+Esto va a mostrar las conexiones seriales presentes, en las cuales se incluye la de tu tarjeta.
+
+Utilizando Linux, un nuevo puerto aparece con el nombre /dev/ttyACM0 . La parte ttyACM0 en este ejemplo es el nombre de la tarjeta que estás utilizando. La tuya va a tener un nombre similar.
+
+Conectándose con screen
+
+Ahora que conoces el nombre de la tarjeta que estás utilizando, estás listo para conectarte a la consola serial. Vamos a utilizar un comando llamado screen. El comando screen se incluye con MacOS. Los usuarios de Linux es posible que lo vayan a tener que instalar utilizando su administrador de paquetes. Para conectarse a la consola serial, utilice Terminal. Escriba el siguiente comando, reemplazando nombre_tarjeta por el nombre que encontraste que usa tu tarjeta:
+
+screen /dev/tty.nombre_tarjeta 115200
+
+La primera porción de este comando establece que vas a utilizar el comando screen. La segunda parte le dice a screen el nombre de la tarjeta que estás tratando de usar. La tercera parte le indica a screen la taza de baudios a utilizar para la conexión serial. La taza de baudios es la velocidad en bits por segundo en que se transfieren datos por la conexión serial. En este caso la velocidad requerida por la tarjeta es 115200 bits por segundo.
+
+Digita enter para ejecutar el comando. Se abre en la misma ventana. Si ningún código está corriendo, la ventana se va a ver en blanco.
+
+De otra forma, vas a ver la salida de tu código.
+
+¡Buen trabajo! ¡Te has conectado a la consola serial!
+
+Permisos en Linux
+
+Si tratas de conectarte con screen y no funciona, es posible que tengas un problema con los permisos. Linux le da seguimiendo a los usuarios y grupos y lo que pueden hacer y no hacer, como acceso al hardware asociado con la consola serial para correr screen . Así que si ves algo como esto:
+
+es posible que necesites darte acceso. Existen básicamente dos formas para lograrlo. La primera es ejecutar screen con el comando de sudo, el cual temporalmente entrega privilegios elevados. Una vez que escribas tu contraseña, ya debería funcionar:
+
+La segunda forma es agregándote al grupo asociado con el hardware. Para averiguar cual grupo es el correcto, utiliza el comando ls -l como se muestra abajo. El nombre del grupo está marcado en un círculo rojo.
+
+Ahora utiliza el comando adduser para agregar a tu usuario al grupo. Necesitas permisos elevados para realizar esto, por lo cual necesitas utilizar sudo . En el ejemplo abajo, el grupo es adm y el usuario ackbar.
+
+Luego de que te agregues al grupo, necesitas deslogearte y logearte de nuevo, o en algunos casos, reiniciar tu computadora. Luego de que te logees de nuevo, verifica que te has agregado utilizando el comando groups . Si no estás en el grupo, reinicia y revisa de nuevo.
+Ahora debes poderte conectar con screen sin necesidad de sudo .
+
+Y ya estás adentro:
+
+Los ejemplos de arriba utilizan screen , pero si lo prefieres puede utilizar otros programas como putty o picocom.
+
+PyCharm y CircuitPython
+
+ESTE PROCESO NO FUNCIONA. Este plugin nunca fue diseñado para trabajar con CircuitPython. El proceso descrito es una forma de lograrla con funcionalidad limitada. SI DESEA UTILIZAR REPL CON PYCHARM, UTILICE LA TERMINAL INTEGRADA Y screen.
+
+
+PyCharm (https://adafru.it/xNC) es un editor con todas las características incluyendo cosas super útiles como completado de código y señalado de errores. Está disponible gratis en su versión comunitaria.
+
+Recientemente, agregaron un plugin para MicroPython (https://adafru.it/Bex) el cual habilita el uso del REPL desde el editor.
+
+CircuitPython no está bajo mantenimiento oficial, sin embargo ¡tenemos algunos pasos para lograr que funcione!
+
+Descarge (https://adafru.it/Bey) e instale PyCharm en su computadora. Ahora, ¡conecte la tarjeta y siga los pasos descritos arriba!
+
+Cree un nuevo proyecto o abra un proyecto existente.
+
+Abra PyCharm y luego Preferences/Settings. Dé click en Plugins y busque “micropython”. Dé click en Search para buscar en los repositorios.
+
+ESTE PROCESO NO FUNCIONA. Este plugin nunca fue diseñado para trabajar con CircuitPython. El proceso descrito es una forma de lograrla con funcionalidad limitada. SI DESEA UTILIZAR REPL CON PYCHARM, UTILICE LA TERMINAL INTEGRADA Y screen.
+
+Dé click en Install.
+
+Una vez que el proceso completa, de click en Restart PyCharm.
+
+Una vez reiniciado, abra Preferences/Settings. Dé click en Languages & Frameworks y escoja MicroPython.
+
+ESTE PROCESO NO FUNCIONA. Este plugin nunca fue diseñado para trabajar con CircuitPython. El proceso descrito es una forma de lograrla con funcionalidad limitada. SI DESEA UTILIZAR REPL CON PYCHARM, UTILICE LA TERMINAL INTEGRADA Y screen.
+
+Escoja su carpeta de directorio de la lista.
+
+Escoja ESP8266 de la lista de Device Names (o Nombres de Dispositivos).
+
+Por ahora, vas a utilizar esta opción sin importar la tarjeta que utilices.
+
+Vas a necesitar agregar manualmente la ruta del dispositivo o Device Path.
+Esta es la ruta hacia tu conexión serial. Una vez escrita, dé click en Ok.
+
+Si necesitas ayuda encontrando la consola serial de tu dispositivo visita la sección Advanced Serial Console on
+Windows (https://adafru.it/AAH) y Advanced Serial
 Console on Mac and Linux (https://adafru.it/AAI).
-THIS PROCESS DOES NOT WORK. This plugin was never designed to work with CircuitPython. The process
-described here is a work-around that is of limited functionality. IF YOU WANT TO USE THE REPL WITHIN
-PYCHARM, USE THE BUILT IN TERMINAL AND screen.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 69 of 95Now, open any Python file from the project directory you
-chose.
-A message may pop up stating, "Packages required for
-ESP8266 support not found," followed by a list of
-packages. Click Install Requirements on this message to
-install the required packages.
-Now, you can click on the Tools menu and you should
-find a MicroPython menu. Highlight this, and you'll find
-MicroPython REPL available.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 70 of 95The REPL will open at the bottom of the PyCharm
-window. Now you can begin coding!
-If you want to use the built in REPL with a different board, you'll need to go in and change the Device Path to
-the path that matches the board you'd like to use.
-To change the Device Path, follow the steps above starting with manually adding the Device Path.
-The PyCharm REPL will not work with multiple boards at the same time. Going through the steps above on multiple
-projects did not result in consistently being able to open multiple REPL connections at the same time.
-The "Remove All Files from MicroPython Device" and "Flash Project" features do not work, but could corrupt
-your board. Do not try to use these functions. Remember, CircuitPython isn't officially supported and the
-steps above are a workaround.
-THIS PROCESS DOES NOT WORK. This plugin was never designed to work with CircuitPython. The process
-described here is a work-around that is of limited functionality. IF YOU WANT TO USE THE REPL WITHIN
-PYCHARM, USE THE BUILT IN TERMINAL AND screen.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 71 of 95CircuitPython for
-ESP8266
-We are no longer supporting CircuitPython on ESP8266. This page is for historical purposes only. There is no
-guarantee that the instructions will continue to work.
-Why are we dropping support for ESP8266?
-CircuitPython on ESP8266 has not been a great experience for users. Its hard to send files to the device because it
-has no native USB, and you can quickly run out of RAM (there's less than you think once the networking stack is
-added). We've decided to only use ESP as a co-processor. Specifically, the ESP32 because it has good TLS/SSL
-support which is now essential for even the most basic interactions.
-If you'd like to use ESP8266, please keep to version 3.x with the knowledge that it isn't supported. You can also check
-out MicroPython for ESP8266 which is still supported!
-If you'd like to add WiFi support, check out our guide on ESP32/ESP8266 as a co-processor. (https://adafru.it/Dwa)
-About ESP8266 for CircuitPython (3.x)
-We have two 'strains' of CircuitPython, the primary one is the ATSAMD21/51-based boards that have native USB
-connectivity. Native USB means that the board can show up as a disk drive called CIRCUITPY and hold all your files on
-it.
-There's also CircuitPython for boards like the ESP8266 and nRF52832, these are really nice chips with WiFi and
-Bluetooth, respectively, built in. But they do not have native USB! That means there is no way for the chip to appear as
-a disk drive. You can still use them with CircuitPython but its a lot tougher, so we don't recommend them for beginners.
-Here's what you have to know about using non-native chips for CircuitPython:
-You only get a REPL connection! No HID keyboard/mouse or other USB interface
-No disk drive for drag-n-drop file moving, files must be moved via a special tool such as ampy that 'types' the file
-in for you via the REPL
-Loading CircuitPython requires command line tools
-Installing CircuitPython on the ESP8266
-To use CircuitPython with the ESP8266 you'll need to first flash it with the latest firmware.
-Download esptool
+
+ESTE PROCESO NO FUNCIONA. Este plugin nunca fue diseñado para trabajar con CircuitPython. El proceso descrito es una forma de lograrla con funcionalidad limitada. SI DESEA UTILIZAR REPL CON PYCHARM, UTILICE LA TERMINAL INTEGRADA Y screen.
+
+Ahora, abra cualquier archivo de Python de la carpeta de proyecto que has seleccionado.
+
+Puede que aparezca un mensaje diciendo "Packages required for
+ESP8266 support not found", seguidos de una lista de paquetes. Haga click en Install Requirements en este mensaje para instalar los paquetes requeridos.
+Ahora le puedes dar click al menú de Tools (o Herramientas) y vas a poder encontrar un menú MicroPython. Señala esto, y vas a encontrar el REPL para MicroPython disponible.
+
+
+El REPL se abrirá en la parte inferior de la ventana de PyCharm. ¡Ya puedes comenzar a programar!
+
+Si deseas utilizar el REPL con una tarjeta diferente, vas a tener que ir a modificar la ruta del dispositivo a la ruta apropiada para la tarjeta que deseas utilizar.
+
+Para cambiar la ruta de dispositivo, siga los pasos descritos arriba, comenzando por agregar manualmente la ruta de dispositivo.
+
+El REPL de PyCharm no va a trabajar con múltiples tarjetas al mismo tiempo. Seguir los pasos descritos arriba para múltiples proyectos no resulta para abrir múltiples conexiones a REPL de forma simultánea.
+
+Las funcionalidades de "Remove All Files from MicroPython Device" y "Flash Project"  no funcionan, pero podrían corromper tu tarjeta. No trates de utilizar estas funcionalidades. Recuerda, CircuitPython no está bajo mantenimiento oficial, y estos son solo algunos pasos para lograr que funcione.
+
+ESTE PROCESO NO FUNCIONA. Este plugin nunca fue diseñado para trabajar con CircuitPython. El proceso descrito es una forma de lograrla con funcionalidad limitada. SI DESEA UTILIZAR REPL CON PYCHARM, UTILICE LA TERMINAL INTEGRADA Y screen.
+
+CircuitPython para ESP8266
+
+Nosotros ya no estamos dando mantenimiento a CircuitPython en ESP8266. Esta página es solamente por razones históricas. No hay garantía que las instrucciones continúen funcionando.
+
+¿Porqué no damos mantenimiento a las ESP8266?
+
+Correr CircuitPython en las ESP8266 no ha sido una buena experiencia para los usuario. Es difícil enviar archivos al dispositivo porque no tiene USB nativo, y rápidamente te puedes quedar sin memoria RAM (queda menos de lo que crees una vez que activas los componentes para redes). Hemos decidido utilizar las ESP solo como un co-procesador. Específicamente la ESP32 porque tiene muy buenas capacidades de TLS/SSL las cuales son esenciales para las interacciones más básicas.
+
+Si desea utilizar ESP8266, favor mantenga la versión 3.x teniendo en mente que no le damos mantenimiento. ¡También puede usar MicroPython para ESP8266 a la cual le dan mantenimiento!
+
+Si deseas agregar capacidades de WiFi, revisa nuestra guía sobre usar las ESP32/ESP8266 como un co-procesador. (https://adafru.it/Dwa)
+
+Sobre ESP8266 para CircuitPython (3.x)
+
+Tenemos dos sub-versiones de CircuitPython, la primaria es para tarjetas basadas en ATSAMD21/51 que tienen conectividad nativa por USB. USB nativo significa que la tarjeta aparece como una unidad de disco llamada CIRCUITPY donde puedes almacenar tus archivos.
+
+También hay CircuitPython para tarjetas como las ESP8266 y nRF52832, estos son muy buenos chips con WiFi y Bluetooth integrados, respectivamente. ¡Pero no tienen soporte nativo para USB! Esto significa que no hay forma que el chip aparezca como una unidad de disco. Usted todavía las puede usar con CircuitPython pero es mucho más difícil, así que no las recomendamos para principiantes.
+
+Esto es lo que debes saber si utilizas chips no-nativos a CircuitPython:
+
+¡Solo tienes una conexión al REPL! No hay capacidades de teclado y mouse HID u otras interfaces USB. No hay unidades de disco para arrastrar archivos, y los archivos deben ser manipulados con una herramienta como ampy la cual “escribe” tu archivo usando el REPL.
+
+Cargando CircuitPython requiere herramientas de línea de comandos
+
+Instalando CircuitPython en una ESP8266
+
+Para utilizar CircuitPython con una ESP8266 primero necesitas cargarlo con el último firmware.
+
+Descargue esptool
+
+Primero instale la herramienta esptool.py que permite subirle firmware a una ESP8266. La forma más sencilla para instalar esta herramienta es con el administrador de paquetes para Python llamado pip . S
+
 First install the esptool.py software which enables firmware flashing on the ESP8266. The easiest way to install this
 tool is from Python's pip package manager. If you don't have it already you'll need to install Python
 2.7 (https://adafru.it/fa7) (make sure you check the box to put Python in your system path when installing on
@@ -1607,10 +1521,4 @@ CircuitPython running. Great! Now what? CircuitPython Essentials!
 There are a number of core modules built into CircuitPython and commonly used libraries available. The Essentials
 guide will introduce you to these and show you an example of how to use each one.
 It's time to get started learning the CircuitPython Essentials (https://adafru.it/cpy-essentials)!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 94 of 95© Adafruit Industries
-Last Updated: 2020-02-10 04:43:06 PM UTC
-Page 95 of 95
-
 
