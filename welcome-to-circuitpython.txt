@@ -1,23 +1,4 @@
-﻿¡Bienvenido a CircuitPython!
-Creado por Kattni Rembor
-
-Last updated on 2020-02-10 04:43:06 PM UTC
-
-Introducción
-
-Entonces, tienes una nueva tarjeta compatible con CircuitPython. Las has  conectado. Tal vez aparece como una unidad de disco llamada CIRCUITPY. ¡O tal vez no lo hizo!. De cualquier forma, es importante que sepas que hacer en este momento. Y bueno, ¡esamos para ayudarte!
-
-¡Esta guía te ayudara a iniciar con CircuitPython!
-
-Hay muchas cosas impresionantes sobre su nueva tarjeta. Una de ellas es su habilidad de correr CircuitPython. Es posible que hayas visto este nombre en algún lado del sitio de Adafruit. ¿No estás seguro de que es? ¡Nosotros te podemos ayudar!
- 
-"Pero yo nunca he programado en mi vida. ¡No hay forma de que lo logre!". ¡Absolutamente puedes! CircuitPython es diseñado para ayudarte a que aprendas desde las bases. Si eres nuevo a todo, ¡este es el lugar para empezar!
-
-Esta guía te llevará por el camino para iniciarse con CircuitPython. Aprenderás como instalar CircuitPython, obtener la última versión de CircuitPython, como configurar una conexión serial, y como editar los archivos.
-
-¡Bienvenido a CircuitPython!
-
-¿Qué es CircuitPython?
+﻿¿Qué es CircuitPython?
 
 CircuitPython es un lenguaje de programación diseñado para simplificar la experimentación y aprendizaje de programar en microcontroladoras de bajo costo. Hace el iniciar más sencillo que nunca sin necesidad previa de descargar herramientas a la estación de trabajo. Una vez que tu tarjeta ha sido preparada, abres cualquier editor de texto, y puedes comenzar a escribir código. Es así de simple.
 
@@ -1007,236 +988,230 @@ Para utilizar CircuitPython con una ESP8266 primero necesitas cargarlo con el ú
 
 Descargue esptool
 
-Primero instale la herramienta esptool.py que permite subirle firmware a una ESP8266. La forma más sencilla para instalar esta herramienta es con el administrador de paquetes para Python llamado pip . S
+Primero instale la herramienta esptool.py que permite subirle firmware a una ESP8266. La forma más sencilla para instalar esta herramienta es con el administrador de paquetes para Python llamado pip . Si aún no lo tiene, debe instalar Python 2.7 (https://adafru.it/fa7) (asegúrese de marcar la caja para poner Python en tu sistema cuando instalas Windows) y luego ejecute el siguiente comando en una terminal: pip install esptool
 
-First install the esptool.py software which enables firmware flashing on the ESP8266. The easiest way to install this
-tool is from Python's pip package manager. If you don't have it already you'll need to install Python
-2.7 (https://adafru.it/fa7) (make sure you check the box to put Python in your system path when installing on
-Windows) and then run the following command in a terminal: pip install esptool
-Note on Mac OSX and Linux you might need to run the command as root with sudo, like: sudo pip install esptool
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 72 of 95If you receive an error that esptool.py only supports Python 2.x try running again with the pip2 command instead of
-pip (likely your system is using Python 3 and the pip command is getting confused which version to use).
-Download Latest CircuitPython Firmware
-Next download the latest CircuitPython ESP8266 firmware file:
+Tome nota que en Mac OSX y Linux puede que necesite ejecutar el comando en conjunto con sudo, de esta manera: sudo pip install esptool
+
+Si recibes un error de que esptoo.py solo trabaja con Python 2.x, trata de ejecutarlo de nuevo pero con pip2 en lugar de pip (lo más probable es que tu sistema esté usando Python 3 y el comando pip se confunde con cual usar).
+
+Descargue la última versión del firmware de CircuitPython
+
+Ahora, descargue el archivo de la última versión del firmware de CircuitPython para ESP8266:
+
 https://adafru.it/F9z
-https://adafru.it/F9z
-Get ESP8266 Ready For Bootloading
-Now you'll need to put the ESP8266 into its firmware flashing mode. Each ESP8266 board is slightly different:
-For a raw ESP8266 module you'll need to wire up buttons to ground for the GPIO0 and RESET pins. Hold the
-GPIO0 button down (or connect the line to ground) and while still holding GPIO0 to ground press and release the
-RESET button (or connect and release the line from ground), then release GPIO0.
-For the HUZZAH ESP8266 breakout (https://adafru.it/f9X) buttons for GPIO0 and RESET are built in to the
-board. Hold GPIO0 down, then press and release RESET (while still holding GPIO0), and finally release GPIO0.
-For the Feather HUZZAH ESP8266 (https://adafru.it/n6A) you don't need to do anything special to go into
-firmware flashing mode. This board is built to detect when the serial port is opened for flashing and automatically
-configure the ESP8266 module to receive firmware. Be sure to first install the SiLabs CP210x
-driver (https://adafru.it/jCs) on Windows and Mac OSX to make the board's serial port visible! On Windows you
-want the normal VCP driver, not the 'with Serial Enumeration' driver.
-Erase ESP8266
-It's recommended to erase the entire flash memory of the ESP8266 board before uploading firmware. Run the
-following command in a terminal to perform this erase:
-esptool.py --port ESP8266_PORTNAME erase_flash
-Where ESP8266_PORTNAME is the path or name of the serial port that is connected to the ESP8266. The exact name
-of the device varies depending on the type of serial to USB converter chip so you might need to look at the serial ports
-with and without the device connected to find its name.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 73 of 95Program ESP8266
-Now put the ESP8266 back into firmware flashing mode and run the following command to load the downloaded
-firmware file:
-esptool.py --port ESP8266_PORTNAME --baud 115200 write_flash --flash_size=detect 0 firmware.bin
-Again set ESP8266_PORTNAME to the path or name of the serial port that is connected to the ESP8266. In addition
-set firmware.bin to the name or path to the firmware file you would like to load.
-Once the tool finishes flashing the firmware (you'll usually see a blue light on the ESP8266 module flashing during this
-process) press the RESET button on the ESP8266 board or disconnect and reconnect it to your computer. You should
-be all set to start using the latest CircuitPython firmware on the board!
-Note that if you see an error that "detect is not a valid flash_size parameter" you might be using an older version of
-esptool.py. To upgrade to the latest version run the following command pip install --upgrade esptool
-Upload Libraries & Files Using Ampy!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 74 of 95The biggest difference you'll find with ESP8266 is that you need to use a special tool to move files around. Check out
-ampy by reading this guide. It's about MicroPython but CircuitPython is nearly identical so the the overall installation
-and usage is identical!
+
+Alistando la ESP8266 para booteo
+
+Ahora necesitas poner a la ESP8266 en modo de subido de firmware. En cada ESP8266 es un poco diferente:
+
+Para un módulo ESP8266 puro, necesitas cablear botones hacia tierra para los pines de GPIO0 y RESET. Presionas el botón de GPIO0 (o conectas la línea a tierra) y mientras lo mantienes presionado, presiona y suelta el botón RESET (o conectas y desconectas la línea a tierra), y luego sueltas GPIO0.
+
+Para las HUZZAH ESP8266 breakout (https://adafru.it/f9X) tiene botones de GPIO0 y RESET integrados en la tarjeta. Presiona GPIO0, luego presiona y suelta RESET (manteniendo presionado GPIO0) y luego suelta GPIO0.
+
+Para la ESP8266 HUZZAH en formato Feather (https://adafru.it/n6A) no necesitas hacer nada especial para activar el modo de subido de firmware. Esta tarjeta está construida para detectar cuando el puerto serial está abierto para subida y automáticamente configura el módulo de la ESP8266 para recibir el firmware. ¡Asegúrate de instalar el controlador para los SiLabs CP210x (https://adafru.it/jCs) en Windows y en Mac OSX para permitir que se vea el puerto de la tarjeta! En Windows quieres el controlador normal VCP, y no el controlador con enumeración serial ('with Serial Enumeration').
+
+Borrar la ESP8266
+
+Es recomendable eliminar la memoria de flash completa de la tarjeta ESP8266 antes de subirle firmware. Ejecute el siguiente comando en una terminal para ejecutar este borrado:
+
+esptool.py --port NOMBREPUERTO_ESP8266 erase_flash
+
+donde NOMBREPUERTO_ESP8266 es la ruta o el nombre del puerto serial que está conectado a la ESP8266. El nombre exacto varía dependiendo del tipo de convertidor serial así que vas a querer revisar la lista de puertos seriales con y sin la tarjeta conectada para encontrar su nombre.
+
+
+Programar la ESP8266
+
+Ahora, activa de nuevo el modo de subido de firmware en la ESP8266 y ejecuta el siguiente comando para cargarle el archivo de firmware:
+
+esptool.py --port NOMBREPUERTO_ESP8266 --baud 115200 write_flash --flash_size=detect 0 firmware.bin
+
+De nuevo, NOMBREPUERTO_ESP8266 es la ruta o nombre del puerto serial que está conectado a la ESP8266. Así mismo, defina el nombre o ruta del archivo de firmware que desea cargar.
+
+Una vez que la herramienta termina de subir el firmware (normalmente vas a ver una luz azul en el módulo ESP8266 durante el proceso de subida) presiona el botón RESET en la tarjeta ESP8266 o desconéctala y reconéctala a tu computadora. ¡Ya deberías estar listo para usar el firmware de CircuitPython en la tarjeta!
+
+Toma nota que si observas un error de "detect is not a valid flash_size parameter" (o no es capaz de detectar el tamaño del flash) puede que tengas una versión vieja de esptool.py. Para actualizar a la última versión ejecuta el siguiente comando:
+pip install --upgrade esptool
+
+¡Suba librerías y archivos usando Ampy!
+
+La diferencia más grande que vas a ver con las ESP8266 es que necesitas una herramienta especial para manipular archivos. Aprende de ampy leyendo esta guía. ¡Es sobre MicroPython, pero para CircuitPython el proceso de instalación y de uso es básicamente idéntico!
+
 https://adafru.it/q9C
-https://adafru.it/q9C
-Other Stuff To Know!
-The REPL works as you'd expect, so check out that introductory page.
-File storage is in the same chip as CircuitPython so if you update, you may lose your files! Keep backups.
-Libraries and API are also the same as for other CircuitPython boards.
-Note that the ESP8266 does not have a ton of pins available, and only one analog input with 0-1.0V range. There
-is no UART port available (it's the one used for the REPL!)
-There are no analog outputs.
-For SPI and I2C, you can use them! But you will need to use bitbangio (https://adafru.it/zcx) to create the bus
-objects
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 75 of 95Uninstalling CircuitPython
-A lot of our boards can be used with multiple programming languages. For example, the Circuit Playground Express
-can be used with MakeCode, Code.org CS Discoveries, CircuitPython and Arduino.
-Maybe you tried CircuitPython and want to go back to MakeCode or Arduino? Not a problem
-You can always remove/re-install CircuitPython whenever you want! Heck, you can change your mind every day!
-Backup Your Code
-Before uninstalling CircuitPython, don't forget to make a backup of the code you have on the little disk drive. That
-means your main.py or code.py any other files, the lib folder etc. You may lose these files when you remove
-CircuitPython, so backups are key! Just drag the files to a folder on your laptop or desktop computer like you would
-with any USB drive.
-Moving Circuit Playground Express to MakeCode
-On the Circuit Playground Express (this currently does NOT apply to Circuit Playground Bluefruit), if you want to go
-back to using MakeCode, it's really easy. Visit makecode.adafruit.com (https://adafru.it/wpC) and find the program you
-want to upload. Click Download to download the .uf2 file that is generated by MakeCode.
-Now double-click your CircuitPython board until you see the onboard LED(s) turn green and the ...BOOT directory
-shows up.
-Then find the downloaded MakeCode .uf2 file and drag it to the ...BOOT drive.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 76 of 95Your MakeCode is now running and CircuitPython has been removed. Going forward you only have to single click the
-reset button
-Moving to Arduino
-If you want to change your firmware to Arduino, it's also pretty easy.
-Start by plugging in your board, and double-clicking reset until you get the green onboard LED(s) - just like with
-MakeCode
-Within Arduino IDE, select the matching board, say Circuit Playground Express
-Select the correct matching Port:
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 77 of 95Create a new simple Blink sketch example:
-// the setup function runs once when you press reset or power the board
+
+¡Otras cosas para tomar en cuenta!
+
+El REPL funciona como se esperaría, así que revisa la página de introducción.
+
+El almacenamiento de archivos en el chip es compartido con el de CircuitPython, ¡por lo cual si actualizas es posible que pierdas los archivos! Utiliza respaldos.
+
+Las librerías y API son los mismos para otras tarjetas para CircuitPython.
+Toma nota que la ESP8266 no tiene muchos pines disponibles y solo una entrada analógica en el rango de 0.1-0V. No hay puerto de UART disponible (¡porque es usado por el REPL!).
+No hay salidas analógicas.
+
+¡Puedes usar SPI e I2C! Pero necesitas utilizar bitbangio (https://adafru.it/zcx) para crear el bus de objetos.
+
+Desinstalando CircuitPython
+
+Muchas de nuestras tarjetas se pueden utilizar con múltiples lenguajes de programación. Por ejemplo la Circuit Playground Express puede ser usada con MakeCode, Code.org CS Discoveries, CircuitPython y Arduino.
+
+¿Puede que hayas probado CircuitPython y ahora quieres regresar a MakeCode o Arduino? No es problema. ¡Siempre puedes remover y reinstalar CircuitPython cuando lo desees! ¡Incluso puedes cambiar de parecer todos los días!
+
+Respalda tu Código
+
+Antes de desinstalar CircuitPython, no te olvides de realizar un respaldo del código que tienes en la pequeña unidad de disco. Eso significa main.py o code.py y otros archivos, la carpeta lib, etc. Es posible que pierdas estos archivos cuando remueves CircuitPython, ¡por lo que los respaldos son clave! Solo arrastra los archivos a una carpeta en tu laptop o computadora de escritorio, como lo harías con cualquier otra memoria USB.
+
+Pasándose la Circuit Playground Express a MakeCode
+
+En la Circuit Playground Express (por el momento esto NO aplica para la Circuit Playground Bluefruit), si deseas devolverte a usar MakeCode, es realmente sencillo. Visita makecode.adafruit.com (https://adafru.it/wpC) y encuentra el programa que deseas subir. Da click en Download para descargar el archivo .uf2 que genera Makecode.
+
+Ahora da doble click en el botón de reset de tu tarjeta CircuitPython hasta que veas las luces LED prender en verte y luego que aparezca el directorio ...BOOT .
+
+Ahora encuentra el archivo .uf2 descargado de MakeCode y arrástralo a la unidad de disco ...BOOT.
+
+Tu código MakeCode ahora se está ejecutando y CircuitPython ha sido eliminado. De ahora en adelante solo debes dar un solo click al botón de reset.
+
+Paśandose a Arduino
+
+Si quieres mover tu firmware hacia Arduino, es muy sencillo.
+
+Comienza por conectar tu tarjeta y dándole doble click al botón de reset hasta que recibas las luces LED integradas de color verde – igual que con MakeCode.
+
+Dentro del IDE de Arduno, selecciona la tarjeta correcta, diciéndole que use la Circuit Playground Express, y seleccionando el puerto correspondiente:
+
+Crear un nuevo programa ejemplo para Parpadear:
+
+// la función setup se ejecuta cuando presionas reset o prendes la tarjeta
 void setup() {
-// initialize digital pin 13 as an output.
+// inicialice el pin 13 para salida.
 pinMode(13, OUTPUT);
 }
-// the loop function runs over and over again forever
+// la función de loop se repite una y otra vez
 void loop() {
 digitalWrite(13, HIGH);
-// turn the LED on (HIGH is the voltage level)
+// prenda el LED (HIGH o alto, es el nivel de voltaje)
 delay(1000);
-// wait for a second
+// espere un segundo
 digitalWrite(13, LOW);
-// turn the LED off by making the voltage LOW
+// apaga el LED pasando el voltaje a LOW (bajo)
 delay(1000);
-// wait for a second
+// espere un segundo
 }
-Make sure the LED(s) are still green, then click Upload to upload Blink. Once it has uploaded successfully, the serial
-Port will change so re-select the new Port!
-Once Blink is uploaded you should no longer need to double-click to enter bootloader mode, Arduino will automatically
-reset when you upload
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 78 of 95Non-UF2 Installation
-This installation page is only required if you do not have UF2 bootloader installed (e.g. boardBOOT drag-n-
-drop)! This page is for non-Express Feather M0's, Arduino Zero's & M0's, and other custom ATSAMD21
-boards.
-Flashing with Bossac - For Non-Express Feather M0's & Arduino Zero
-Our older Feather M0 boards don't come with UF2, instead they come with a simpler bootloader called bossa. This is
-also what is installed on Arduino Zero's and other CircuitPython compatible boards that use the ATSAMDx1 or
-nRF52840. It is the only method you can use if your CircuitPython installation file is a .bin rather than a .uf2
-Command-Line ahoy!
-Flashing with bossac requires the use of your computer's command line interface. On windows, that's the cmd or
-powershell tool. On mac and Linux, use Terminal!
-Download Latest CircuitPython Firmware
-The first thing you'll want to do is download the most recent version of CircuitPython.
-As of April, 2019, there are two sites to download the appropriate .bin file. Adafruit is migrating files to
-CircuitPython.org (https://adafru.it/Em8). It is suggested to look for the .bin file for your compatible board there first by
-searching for the board. Only compatible boards that have a pull request for the appropriate pin definition files will be
-listed on that site, developers should submit their materials to be included if they have a new CircuitPython board they
-would like to see listed.
-Click the green button below to search for your board to find the appropriate file.
+
+Asegúrate que los LEDs todavía están de color verde, da click en Upload para subir el código de parpadeo. Una vez que ha subido correctamente el puerto serial va a cambiar, ¡así que seleccione el nuevo puerto!
+
+Una vez que el código de parpadeo ha sido subido, no es necesario volver a dar doble click en el botón de reset para entrar en modo de booteo, Arduino va a resetear la tarjeta de forma automática cuando subes nuevo firmware.
+
+
+Instalación sin UF2
+
+¡Esta página de instalación es solo necesaria si no tienes un gestor de arranque UF2 instalado (donde sale ...BOOT y le arrastramos archivos)! Esta página es para tarjeta no-Express como Feather M0, Arduino Zero y M0 y otras tarjetas a la medida con chips ATSAMD21.
+
+Subiendo con Bossac – Para las Feather M0 no-Express y Arduino Zero
+
+Nuestras tarjetas viejas de formato Feather con chips M0 no vienen con UF2, sino con un gestor de arranque más sencillo llamado bossa. Esto es lo que está instalado en los Arduino Zero y otras tarjetas para CircuitPython que usan chips como ATSAMDx1 o nRF52840. Es el único método de instalación que puedes utilizar si el archivo de instalación de CircuitPython es de tipo .bin en lugar de un .uf2 .
+
+¡Vamos a la línea de comando!
+
+Para subir firmware con bossac requiere utilizar la línea de comando de tu computadora. En Windows, se llama cmd o herramienta powershell. ¡En mac o Linux, usar Terminal!
+
+Descarga el último firmware CircuitPython
+
+Lo primero que vas a querer hacer es descargar la última versión de CircuitPython. Desde Abril del 2019, existen dos páginas web para descargar el archivo .bin apropiado. Adafruit está migrando sus archivos hacia CircuitPython.org (https://adafru.it/Em8). Se sugiere que busques el archivo .bin compatible para tu tarjeta primero ahí, buscando la tarjeta. Solo tarjetas compatibles que han recibido modificaciones específicas para definir sus pines apropiados van a ser listados en el sitio, por lo cual los desarrolladores deberían enviar sus material (por medio de un pull request) si tienen una tarjeta con CircuitPython la cual desean que salga listada.
+
+Da click al botón verde abajo para buscar tu tarjeta y encontrar el archivo apropiado.
+
 https://adafru.it/Em8
-https://adafru.it/Em8
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 79 of 95Alternatively, use GitHub
-For now, CircuitPython board files are also in the Adafruit CircuitPython GitHub repo, although they may migrate to a
-dedicated CircuitPython repo in the future. If you have issues with CircuitPython.org, look to download from GitHub
-using this second green button below.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 80 of 95https://adafru.it/vlF
+
+De forma alternativa, use GitHub
+
+Por ahora, los archivos de tarjetas para CircuitPython también están disponibles en el repositorio de CircuitPython de Adafruit, aunque a futuro se desea mover a un repositorio separado. Si tienes problemas con CircuitPython.org, trata de descargarlo de GitHub utilizando este segundo botón verde.
+
 https://adafru.it/vlF
-Once downloaded, save the .bin file onto your desktop, you'll need it soon!
-If you are running Windows 7, you must install the driver set (we cover it on this page) (https://adafru.it/Bfd) so you have
-access to the COM port.
-Download BOSSA
-Once you have a firmware image you'll need to download the BOSSA tool, which that can load firmware on SAMD21/51
-boards. This tool is actually used internally by the Arduino IDE when it programs these boards, however you can use it
-yourself to load custom firmware
-Be aware you must use 1.7.0 or higher version of bossac to program SAMD21 and SAMD51 boards! Versions of
-BOSSA before version 1.7.0 won't work because it doesn't support the SAMD21/51 chips. Also note that bossac
-versions 1.9.0 and newer have incompatibly changed their command-line parameters, and can erase your bootloader
-if it is not protected. (Adafruit boards ship with protected bootloaders.) Follow the directions below carefully,
-depending on which version you have.
-To flash with bossac (BOSSA's command line tool) first download the latest version from here (https://adafru.it/Bfe).
-The ming32 version is for Windows, apple-darwin for Mac OSX and various linux options for Linux.
-bossac works with .bin files only, it will not work with .uf2 files!
-Test bossac
-Open a terminal and navigate to the folder with the bossac tool. Then check the tool runs by running it with the --help
-option:
-Open a terminal and navigate to the folder with the
-bossac tool. Then check the tool runs by running it with
-the --help option with bossac --help
-Or if you're using Linux or Mac OSX you'll need to add a
-./ to specify that bossac is run from the current directory
-like ./bossac --help
-Make sure you see BOSSA version 1.7.0 or higher! And
-see the warning below about version 1.9.0 and higher. If
-you see a lower version then you accidentally
-downloaded an older version of the tool and it won't
-work to flash SAMD21 chips. Go back and grab the
-latest release from this BOSSA GitHub
-repository (https://adafru.it/s1B) as mentioned above.
-Port Selection for Mac OS
-You'll need to know what port to use if you're on a Mac.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 81 of 95In your same terminal window, run the command ls /dev/cu.* . Note the ports listed, then plug in your board and run
-the command again. The device may be listed something like /dev/cu.usbmodem14301. Make note of the port name
-for the bossac section below.
-Get Into the Bootloader
-You'll have to 'kick' the board into the bootloader manually. Do so by double-clicking the reset button. The red "#13"
-LED should pulse on and off. If you are using an Arduino Zero, make sure you are connected to the native USB port
-not the debugging/programming port.
-One special note, if you're using the Arduino M0 from Arduino.org you'll need to replace its bootloader with the
-Arduino Zero bootloader so it can work with BOSSA. To do this install the Arduino/Genuino Zero board in the Arduino
-IDE board manager and then follow these steps to burn the Arduino Zero bootloader (https://adafru.it/s1D) (using
-the programming port on the board). Once you've loaded the Arduino Zero bootloader you should be able to use the
-M0 with bossac as described below.
-Run the bossac Command
-With your board plugged in and running the bootloader you're ready to flash CircuitPython firmware onto the board.
-Copy the firmware .bin file to the same directory as the bossac tool, then in a terminal navigate to that location and run
-one ofthe following commands, depending on which version of bossac you have.
-With bossac versions 1.9 or later, you must use the --offset parameter on the command line, and it must have
-the correct value for your board.
-With bossac version 1.9 or later, you must give an --offset parameter on the command line to specify where to start
-writing the firmware in flash memory. This parameter was added in bossac 1.8.0 with a default of 0x2000 , but starting
-in 1.9, the default offset was changed to 0x0000 , which is not what you want in most cases. If you omit the argument
-for bossac 1.9 or later, you will probably see a "Verify Failed" error from bossac. Remember to change the option for -
-p or --port to match the port on your Mac.
-Replace the filename below with the name of your downloaded .bin : it will vary based on your board!
-Using bossac Versions 1.7.0, 1.8
-There is no --offset parameter available. Use a command line like this:
+
+Una vez descargado, salvar el archivo .bin en tu equipo de escritorio, ¡ya casi lo vas a ocupar!
+
+Si estás usando Windows 7, debes instalar el controlador (hablamos de ello, en esta página) (https://adafru.it/Bfd) para tener acceso al puerto COM.
+
+
+Descargando BOSSA
+
+Una vez que tienes el archivo con el firmware, vas a necesitar descargar la herramienta BOSSA, la cual puede cargarle firmware a tarjetas con chips SAMD21/51. Esta herramienta es usada internamente por el IDE de Arduino cuando programa estas tarjetas, sin embargo lo puedes usar para subir tu firmware a la medida.
+
+¡Ten cuidado que necesitas una versión 1.7.0 o superior de bossac para programar tarjetas con chips SAMD21 y SAMD51! Versionas de BOSSA anteriores a 1.7.0 no van a funcionar porque no saben hablar con chips SAMD21/51. También tener cuidado que versiones 1.9.0 o más nuevas pueden tener un problema de incompatibilidad al cambiar sus parámetros de línea de comando y puede eliminar tu gestor de arranque si no está protegido (Las tarjetas de Adafruit se envían con gestores de arranque protegidos). Sigue las instrucciones a continuación con mucho cuidado, dependiendo de que versión tengas.
+
+Para subir firmware con bossac (la herramienta de línea de comando de BOSSA) primero descar la última versión de aquí (https://adafru.it/Bfe).
+
+La versión ming32 es para Windows, la versión apple-darwin para Mac OSX y varios opciones de Linux para Linux.
+
+Bossac solo trabaja con archivos .bin, ¡no funciona con archivos .uf2!
+
+Pruebe bossac
+
+Abra una terminal y navegue por la carpeta con la herramienta bossac. Ahora revise que la aplicación funciona, probando con la opción --help con bossac --help
+
+
+Si estás utilizando Linux o Mac OSX, vas a necesitar agregar un ./ para decirle que ejecute bossac desde el directorio actual, así ./bossac --help
+
+¡Asegúrate de que observes BOSSA versión 1.7.0 o superior! Y nota la observación abajo sobre la versión 1.9.0 o superior. Si ves una versión anterior es porque descargaste por error una versión anterior y no va a funcionar para subirle a chips SAMD21. Regresa y descarga la última versión del repositorio de GitHub de BOSSA (https://adafru.it/s1B) como se mencionó arriba.
+
+Selección de puerto para Mac OS
+
+Vas a necesitar saber que puerto usar si estás en Mac.
+
+En la misma terminal, ejecuta el comando ls /dev/cu.* . Nota los puertos listados, ahora conecta tu tarjeta y ejecuta el comando de nuevo. El dispositivo listado puede llamarse algo similar a /dev/cu.usbmodem14301. Toma nota del nombre del puerto para usarlo en la sección que sigue.
+
+Entra en el gestor de arranque
+
+Vas a tener que darle un empujón a la tarjeta para que entre en modo de gestor de arranque. Lo haces dándole doble-click al botón de reset en la tarjeta. El LED rojo “#13” va a parpadear. Si estás usando un Arduino Zero, asegúrate de que estás conectado al puerto USB nativo y no al puerto de depuración/programación.
+
+Una nota importante, si estás utilizando un Arduino M0 de Arduino.org, vas a necesitar reemplazar su gestor de arranque con el gestor de arranque de Arduino Zero para que pueda trabajar con BOSSA. Para esto, instala las tarjetas Arduino/Genuino Zero en el IDE de Arduino y luego sigue estos pasos para subir el gestor de arranque (https://adafru.it/s1D) (usando el puerto de programación en la tarjeta). Una vez que has agregado el gestor de arranque de las Arduino Zero, vas a poder utilizar la M0 con bossac como se describe abajo.
+
+
+Ejecutando el comando bossac
+
+Con tu tarjeta conectada y corriendo el gestor de arranque, estás listo para subirle el firmware de CircuitPython a la tarjeta.
+
+Copia el archivo .bin con el firmware al mismo directorio donde reside la herramienta bossac, y luego en una terminal entre en la misma carpeta y ejecute los siguiente comandos, dependiendo de la versión de bossac que tengas.
+
+Con bossac versiones 1.9 o superiores debes usar el parámetro --offset en la línea de comando, y debe tener el valor correcto para tu tarjeta.
+
+Con bossac versiones 1.9 o superior, le debes indicar en el pámetro --offset donde debe comenzar a escribir el firmware en la memoria flash. Este parámetro se agregó desde bossac 1.8.0 por omisión en 0x2000, pero en 1.9 por omisión se definió a 0x0000 , lo cual no es deseable en la mayoría de casos. Si omites el argumento a bossac 1.9 o superior, probablemente vas  a recibir un error de “Verify Failed” o verificación fallida.
+
+Recuerda cambiar la opción -p o --port para usar el mismo puerto que en tu Mac.
+
+Reemplaza el nombre abajo por el archivo que has descargado de tipo .bin , teniendo en cuenta que ¡varía dependiendo de tu tarjeta!
+
+Utilizando bossac versiones 1.7.0, 1.8
+
+No existe el parámetro --offset. Utiliza el comando de la siguiente forma:
+
 bossac -p /dev/cu.usbmodem14301 -e -w -v -R adafruit-circuitpython-
-boardname-version.bin
-For example,
+nombretarjeta-version.bin
+
+Por ejemplo,
+
 bossac -p /dev/cu.usbmodem14301 -e -w -v -R adafruit-circuitpython-feather_m0_express-3.0.0.bin
-Using bossac Versions 1.9 or Later
-For M0 boards, which have an 8kB bootloader, you must specify -offset=0x2000 , for example:
+
+Usando bossac para versiones 1.9 y superiores
+
+Para tarjetas M0, las cuales tienen 8kB para el gestor de arranque, debes especificar --offset=0x2000 , por ejemplo:
 bossac -p /dev/cu.usbmodem14301 -e -w -v -R --offset=0x2000 adafruit-circuitpython-feather_m0_express-3.0.0.bin
-For M4 boards, which have a 16kB bootloader, you must specify -offset=0x4000 , for example:
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 82 of 95bossac -p /dev/cu.usbmodem14301 -e -w -v -R --offset=0x4000 adafruit-circuitpython-feather_m4_express-3.0.0.bin
-This will e rase the chip, w rite the given file, v erify the write and R eset the board. On Linux or MacOS you may
-need to run this command with sudo ./bossac ... , or add yourself to the dialout group first.
-After BOSSA loads the firmware you should see output similar to the following:
-After reset, CircuitPython should be running and the CIRCUITPY drive will appear. You can always manually reset the
-board by clicking the reset button, sometimes that is needed to get it to 'wake up'. Express boards may cause a
-warning of an early eject of a USB drive but just ignore it. Nothing important was being written to the drive!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 83 of 95Troubleshooting
+
+Para tarjetas M4, las cuales tienen 16kB para el gestor de arranque, debes especificar --offset=0x4000 , por ejemplo:
+
+bossac -p /dev/cu.usbmodem14301 -e -w -v -R --offset=0x4000 adafruit-circuitpython-feather_m4_express-3.0.0.bin
+
+Esto va a (e) borrar la memoria en el chip, (w) escribir el archivo indicado, (v) verifiaar la escritura y (R) reinicia la tarjeta. En Linux o MacOS vas a querer ejecutar el comando con sudo ./bossac ... , o agregarte primero al grupo de dialout.
+
+Luego de que BOSSA carga el firmware vas a ver una salida similar a la siguiente:
+
+
+Puedes reiniciar manualmente la tarjeta dando click al botón de reset, que algunas veces es necesario para despertar la tarjeta. Las tarjetas Express es posible que muestre una advertencia de haber expulsado incorrectamente una unidad de disco USB, la cual se puede ignorar sin problemas. ¡Nada importante se estaba escribiendo a la unidad de disco!
+
+
+Depuración
+De vez en cuando, 
+
 From time to time, you will run into issues when working with CircuitPython. Here are a few things you may encounter
 and how to resolve them.
 As we continue to develop CircuitPython and create new releases, we will stop supporting older releases.
@@ -1281,15 +1256,13 @@ Unplug any boards. In Uninstall or Change a Program (Control Panel->Programs->Un
 everything named "Windows Driver Package - Adafruit Industries LLC ...".
 Now install the new 2.3.0.0 (or higher) Adafruit Windows Drivers Package:
 https://adafru.it/AB0
-https://adafru.it/AB0
+
 When running the installer, you'll be shown a list of drivers to choose from. You can check and uncheck the
 boxes to choose which drivers to install.
 You should now be done! Test by unplugging and replugging the board. You should see the CIRCUITPY drive, and
 when you double-click the reset button (single click on Circuit Playground Express running MakeCode), you should see
 the appropriate boardnameBOOT drive.
 Let us know in the Adafruit support forums (https://adafru.it/jIf) or on the Adafruit Discord () if this does not work for you!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
 Page 85 of 95Windows Explorer Locks Up When Accessing boardnameBOOT Drive
 On Windows, several third-party programs we know of can cause issues. The symptom is that you try to access the
 boardnameBOOT drive, and Windows or Windows Explorer seems to lock up. These programs are known to cause
@@ -1325,8 +1298,6 @@ Therefore, if your serial console panel is five lines tall or less, you may only
 Press any key to enter the REPL. Use CTRL-D to reload.. If this is the case, you need to either mouse over the top of
 the panel to utilise the option to resize the serial panel, or use the scrollbar on the right side to scroll up and find your
 message.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
 Page 86 of 95This applies to any kind of serial output whether it be error messages or print statements. So before you start trying to
 debug your problem on the hardware side, be sure to check that you haven't simply missed the serial messages due to
 serial output panel height.
@@ -1361,8 +1332,6 @@ version of CircuitPython than the one its being loaded into. In particular, the 
 CircuitPython versions 2.x and 3.x, as well as between 1.x and 2.x.
 So, for instance, if you upgraded to CircuitPython 3.x from 2.x you’ll need to download a newer version of the library
 that triggered the error on import . They are all available in the Adafruit bundle (https://adafru.it/y8E).
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
 Page 87 of 95Make sure to download a version with 2.0.0 or higher in the filename if you're using CircuitPython version 2.2.4, and
 the version with 3.0.0 or higher in the filename if you're using CircuitPython version 3.0.
 CIRCUITPY Drive Issues
@@ -1393,9 +1362,7 @@ https://adafru.it/AdI
 https://adafru.it/AdJ
 https://adafru.it/AdJ
 https://adafru.it/EVK
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 88 of 95https://adafru.it/EVK
+https://adafru.it/EVK
 https://adafru.it/AdK
 https://adafru.it/AdK
 https://adafru.it/EoM
@@ -1425,17 +1392,11 @@ If the LED flashes red during step 5, it means the erase has failed. Repeat the 
 If you haven't already downloaded the latest release of CircuitPython for your board, check out the installation
 page (https://adafru.it/Amd). You'll also need to install your libraries and code!
 Old Way: For Non-Express Boards with a UF2 bootloader (Gemma M0, Trinket M0):
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
 Page 89 of 95If you can't get to the REPL, or you're running a version of CircuitPython before 2.3.0, and you don't want to upgrade,
 you can do this.
 1. Download the erase file:
 https://adafru.it/AdL
 https://adafru.it/AdL
-2.
-3.
-4.
-5.
 Double-click the reset button on the board to bring up the boardnameBOOT drive.
 Drag the erase .uf2 file to the boardnameBOOT drive.
 The boot LED will start flashing again, and the boardnameBOOT drive will reappear.
@@ -1464,8 +1425,6 @@ with four spaces for every indent. In general, we recommend that too. However, o
 readable code is to use a single tab character for indentation. This approach uses 1/4 of the space for indentation and
 can be significant when we're counting bytes.
 Mac OSX loves to add extra files.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
 Page 90 of 95Luckily you can disable some of the extra hidden files that Mac OSX adds by running a few commands to disable
 search indexing and create zero byte placeholders. Follow the steps below to maximize the amount of space available
 on OSX:
@@ -1495,8 +1454,6 @@ you cannot use drag and drop copy in Finder because it will still create these h
 cases (for files downloaded from the internet, like Adafruit's modules).
 To copy a file or folder use the -X option for the cp command in a terminal. For example to copy a foo.mpy file to the
 board use a command like:
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
 Page 91 of 95cp -X foo.mpy /Volumes/CIRCUITPY
 (Replace foo.mpy with the name of the file you want to copy.) Or to copy a folder and all of its child files/folders use a
 command like:
@@ -1510,8 +1467,7 @@ Other Mac OSX Space-Saving Tips
 If you'd like to see the amount of space used on the drive and manually delete hidden files here's how to do so. First
 list the amount of space used on the CIRCUITPY drive with the df command:
 Lets remove the ._ files first.
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
+
 Page 92 of 95Whoa! We have 13Ki more than before! This space can now be used for libraries and code!
 © Adafruit Industries
 https://learn.adafruit.com/welcome-to-circuitpython
