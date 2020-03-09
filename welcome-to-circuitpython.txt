@@ -1,386 +1,13 @@
-﻿¿Qué es CircuitPython?
-
-CircuitPython es un lenguaje de programación diseñado para simplificar la experimentación y aprendizaje de programar en microcontroladoras de bajo costo. Hace el iniciar más sencillo que nunca sin necesidad previa de descargar herramientas a la estación de trabajo. Una vez que tu tarjeta ha sido preparada, abres cualquier editor de texto, y puedes comenzar a escribir código. Es así de simple.
-
-CircuitPython está basado en Python
-
-Python es el lenguaje de programación de mayor crecimiento. Es enseñado en escuela y universidades. Es un lenguaje de programación de alto nivel, lo que significaque está diseñado para ser facil de leer, escribir y mantener. Se utilizan módulos y paquetes lo que quiere decir que es sencillo reutilizar tu código en otros proyectos. Tiene un intérprete integrado, que significa que no hay pasos adicionales como compilación para que tu código funcione. Y por supuesto, Python es software Open Source, que quiere decir que es libre para ser usado, modificado o mejorado por cualquier persona.
-CircuitPython le agrega al hardware todas estas capacidades asombrosas. Si ya tienes conocimiento de Python, puedes aplicarlo usando CircuitPython. Si no tienes experiencia previa, ¡debería ser sencillo comezar!
-
-¿Por qué debería utilizar CircuitPython?
-
-CircuitPython es diseñado para correr en tarjetas con microcontroladora. Una tarjeta con microcontroladora es una tarjeta con un chip controlador que la vuelve escencialmente una mini computadora todo-en-uno. ¡La tarjeta que estás sosteniendo es una tarjeta con microcontroladora!
-
-CircuitPython es sencillo de usar, dado que todo lo que necesitas es esta pequeña tarjeta, un cable USB, y una computadora con conexión USB. Pero eso es solo el principio. Otras razones para usar CircuitPython incluyen:
-Quieres tener tu ambiente listo para trabajar, en poco tiempo. Creas un archivo, editas tu código, salvas el archivo y se ejecuta de inmediato. No hay proceso de compilado, sin descargas ni subidas necesarias.
-
-Eres nuevo en programación. CircuitPython es diseñado pensando en educación. Es sencillo comenzar a programar, y recibes retroalimentación inmediata de la tarjeta.
-Actualiza sencillamente tu código. Dado que tu código vive en la unidad de disco, puedes editarlo cuando gustes, y puedes mantener varios archivos con diferentes archivos para fácil experimentación.
-
-La consola serial y REPL.
-Estas te permiten recibir retroalimentación en vivo de tu código y programando de forma interactiva.
-
-Almacenamiento de archivos.
-El almacenamiento interno de CircuitPython es un excelente lugar para bitácoras de datos, tocar archivos de audio o para interactuar con archivos.
-
-Fuertes capacidades de hardware
-Hay muchas librerías y controladores para sensores, tarjetas específicas y otros componentes externos.
-
-¡Es Python!
-Python es el lenguaje de programación de mayor crecimiento. Es enseñado en escuelas y universidades.
-CircuitPython es casi compatible con Python. Solamente agregar capacidades de hardware.
-Esto es solo el comiento. CircuitPython continua evolucionando, y actualizandose constantemente. Te damos la bienvenida y bien recibimos comentarios de la comunidad, y los incorporamos en como desarrollamos CircuitPython. Ese es el núcleo del concepto de Open Source. Esto mejora CircuitPython para tí y cualquier otro usuario.
-
-
-Preguntas Frecuentes
-Estas son algunas de las preguntas comunes sobre CircuitPython y microcontroladoras con CircuitPython
-Mientras continuamos desarrollando CircuitPython y crear nuevas versiones de producto, dejaremos de dar mantenimiento a versiones anteriors.
-Vitite https://circuitpython.org/downloads para descargar la última versión de CircuitPython para tu tarjeta. Usted debe descargar el conjunto de librerías para CircuitPython (o "CircuitPython Library Bundle") para la versión apropiada de CircuitPython. Favor actualice CircuitPython y visite https://circuitpython.org/libraries para descargas la última versión del Conjunto de Librerías.
-
-He venido utilizando CircuitPython 3.x o 2.x, donde puedo encontrar librerías compatibles?
-
-Ya no estamos compilando o dando mantenimiento a CircuitPython 2.x y 3.x. Lo alentamos a actualizar CircuitPython a la última versión (https://adafru.it/Em8) y a utilizar una versión actualizada de las librerías (https://adafru.it/ENC). Sin embargo, puedes encontrar la última versión disponible para 2.x compilada aquí (https://adafru.it/FJA) y la última para la versión 3.x aquí (https://adafru.it/FJB).
-
-¿ Puedo usar los ESP8266 o las ESP32 con CircuitPython? ¿Por qué no?
-Estamos quitando capacidades para ESP8266 desde 4.x - ¡Para más información favor lea aquí!
-https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-for-esp8266
-
-¿Como me conecto a la Internet con CircuitPython?
-
-Si desea agregar capacidades de Wifi, revise nuestra guía en utilizar ESP32/ESP8266 como un co-procesador.
-
-¿Existen capacidades de asyncio en CircuitPython?
-
-Nosotros no tenemos capacidades de asyncio en CircuitPython en este momento.
-
-Mi LED Neopixel/DotStar de colores RGB parpadea en colores extraños. ¿Esto que significa?
-
-El LED indicador de estado te puede decir que está pasandoo con tu tarjeta CircuitPython. ¡Lea aquí lo que significan estos colores!
-
-¿Que es MemoryError?
-
-Los errores de solicitud de memoria suceden cuando tratamos de guardar mucho en la tarjeta. Las tarjetas con microcontroladoras para CircuitPython tiene una cantidad limitadad de memoria disponible. Usted puede tener como 250 líneas de código en tarjetas M0 Express. Si tratas de importar muchas librerías, una combinación de librerías largas, o correr un código con muchas líneas de código, si programa va a fallar en ejecutar y vas a recibir un mensaje MemoryError en la consola serial (REPL).
-
-¿Que hago cuando recibo un MemoryError?
-
-Trata reiniciando tu tarjeta. Cada vez que reinicias la tarjeta, ella tratará de acomodar la memoria. Mientras es poco probable que resuelta tu error, es un paso sencillo que vale la pena probar.
-
-Asegúrate de usar las versiones .mpy de las librerías. Todas las librerías de CircuitPython están disponibles en el conjunto en formato .mpy el cual consume menos memoria que el formato .py. Asegúrate de estar usando la última versión de la librería (https://adafru.it/uap) para tu versión de CircuitPython.
-
-Si esto no resuelve tu problema, trata recortando tu código. Recortar comentarios, limpiar código innecesario o cualquier otra limpieza que puedas realizar para acortar tu código. Si estás utilizando muchas funciones, trata de moverlas a una librería separada, crear un .mpy de dicha librería e importandola en tu código.
-
-Puedes tranformar tu archivo entero a .mpy e importar esto en tu código. Esto significa que no vas a poder editar tu código en vivo en la tarjeta,, pero te puede ahorrar espacio.
-
-¿Puede el orden de mis import, afectar la memoria?
-
-Si puede, daado que la memoria se fragmenta de diferente forma, dependiendo de el orden de solicitud y del tamaño de los objetos. Cargar archivos .mpy utiliza menos memoria por lo que se recomienda realizar esta conversión para archivos que no estés editando.
-
-¿Como puedo crear mis propios archivos .mpy?
-
-Puedes realizar tus propias versiones de archivos .mpy con mpy-cross. Puedes descargar la versión de mpy-cross para CircuitPython 2.x para tu sistema operativo desde la página de Versiones de CircuitPython (https://adafru.it/tBa) bajo la última versión para 2.x.
-
-Usted puede compilar mpy-cross para CircuitPython 3.x, clonando el repositorio de GitHub de CircuitPython (https://adafru.it/tB7) y ejecutando make dentro del directorio circuitpython/mpy-cross/. Ahora ejecutas ./mpy-cross ruta/a/foo.py para crear foo.mpy en el mismo directorio que el archivo original.
-
-¿Como reviso cuanta memoria tengo disponible?
-
-import gc
-gc.mem_free()
-
-Esto te dará el número de bytes disponibles para utilizarse.
-
-¿CircuitPython maneja interrupciones?
-
-No. CircuitPython no trabaja por el momento con interrupciones. No tenemos un estimado para cuando se podrían incluir.
-
-¿Las Feather M0 trabajan con WINC1500?
-No, WINC1500 no cabe en la memoria de flash de los chips M0.
-
-¿Pueden chips AVR como los ATMega328 o ATMega2560 correr CircuitPython?
-No
-
-Acrónimos Comunes
-CP o CPy = CircuitPython (https://adafru.it/cpy-welcome)
-CPC = Circuit Playground Classic (https://adafru.it/ncE)
-CPX = Circuit Playground Express (https://adafru.it/wpF)
-
-
-Instalando el editor Mu
-
-Mu es un simple editor de código que funciona con las tarjetas CircuitPython de Adafruit. Está escrito en Python y trabaja en Windows, MacOS, Linux y en Raspberry Pi. ¡La consola serial está integrada por lo que obtienes retroalimentación inmediata de la salida serial de tu tarjeta!
-
-Mu es nuestro editor recomendado - favor úselo (¡a menos que seas un usuario experto y ya tengas un editor favorito!)
-
-Descargando e instalando Mu
-
-Descargue Mu de https://codewith.mu (https://adafru.it/Be6). Presione los enlaces ya sea de Download o de Start here para descargas, e instrucciones de instalación. El sitio cuenta con valiosa información, incluyendo extensivos tutoriales y guías-como.
-
-Usando Mu
-
-La primera vez que inicias Mu, te va a pedir que selecciones un modo (o "mode"), el cual puedes cambiar de nuevo en el futuro. ¡Por el momento selecciona Adafruit!
-
-El modo actual se muestra en la esquina inferior izquierda de la ventana, a la par de un ícono de engranaje. Si el modo dice "Microbit" o algo similar, haga click en el para cambiar el modo, y escoja "Adafruit" de la ventana que aparece.
-
-Mu va a tratar de auto-detectar tu tarjeta, así que conecte tu dispositivo CircuitPython y asegúrat de que aparezca como una unidad llamada CIRCUITPY, antes de iniciar Mu.
-¡Ya estás listo para programar! Continuemos...
-
-Instalando CircuitPython
-
-Mientras continuamos desarrollando CircuitPython y creando nuevas versiones, vamos a ir descontinuando versiones anteriores. Si estás corriendo CircuitPython 2.x, necesitas actualizarte a 3.x. Normalmente, Adafruit va a seguir manteniendo las dos últimas versiones mayores.
-Algunas de las tarjetas compatibles con CircuitPython, traen CircuitPython instalado. Otras, vienen preparadas para correr CircuitPython, pero este debe ser instalado. Así como también quieras actualizar la versión de CircuitPython que viene con la tarjeta.
-
-Los pasos para actualizar o instalar, son los mismos. Aquí vamos a cubrir como instalar y actualizar CircuitPython para tu tarjeta.
-Solamente debes instalar CircuitPython una vez, y luego de esto puedes programar y editar tu código sin pasar por este proceso de nuevo, hasta que sea hora de actualizar.
-¡Descarga la última versión!
-
-Lo primero que deseas hacer, es descargar la versión más reciente de CircuitPython.
-
-Si ya estás ejecutando CircuitPython, ¡verifica que estás ejecutando la última versión! Si no estás seguro, puedes seguir estos pasos para asegurarte que vas a tener la última versión instalada.
-
-SIEMPRE RESPALDA TU CÓDIGO ANTES DE INSTALAR O ACTUALIZAR CIRCUITPYTHON. En la mayoría de los casos, nada va a ser eliminado de tu tarjeta durante una actualización, asegúrate de respaldarlo a tu computadoa antes de seguir los pasos a continuación.
-
-Descarga la última versión para tu tarjeta, dando click en el botón verde abajo, visitando CircuitPython.org (https://adafru.it/Em8).
-
-Luego, vas a querer conectar tu tarjeta con un cable USB verificado para transmitir datos. Existen algunos cables que funcionan solamente para carga, y pueden llevar a mucha frustración.
-
-Controladores para Windows 7
-Si estás utilizando Windows 7, necesitas instalar un controlador antesde conectar la tarjeta.
-
-Si estás utilizando Windows 7, utilice el enlace abajo, para escargar el paquete con el controlador. No es necesario instalar controladores en Mac, Linux o Windows 10.
-
-https://adafru.it/AB0
-
-Iniciando el gestor de arranque UF2
-
-Casi todas las tarjetas para CircuitPython vienen con un gestor de arranque llamado UF2 (USB Flasher versión 2) que permite que el proceso de instalar o actualizar CircuitPython sea rápido y sencillo. El gestor de arranque es el modo que tu tarjeta necesita para que el archivo .uf2 de CircuitPython pueda ser cargado. Si el archivo que descargaste contiene el nombre de tu tarjeta en el nombre de archivo y termina en uf2, puedes continuar con esta sección. Sin embargo, si el archivo termina en .bin, debes realizar un proceso de instalación más complejo; visita esta página para archivos tipo .bin (https://adafru.it/Bed).
-
-Encuentra el botón de reset en tu tarjeta. Es un pequeño botón negro, y en la mayoría de las tarjetas, es el único botón disponible. (En la CircuitPython Express, es el botón más pequeño situado en el centro de la tarjeta),
-
-Presiona el botón dos veces para entrar en el gestor de arranque. Si no funciona al primer intento, no te desesperes. El ritmo de estas presiones debe ser el correcto y alguna veces requiere algunos intentos. Si tienes una Circuit Playground Express recién salida e la bolsa, trata presioando el botón solo una vez.
-
-Si funciona, el LED RGB en la tarjeta va a parpadear rojo y luego quedarse fijo en verde. La unidad de disco se va a llamar nombretarjetaBOOT, donde nombretarjeta es el nombre definido para cada tarjeta. Porejemplo una Feather va a tener FEATHERBOOT y una Trinket va a tener TRINKETBOOT, etc. En un futuro lo llamaremos solo BOOT.
-
-¡La tarjeta ya está en modo de gestor de arranque! Esto es lo que queremos para instalar CircuitPython.
- 
-Ahora encuentra el archivo que descargaste. Arrástralo hacia el disco de gestor de arranque UF2 en tu equipo.
-
-
-Las luces van a parpadear de nuevo, la unidad BOOT desaparece, y una nueva unidad de disco aparece en tu computadora con el nombre CIRCUITPY.
-
-¡Felicidades! !Has instalado o actualizado CircuitPython de forma exitosa!
-
-¿Cual es la diferencia entre CIRCUITPY y nombretarjetaBOOT?
-
-Cuano conectas una tarjeta CircuitPython a tu computadoa, tu equipo va a ver la memoria flash de la tajeta como una unidad de disco USB en el cual puedes almacenar archivo. Cuando instalas correctamente CircuitPython, verás la unidad de disco CIRCUITPY. Cuando le das doble click al botón de reset, observarás a la unidad de disco nombretarjetaBOOT. Puedes arrastrarle archivos a ambos, pero solo CIRCUITPY va a correr tu código de CircuitPython.
-
-Normalmente, cuando arrastras un archivo a una unidad de disco USB montada, el archivo se copia a la unidad y lo puedes observar con tu navegador de archivos. Sin embargo, cuando copia el archivo UF2 con CircuitPython a la unidad de disco nombretarjetaBOOT, pareceque desaparece, y la unidad de disco se desconecta. ¡Esto es normal! El UF2 es básicamente un archivo instalador y no solo reside en la unidad, sino que instala CircuitPython si estamos en modo gestor de arranque (con nombretarjetaBOOT).
-
-Usted va a poder copiar otro archivos a la unidad de disco de gestor de arranque (la nombretarjetaBOOT) pero no se van a ejecutar ni estarán disponibles en CircuitPython. ¡Así que asegúrate que una vez que completas la instalación de CircuitPython, que estás arrastrando y editando archivo de la unidad de disco CIRCUITPY! 
-
-Nombres de unidades de disco en modo gestor de arranque
-
-Esta lista no es exhaustiva, pero te debería dar una idea de que buscar en el nombre de una unidad de disco en modo gestor de arranque.
-Trinket M0 = TRINKETBOOT
-Gemma M0 = GEMMABOOT
-Circuit Playground Express = CPLAYBOOT
-ItsyBitsy M0 Express = ITSYBOOT
-ItsyBitsy M4 Express = ITSYM4BOOT
-Feather M0 Express = FEATHERBOOT
-Feather M4 Express = FEATHERBOOT
-Metro M0 Express = METROBOOT
-Metro M4 Express = METROM4BOOT
-NeoTrelis M4 Express = TRELM4BOOT
-
-La unidad de disco CIRCUITPY
-
-Cuando CircuitPython termina de instalar o conectas una tarjeta CircuitPython a tu computadora con CircuitPython ya instalado, la tarjeta se muestra en tu computadora como un disco USB llamado CIRCUITPY.
-La unidad de disco CIRCUITPY es donde tu código y librerías necesarias van a residir. Usted puede editar el código directamente en esta unidad de disco, y se va a ejecutar automáticamente. Cuando creas y editas código, usted salvará su código en el archivo llamado code.py, situado en la unidad de disco CIRCUITPY. Si estás siguiendo una guía del Learn, puedes pegar los contenidos de ejemplo del tutorial a este archivo code.py en tu unidad de disco CIRCUITPY, y lo salvas para ejecutar el ejemplo.
-CircuitPython busca a code.py y ejecuta su contenido de forma automática cuando la tarjeta inicia, reinicia o cuando salvas el contenido del archivo. ¡Esto es lo que hace tan sencillo iniciar con proyectos y actualizar tu código!
-
-Trabajando con múltiples dispositivos
-
-Existen muchas tarjetas que trabajan con CircuitPython. Usted se puede encontrar en una situación donde estás trabajando con más de una tarjeta a la vez. ¿Que sucede cuando conectas varias tarjetas a tu computadora?
-¡Pues tienes múltiples unidades CIRCUITPY! ¿Ahora como sabes cual es cual? Usted puede renombrar cada unidad de disco CIRCUITPY para evitar confusión.
-
-Renombrando CIRCUITPY
-
-Cuando le cambias el nombre a CIRCUITPY, se escribe el nombre en el sistema de archivos. Esto significa que el cambio de nombre se va a mantener si desconectas la tarjetas así como si recargas CircuitPython. ¡El nombre debe ser de 11 letras o menos! Esto es una limitante del sistema de archivo. Vas a recibir un error si escojes uno con más de 11 letras.
-
-Renombrando CIRCUITPY en Mac
-Cambiarle el nombre a tu unidad de disco CIRCUITPY es sencillo. Das click a tu unidad de disco en el Finder para ver su contenido. Luego le das click derecho a la unidad de disco en el Finder y escoges "Renombrar".
-Cuando das click a "Renombrar", en el menú de click derecho, el nombre de la unidad de disco aparece en una caja de texto donde puedes renombrarla. Escriba el nuevo nombre.
-
-Renombrando CIRCUITPY en Windows
-Camniar el nombre a la unidad de disco CIRCUITPY en Windows es sencillo. Abre el Explorador de archivos y buscas la unidad de disco CIRCUITPY. Le das click derecho encima, y click a "Renombrar".
-
-Renombrar la unidad de disco CIRCUITPY en Windows es sencillo. Abre el Explorador de archivos y buscas la unidad de disco CIRCUITPY. Le das click derecho encima, y click a "Renombrar".
-También puedes renombrar la unidad de disco por medio del menú de "Propiedades" en el Explorador de Windows, incluyendo click derecho sobre la unidad de disco CIRCUITPY y escogiendo "Propiedades".
-
-Una vez que da click en "Renombrar" en el menú de click derecho, la unidad de disco aparece en un campo de texto donde puedes renombrarla. Escriba el nuevo nombre.
-
-Renombrando CIRCUITPY en Linux
-Para cambiar el nombre de la unidad de disco CIRCUITPY en Linux, es necesario ejecuta un par de pasos. Necesitas identificar el punto de monta, y luego ejecutar un comando para renombrar la unidad de disco.
-
-Abra la aplicación de terminal. Ejecute el siguiente comando para consultar donde está montada tu tarjeta:
-
-df | grep CIRCUITPY
-
-Vas a ver CIRCUITPY en la derecha de la línea resultante. El punto de monta aparece a la izquierda de la línea y es similar a /dev/foo (donde foo es el nombre del punto de monta).
-
-Ahora puedes ejecutar el siguiente comando para desmontar la tarjeta, reemplazando la palabra foo por tu punto de monta.
-
-sudo umount /dev/foo
-
-Para renombrar la tarjeta, ejecute lo siguiente:
-
-sudo fatlabel /dev/foo NUEVO_NOMBRE
-Ahora desconecta tu tarjeta y la conectas para forzarla a remontarse con el nuevo nombre.
-
-Para revisar que funcionó, busca el nuevo nombre de unidad de disco en tu navegador de archivos. O puedes ejecutar lo siguiente:
-
-df | grep NEW_NAME
-
-Renombrando CIRCUITPY desde CircuitPython
-Usted también puede renombrar la unidad de disco CIRCUITPY utilizando CircuitPython. Crea un nuevo archivo en tu CIRCUITPY llamado boot.py . Copia el siguiente código dentro del archivo boot.py:
-
-import storage
-storage.remount("/", readonly=True)
-m = storage.getmount("/")
-m.label = "NEW_NAME"
-storage.remount("/", readonly=False)
-
-Desmonta tu tarjeta, y reiniciala ya sea presionando el botón de reset una vez, o desconectando la tarjeta y reconectándola. !Luego de un instante, debería aparecer en tu navegador de archivos con el NUEVO_NOMBRE que has escogido! Ya puedes borrar boot.py luego de que el nuevo nombre aparece en tu navegador de archivos.
-
-Revirtiendo a CIRCUITPY
-Puedes seguir el mismo proceso antes descrito para renombrar la unidad de disco, de nuevo hacia CIRCUITPY.
-También puedes revertir al nombre CIRCUITPY, borrando el sistema de archivos. Si estás en una situación donde debe eliminar el sistema de archivos en tu tarjeta CircuitPython, la unidad de disco revertirá su nombre a CIRCUITPY cuando complete el borrado.
-
-Creando y editando el código
-
-Una de las mejores cosas sobre CircuitPython, es lo sencillo que es poner a trabajar al código. En esta sección vamos a hablar de como crear y editar tu primer programa en CircuitPython.
-
-Para crear y editar el código, todo lo que necesitas es un editor. Existen muchas opciones. ¡Nosotros recomendamos fuertemente a Mu! Es diseñado para CircuitPython, y es realmente simple y sencillo de utilizar, ¡con una consola serial integrada!
-Si no utilizas o no puedes usar Mu, hay editores básicos para texto en cualquier sistema operativo, como Notepad en Windows, TextEdit en Mac, y gedit en Linux. Sin embargo, muchos de estos editores no escriben sus cambios de inmediato a los archivos que editas. Esto puede causar problemas con CircuitPython. Ver la sección de Editando Código a continuación (https://adafru.it/id3)
-
-Si quieres saltarte dicha sección por el momento, asegurate de "Expulsar" o "Remover de forma segura" en Windows, o "sync" en Linux luego de escribir un archivo si no estás en Mu. (Esto no es un problema en MacOS)
-
-Creando código
-Abre tu editor y crea un archivo nuevo. Si estás usando Mu, dá click al botón de Nuevo arriba a la izquierda.
-Copia y pega el siguiente código en tu editor:
-import board
-import digitalio
-import time
-led = digitalio.DigitalInOut(board.D13)
-led.direction = digitalio.Direction.OUTPUT
-while True:
-led.value = True
-time.sleep(0.5)
-led.value = False
-time.sleep(0.5)
-
-Se va a ver así - nota que cuando estás bajo la línea while True:, las siguientes cuatro líneas tienen espacios para identarlas, pero están identadas la misma cantidad. El resto de líneas no tiene espacios antes del texto.
-Salva este archivo como code.py bajo tu unidad de disco CIRCUITPY.
-
-En cada tarjeta vas a encontrar un pequeño LED rojo. Debería estar parpadeando una vez por segundo.
-
-¡Felicidades, estas ejecutando tu primer programa en CircuitPython!
-
-Editando código
-
-Para editar código, abre tu archivo code.py bajo tu unidad de disco CIRCUITPY usando un editor.
-Realiza los cambios deseados en tu código. Salva el archivo.
-¡Eso es todo!
-Los cambios en tu código son aplicados en el momento que el archivo es salvado.
-Solamente hay una advertencia para darte, antes de continuar...
-¡No dés click en Reset o desconectes!
-
-El código CircuitPython en tu tarjeta detecta cuando los archivos cambian o son escritos y automáticamente re-inicia tu código. Esto hace programar muy rápido porque tu salvas y vuelve a correr.
-¡Sin embargo, desdeesperar a que el archivo esté completamentes salvado antes de desconectar o reiniciar tu tarjeta! En Windows, usando algunos editores es posible que dure hasta 30 segundos para completar porque el editor de texto no salva el archivo completamente. Mac OS parece no tener este retraso, ¡lo cual es bueno!
-
-Esto es muy importante para tenr en cuenta. Si desconectas o reinicias la tarjeta antes de que tu computadora termine de escribir a la tarjeta, puedes corromper la unidad de disco. Si esto sucede, es posible que pierdas el código que has escrito, por lo que es importante respaldar tu código regularmente hacia una computadora.
-
-Estas son algunas recomendaciones para evitar que suceda:
-1. Utiliza un editor que escriba los archivos completamente cuando los salvas.
-Editores recomendados:
-
-mu (https://adafru.it/Be6) es un editor que escribe de forma segura todos los cambios (así como es tambié̆n nuestro editor recomendado!)
-
-emacs (https://adafru.it/xNA) is también un editor que va a escribir completamente los archivos cuando los salvas (https://adafru.it/Be7)
-Sublime Text (https://adafru.it/xNB) escribe segúramente los cambios
-Visual Studio Code (https://adafru.it/Be9) parece escribir seguramente los cambios
-gedit bajo Linux aparece escribir seguramente todos los cambios
-IDLE (https://adafru.it/IWB), en Python 3.8.1 o posterior, se arregló́ (https://adafru.it/IWF) para escribir todos los cambios inmediatamente
-
-Recomendadoo para ciertos escenarios o con añadidos:
-vim (https://adafru.it/ek9) / vi escribe seguramente todos los cambios. Pero lo debes configurar para no utilizar archivos de intercambio  (https://adafru.it/ELO) (archivos .swp: registros temprales de las ediciones) en CIRCUITPY. Ejecuta vim con -n, para definir la opción sin archivos de intercambio, o puedes definirle que escriba los archivos de intercambio en otro directorio. De otra manera, los archivos de intercambio podrían iniciar un reiniciado de tu programa.
-
-El IDE PyCharm (https://adafru.it/xNC) es seguro cuando "Safe Write" es activado en Settings->System Settings->Synchronization (activado por omisión).
-Si estás utilizando Atom (https://adafru.it/fMG), instala el paquete fsync-on-save (https://adafru.it/E9m) para que siempre escriba completamente los archivos hacia CIRCUITPY.
-SlickEdit (https://adafru.it/DdP) funciona solo si le agregas un macro para vaciar escrituras pendientes hacia el disco (https://adafru.it/ven).
-
-Nosotros no recomendamos estos editores:
-notepad (el editor por omisión en Windows) ni Notepad++ que pueden serlentos para escribir, ¡por lo que recomendamos los editores mencionados arriba!
-Si estás utilizando notepad, asegúrate de expulsar la unidad de disco (ver abajo). 
-IDLE en Python 3.8.0 o anterior no fuerza la escritura inmediata de los cambio
-nano (on Linux) no fuerza la escritura de cambios
-geany (on Linux) no fuerza la escritura de cambios
-
-Cualquier otro - nosotros no hemos probado otros editores, así que por favor ¡utilice uno recomendado!
-
-2. Expulse o sincronice el dispositivo luego de escribir
-Si estás utilizando uno de los editores no recomendados, ¡todavía hay esperanza! Todavía puedes lograr que funcione.
-En Windows, puedes Expulsar o Remover de forma segura, la unidad de disco CIRCUITPY. No se va a expulsar realmente, pero forzará al sistema operativo a escribir tu archivo al disco. En Linux, puedes usar el comando sync en una terminal para forzar la escritura al disco.
-
-¡¡¡Oh No, hice algo mal y ahora la unidad de disco CIRCUITPY no aparece!!!
-¡No se preocupe! El corromper una unidad de disco no es el fin del mundo (¡o de tu tarjeta!). Si esto sucede, sigue los pasos descritos en la página de Solución de Problemas en la guía de cada tarjeta, para tenerla trabajando de nuevo.
-
-
-Volviendo a la edición de código...
-¡Ahora! Vamos a tratar de editar el programa que has agregado a tu tarjeta. Abre tu archivo code.py en tu editor. Vamos a realizar un simple cambio. Modifique el primer 0.5 hacia un 0.1 . El código debería verse de esta manera:
-import board
-import digitalio
-import time
-led = digitalio.DigitalInOut(board.D13)
-led.direction = digitalio.Direction.OUTPUT
-while True:
-led.value = True
-time.sleep(0.1)
-led.value = False
-time.sleep(0.5)
-
-Mantenga el resto del código sin cambios. Salve su archivo. Observe que sucede con el LED de tarjeta. ¡Algo ha cambiado! ¿Sabes por qué? ¡Vamos a averiguarlo!
-
-Explorando tu primer programa en CircuitPython
-
-Primero, vamos a observar el código que estamos editando.
-
-Aquí está el código original de nuevo:
-import board
-import digitalio
-import time
-led = digitalio.DigitalInOut(board.D13)
-led.direction = digitalio.Direction.OUTPUT
-while True:
-led.value = True
-time.sleep(0.5)
-led.value = False
-time.sleep(0.5)
-
-Imports y librerías
-Cada programa en CircuitPython que ejecutas necesita tener mucha información para trabajar. La razón de porqué CircuitPython es tan sencillo es porque mucha de esa inforación se encuentra almacenada en otros archivos y trabaja detrás del telón. Estos archivos se llaman librerías. Algunas de ellas están integradas dentro e CircuitPython. Otras están almacenadas dentro de la unidad de disco CIRCUITPY en una carpeta llamada lib.
-import board
-import digitalio
-import time
-
-Las palabras de import le dicen a la tarjeta que vas a utilizar una librería en particular en tu código. En este ejemplo, hemos importado tres librerías: board , digitalio , y time . Estas tres librerías se encuentran integrada en CircuitPython, por lo que no son necesarios archivos adicionales. Eso es una de las cosas que lo vuelven un excelente primer ejemplo. ¡No necesitas nada extra para que funcione! board provee el acceso al hardware de tu tarjeta, digitalio permite accesar las entradas y salidas de hardware, time te permite pasar el rato 'durmiendo' 
+﻿Las palabras de import le dicen a la tarjeta que vas a utilizar una librería en particular en tu código. En este ejemplo, hemos importado tres librerías: board , digitalio , y time . Estas tres librerías se encuentran integrada en CircuitPython, por lo que no son necesarios archivos adicionales. Eso es una de las cosas que lo vuelven un excelente primer ejemplo. ¡No necesitas nada extra para que funcione! board provee el acceso al hardware de tu tarjeta, digitalio permite accesar las entradas y salidas de hardware, time te permite pasar el rato 'durmiendo' 
 Configurando el LED
-Las siguientes dos líneas de código configuran el código para utilizar el LED.
+Las siguientes dos líneas de código configuran el código para utilizar el LED.
 led = digitalio.DigitalInOut(board.D13)
 led.direction = digitalio.Direction.OUTPUT
 
-Tu tarjeta conoce el LED rojo como D13 . Así que cuando inicializas este pin, lo preparamos para salida. Preparamos led para para que retenga esta información y no sea necesario escribirlo de nuevo más adelante en nuestro código.
+Tu tarjeta conoce el LED rojo como D13 . Así que cuando inicializas este pin, lo preparamos para salida. Preparamos led para para que retenga esta información y no sea necesario escribirlo de nuevo más adelante en nuestro código.
 
 Ciclos
-La tercera sección comienza con una palabra de while. while True: básicamente significa "por siempre haga esto". while True: crea un ciclo. El código va a repetir "mientras" (while) la condición sea "verdadera" (true) (a diferencia de falso), y como True nunca es falso, el código se encicla sin fin. Todo el código que está identado bajo while True: está "dentro" del ciclo.
+La tercera sección comienza con una palabra de while. while True: básicamente significa "por siempre haga esto". while True: crea un ciclo. El código va a repetir "mientras" (while) la condición sea "verdadera" (true) (a diferencia de falso), y como True nunca es falso, el código se encicla sin fin. Todo el código que está identado bajo while True: está "dentro" del ciclo.
 
 Dentro del ciclo, tenemos cuatro elementos:
 
@@ -390,54 +17,54 @@ time.sleep(0.5)
 led.value = False
 time.sleep(0.5)
 
-Primero, tenemos led.value = True . Esta línea le dice al LED que se encienda. En la siguiente línea tenemos time.sleep(0.5) . Esta línea le dice a CircuitPython que realice una pausa durante medio segundo. Ya que esta línea está en medio del prendido y apagao el led, el led va a estar encendido por medio segundo.
+Primero, tenemos led.value = True . Esta línea le dice al LED que se encienda. En la siguiente línea tenemos time.sleep(0.5) . Esta línea le dice a CircuitPython que realice una pausa durante medio segundo. Ya que esta línea está en medio del prendido y apagao el led, el led va a estar encendido por medio segundo.
 
-Las siguientes dos líneas son similares. led.value = False le dice al LED que se apague, y time.sleep(0.5) le dice a CircuitPython que realice otra pausa, también medio segundo.
+Las siguientes dos líneas son similares. led.value = False le dice al LED que se apague, y time.sleep(0.5) le dice a CircuitPython que realice otra pausa, también medio segundo.
 
-Luego el ciclo comienza de nuevo, y ¡se va a mantener ejecutándose siempre y cuando el código esté trabajando!
+Luego el ciclo comienza de nuevo, y ¡se va a mantener ejecutándose siempre y cuando el código esté trabajando!
 
-Entonces, cuando cambiaste el primer 0.5 hacia un 0.1, bajaste el tiempo que el LED se mantiene encendido. Así que parpadea encendido, ¡muy rápido antes de apagarse!
+Entonces, cuando cambiaste el primer 0.5 hacia un 0.1, bajaste el tiempo que el LED se mantiene encendido. Así que parpadea encendido, ¡muy rápido antes de apagarse!
 
-¡Excelente trabajo! ¡Has editado código de un programa en CircuitPython!
+¡Excelente trabajo! ¡Has editado código de un programa en CircuitPython!
 
 ¿Que pasa si no tienes el ciclo?
 
-Si no tienes el ciclo, el código se va a ejecutar hasta el final, y terminal. Esto puede llevar a comportamientos extraños en programas sencillos como este, ya que el comportamiento de "exit" también reinicia el estado del hardware. Esto es un comportamiento diferente a ejecutar comandos en el REPL. Así que si estás editando un programa sencillo que parece no funcionar, pueda que necesites agregar un ciclo al final para que el programa no termine.
+Si no tienes el ciclo, el código se va a ejecutar hasta el final, y terminal. Esto puede llevar a comportamientos extraños en programas sencillos como este, ya que el comportamiento de "exit" también reinicia el estado del hardware. Esto es un comportamiento diferente a ejecutar comandos en el REPL. Así que si estás editando un programa sencillo que parece no funcionar, pueda que necesites agregar un ciclo al final para que el programa no termine.
 
-El ciclo más sencillo sería:
+El ciclo más sencillo sería:
 while True:
 pass
 
 Y recuerda, puedes presionar <CTRL><C> para salirte del ciclo.
-Puedes también leer la sección Comportamiento de la documentación.
+Puedes también leer la sección Comportamiento de la documentación.
 
-Más Cambios
-¡No hay razón para detenernos aquí! Vamos a continuar. Cambie el segundo 0.5 por 0.1 para que se vea así:
+más Cambios
+¡No hay razón para detenernos Aquí! Vamos a continuar. Cambie el segundo 0.5 por 0.1 para que se vea Así:
 while True:
 led.value = True
 time.sleep(0.1)
 led.value = False
 time.sleep(0.1)
 
-¡Ahora parpadea muy rápido! ¡Has bajado ambos tiempos que el código prende y apaga el LED!
-Ahora trata de cambiar ambos de 0.1 a 1 . El LED va parpadear mucho más despacio porque aumentaste la cantidad de tiempo que el LED esta prendido y apagado.
+¡Ahora parpadea muy rápido! ¡Has bajado ambos tiempos que el código prende y apaga el LED!
+Ahora trata de cambiar ambos de 0.1 a 1 . El LED va parpadear mucho más despacio porque aumentaste la cantidad de tiempo que el LED esta prendido y apagado.
 ¡Bien hecho! ¡Lo estas haciendo muy bien! ¡Estas listo para comenzar con nuevos ejemplos y editarlos para ver que pasa! Estos cambos han sido sencillos, pero cambios mayores se puede realizar por el mismo proceso. Haces el cambio que deseas, lo salvas y recibes los resultados. ¡No tiene nada de complicado!
 Nombrando tu programa
-CircuitPython busca un código en tu tarjeta para ejecutar. Existen cuatro opciones: code.txt, code.py, main.txt y main.py.
-CircuitPython buscar por esos archivos, en ese orden, y ejecuta el primero que encuentre. Así como sugerimos utilizar code.py como tu archivo para código, es importante que sepas que existen otras opciones. Si pareciera que tu programa no se actualiza mientras trabajas, verifica que no hayas creado otro archivo que pueda estar siendo leído en lugar del archivo sobre el que estas trabajando.
+CircuitPython busca un código en tu tarjeta para ejecutar. Existen cuatro opciones: code.txt, code.py, main.txt y main.py.
+CircuitPython buscar por esos archivos, en ese orden, y ejecuta el primero que encuentre. Así como sugerimos utilizar code.py como tu archivo para código, es importante que sepas que existen otras opciones. Si pareciera que tu programa no se actualiza mientras trabajas, verifica que no hayas creado otro archivo que pueda estar siendo leído en lugar del archivo sobre el que estas trabajando.
 
 
 Conectándose a la Consola Serial
 
-Algo de todos los días en CircuitPython (¡y en programación en general!) is algo llamado "print". Esto es una línea que incluyes en tu código para que tu código imprima texto. Un "print" en CircuitPython se ve así:
+Algo de todos los días en CircuitPython (¡y en programación en general!) is algo llamado "print". Esto es una línea que incluyes en tu código para que tu código imprima texto. Un "print" en CircuitPython se ve Así:
 print("¡Hola mundo!")
 
 Esta línea resultaría en:
 ¡Hola mundo!
 
-Sin embargo, estos prints necesitan algún lugar para imprimirlos. ¡Aquí es donde entra la consola serial!
+Sin embargo, estos prints necesitan algún lugar para imprimirlos. ¡Aquí es donde entra la consola serial!
 
-La consola serial recibe la salida de la tarjeta CircuitPython enviada por USB y la imprime para que la puedas ver. Esto es necesario cuando has incluído un print en tu código y deseas ver la salida. También es útil para mensajes de depuración de errores, porque tu tarjeta enviará errores y la consola serial los imprimirá.
+La consola serial recibe la salida de la tarjeta CircuitPython enviada por USB y la imprime para que la puedas ver. Esto es necesario cuando has incluído un print en tu código y deseas ver la salida. también es útil para mensajes de depuración de errores, porque tu tarjeta enviará errores y la consola serial los imprimirá.
 
 La consola serial requiere una aplicación de terminal. Una terminal es un aplicació̆n que provee una interface de texto para realizar ciertas tareas.
 
@@ -1246,9 +873,8 @@ once to get the CPLAYBOOT drive to show up. Pressing it twice will not work.
 Windows 10
 Did you install the Adafruit Windows Drivers package by mistake? You don't need to install this package on Windows 10
 for most Adafruit boards. The old version (v1.5) can interfere with recognizing your device. Go to Settings -> Apps and
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 84 of 95uninstall all the "Adafruit" driver programs.
+
+uninstall all the "Adafruit" driver programs.
 Windows 7
 The latest version of the Adafruit Windows Drivers (version 2.0.0.0 or later) will fix the missing boardnameBOOT drive
 problem on Windows 7. To resolve this, first uninstall the old versions of the drivers:
@@ -1263,7 +889,7 @@ You should now be done! Test by unplugging and replugging the board. You should 
 when you double-click the reset button (single click on Circuit Playground Express running MakeCode), you should see
 the appropriate boardnameBOOT drive.
 Let us know in the Adafruit support forums (https://adafru.it/jIf) or on the Adafruit Discord () if this does not work for you!
-Page 85 of 95Windows Explorer Locks Up When Accessing boardnameBOOT Drive
+Windows Explorer Locks Up When Accessing boardnameBOOT Drive
 On Windows, several third-party programs we know of can cause issues. The symptom is that you try to access the
 boardnameBOOT drive, and Windows or Windows Explorer seems to lock up. These programs are known to cause
 trouble:
@@ -1298,7 +924,7 @@ Therefore, if your serial console panel is five lines tall or less, you may only
 Press any key to enter the REPL. Use CTRL-D to reload.. If this is the case, you need to either mouse over the top of
 the panel to utilise the option to resize the serial panel, or use the scrollbar on the right side to scroll up and find your
 message.
-Page 86 of 95This applies to any kind of serial output whether it be error messages or print statements. So before you start trying to
+This applies to any kind of serial output whether it be error messages or print statements. So before you start trying to
 debug your problem on the hardware side, be sure to check that you haven't simply missed the serial messages due to
 serial output panel height.
 CircuitPython RGB Status Light
@@ -1332,7 +958,7 @@ version of CircuitPython than the one its being loaded into. In particular, the 
 CircuitPython versions 2.x and 3.x, as well as between 1.x and 2.x.
 So, for instance, if you upgraded to CircuitPython 3.x from 2.x you’ll need to download a newer version of the library
 that triggered the error on import . They are all available in the Adafruit bundle (https://adafru.it/y8E).
-Page 87 of 95Make sure to download a version with 2.0.0 or higher in the filename if you're using CircuitPython version 2.2.4, and
+Make sure to download a version with 2.0.0 or higher in the filename if you're using CircuitPython version 2.2.4, and
 the version with 3.0.0 or higher in the filename if you're using CircuitPython version 3.0.
 CIRCUITPY Drive Issues
 You may find that you can no longer save files to your CIRCUITPY drive. You may find that your CIRCUITPY stops
@@ -1392,7 +1018,7 @@ If the LED flashes red during step 5, it means the erase has failed. Repeat the 
 If you haven't already downloaded the latest release of CircuitPython for your board, check out the installation
 page (https://adafru.it/Amd). You'll also need to install your libraries and code!
 Old Way: For Non-Express Boards with a UF2 bootloader (Gemma M0, Trinket M0):
-Page 89 of 95If you can't get to the REPL, or you're running a version of CircuitPython before 2.3.0, and you don't want to upgrade,
+If you can't get to the REPL, or you're running a version of CircuitPython before 2.3.0, and you don't want to upgrade,
 you can do this.
 1. Download the erase file:
 https://adafru.it/AdL
@@ -1468,10 +1094,9 @@ If you'd like to see the amount of space used on the drive and manually delete h
 list the amount of space used on the CIRCUITPY drive with the df command:
 Lets remove the ._ files first.
 
-Page 92 of 95Whoa! We have 13Ki more than before! This space can now be used for libraries and code!
-© Adafruit Industries
-https://learn.adafruit.com/welcome-to-circuitpython
-Page 93 of 95CircuitPython Essentials
+Whoa! We have 13Ki more than before! This space can now be used for libraries and code!
+
+CircuitPython Essentials
 You've gone through the Welcome to CircuitPython guide. You've already gotten everything setup, and you've gotten
 CircuitPython running. Great! Now what? CircuitPython Essentials!
 There are a number of core modules built into CircuitPython and commonly used libraries available. The Essentials
